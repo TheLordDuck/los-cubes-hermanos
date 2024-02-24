@@ -1,0 +1,1588 @@
+[
+	{
+		"id": "6542268e-c817-457e-a214-89f5035e38e1",
+		"name": "Kamigawa: Neon Dynasty",
+		"image": "https://cards.scryfall.io/art_crop/front/5/3/5366900b-2abf-4e5c-8507-f51aca9c7ce8.jpg",
+		"difficulty": 2.5,
+		"type": "Cube",
+		"mechanics": [
+			"Reconfigure",
+			"Modified",
+			"Transformed_Sagas",
+			"Ninjutsu",
+			"Channel"
+		],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Vehicles" },
+			{ "colorPair": "UB", "strategy": "Ninjutsu (Ninja, Rogues)" },
+			{ "colorPair": "BR", "strategy": "Artifact Sacrifice" },
+			{ "colorPair": "RG", "strategy": "Modified" },
+			{ "colorPair": "GW", "strategy": "Enchantments" },
+			{ "colorPair": "WB", "strategy": "Artifact & Enchantments Midrange" },
+			{ "colorPair": "UR", "strategy": "Artifact ETB" },
+			{ "colorPair": "BG", "strategy": "Recursive Strategy" },
+			{ "colorPair": "RW", "strategy": "Samurai Warriors" },
+			{ "colorPair": "GU", "strategy": "Channel / Ramp" }
+		]
+	},
+	{
+		"id": "26869dca-8059-4b13-ba00-8a7998153abe",
+		"name": "Throne of Eldraine",
+		"image": "https://cards.scryfall.io/art_crop/front/5/6/56c1227e-bea7-47cb-bbec-389a3d585af5.jpg",
+		"difficulty": 2,
+		"type": "Cube",
+		"mechanics": ["Adventure", "Adamant", "Food_Token"],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "W", "strategy": "Mono-White" },
+			{ "colorPair": "U", "strategy": "Mono-Blue" },
+			{ "colorPair": "B", "strategy": "Mono-Black" },
+			{ "colorPair": "R", "strategy": "Mono-Red" },
+			{ "colorPair": "G", "strategy": "Mono-Green" },
+			{ "colorPair": "WU", "strategy": "Artifacts & Enchantments" },
+			{ "colorPair": "UB", "strategy": "Mill" },
+			{ "colorPair": "BR", "strategy": "Knights" },
+			{ "colorPair": "RG", "strategy": "Non-Humans" },
+			{ "colorPair": "GW", "strategy": "Adventure" },
+			{ "colorPair": "WB", "strategy": "Knights" },
+			{ "colorPair": "UR", "strategy": "Draw Two Matters" },
+			{ "colorPair": "BG", "strategy": "Food Tokens" },
+			{ "colorPair": "RW", "strategy": "Knights" },
+			{ "colorPair": "GU", "strategy": "Ramp / Non-Humans" }
+		]
+	},
+	{
+		"id": "ccc24ab9-65db-4c68-8519-e34409a0e230",
+		"name": "Ravnica at War",
+		"image": "https://cards.scryfall.io/art_crop/front/f/6/f67e7070-2266-4c93-8c89-084e12ba7a4e.jpg",
+		"difficulty": 2.5,
+		"type": "Cube",
+		"mechanics": ["Mentor", "Surveil", "Amass", "Jump_Start"],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Stall & Evasion" },
+			{ "colorPair": "UB", "strategy": "Building up Amass" },
+			{ "colorPair": "BR", "strategy": "Sacrifice Amass" },
+			{ "colorPair": "RG", "strategy": "Power Brutes" },
+			{ "colorPair": "GW", "strategy": "Go-wide & +1/+1 Counters / Wolves" },
+			{ "colorPair": "WB", "strategy": "Lifegain Attrition / Midrange" },
+			{ "colorPair": "UR", "strategy": "Spells-matter Amass" },
+			{ "colorPair": "BG", "strategy": "Graveyard Synergy" },
+			{ "colorPair": "RW", "strategy": "Aggro Tricks" },
+			{ "colorPair": "GU", "strategy": "Go-tall & +1/+1 Counters" }
+		]
+	},
+	{
+		"id": "f46a2523-17df-4a06-80f9-eb1379216b2c",
+		"name": "Essential Tarkir",
+		"image": "https://cards.scryfall.io/art_crop/front/a/4/a42b2c9c-1650-468e-94d6-e09b3518447f.jpg",
+		"difficulty": 3.5,
+		"type": "Cube",
+		"mechanics": [
+			"Outlast",
+			"Bolster",
+			"Prowess",
+			"Rebound",
+			"Delve",
+			"Exploit",
+			"Raid",
+			"Dash",
+			"Ferocious",
+			"Formidable"
+		],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{
+				"colorPair": "WBG",
+				"strategy": "Outlast, Bolster, +1/+1 Counters"
+			},
+			{
+				"colorPair": "URW",
+				"strategy": "Prowess, Rebound, Instant & Sorceries"
+			},
+			{ "colorPair": "BGU", "strategy": "Delve, Exploit, Graveyard" },
+			{ "colorPair": "RWB", "strategy": "Raid, Dash, Attacking/Damage" },
+			{
+				"colorPair": "GUR",
+				"strategy": "Ferocious, Formidable, Big Creatures"
+			}
+		]
+	},
+	{
+		"id": "7c26ea10-e791-4eb7-bcc2-2ec7197498f5",
+		"name": "New Capenna Chroma Families",
+		"image": "https://cards.scryfall.io/art_crop/front/c/d/cd22723d-855f-4b31-827f-a4e388ebbc07.jpg",
+		"difficulty": 4,
+		"type": "Cube",
+		"mechanics": [],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{
+				"colorPair": "WUB",
+				"strategy": "Flicker, ETB, Graveyard Interaction, Control"
+			},
+			{
+				"colorPair": "BRG",
+				"strategy": "Sacrifice, +1/+1 Counters, Tokens"
+			},
+			{
+				"colorPair": "WBG",
+				"strategy": "Tokens, Pump, +1/+1 Counters, Sacrifice"
+			},
+			{
+				"colorPair": "URG",
+				"strategy": "Spells, Damage, +1/+1 Counters"
+			},
+			{
+				"colorPair": "WGR",
+				"strategy": "Tokens, +1/+1 Counters, Fight"
+			},
+			{
+				"colorPair": "WUR",
+				"strategy": "Tokens, First/Double Strike, Pump"
+			},
+			{
+				"colorPair": "UBG",
+				"strategy": "Graveyard Interaction, +1/+1 Counters"
+			},
+			{
+				"colorPair": "WBR",
+				"strategy": "Sacrifice, Recursion, Drain Life"
+			},
+			{ "colorPair": "UBR", "strategy": "Spells, Damage, Control" },
+			{ "colorPair": "WUG", "strategy": "Tokens, +1/+1 Counters" }
+		]
+	},
+	{
+		"id": "51e1790e-7e58-417d-8a6c-e6c68e798f5a",
+		"name": "Kaladesh Reinvented",
+		"image": "https://cards.scryfall.io/art_crop/front/1/d/1df70ef3-8919-43ac-9317-23548437a181.jpg",
+		"difficulty": 0.5,
+		"type": "Cube",
+		"mechanics": [
+			"Artifacts",
+			"Vehicles",
+			"Energy_Counters",
+			"Fabricate",
+			"Improvise",
+			"Revolt"
+		],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 8,
+							"uncommon": 4,
+							"rare": 3
+						},
+						"2": {
+							"common": 8,
+							"uncommon": 4,
+							"rare": 3
+						},
+						"3": {
+							"common": 9,
+							"uncommon": 4,
+							"rare": 1,
+							"mythic": 1
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 5,
+							"uncommon": 2,
+							"rare": 2
+						},
+						"2": {
+							"common": 5,
+							"uncommon": 2,
+							"rare": 2
+						},
+						"3": {
+							"common": 6,
+							"uncommon": 2,
+							"rare": 1
+						},
+						"4": {
+							"common": 6,
+							"uncommon": 2,
+							"rare": 1
+						},
+						"5": {
+							"common": 6,
+							"uncommon": 2,
+							"rare": 1,
+							"mythic": 1
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Flicker / Flyers" },
+			{ "colorPair": "UB", "strategy": "Artifact Midrange / Improvise" },
+			{ "colorPair": "BR", "strategy": "Artifact Midrange / Vehicles" },
+			{ "colorPair": "RG", "strategy": "Energy Beatdown" },
+			{ "colorPair": "GW", "strategy": "Beatdown, +1/+1 Counters" },
+			{ "colorPair": "WB", "strategy": "Artifact Value / Revolt" },
+			{ "colorPair": "UR", "strategy": "Energy / Artifacts" },
+			{ "colorPair": "BG", "strategy": "+1/+1 Counters" },
+			{ "colorPair": "RW", "strategy": "Vehicles Aggro" },
+			{ "colorPair": "GU", "strategy": "Energy" }
+		]
+	},
+	{
+		"id": "24e567ba-49f5-4e5d-aba5-d5bd00d51c3e",
+		"name": "Spectrum",
+		"image": "https://cards.scryfall.io/art_crop/front/5/9/59243436-b55d-44c3-962b-751eff429f71.jpg",
+		"difficulty": 1.5,
+		"type": "Cube",
+		"mechanics": [
+			"Madness",
+			"Threshold",
+			"Artifacts",
+			"Metalcraft",
+			"Enchantments"
+		],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "UBRG", "strategy": "Discard / Madness" },
+			{ "colorPair": "BGU", "strategy": "Graveyard / Threshold" },
+			{ "colorPair": "WURB", "strategy": "Artifact / Metalcraft" },
+			{ "colorPair": "WG", "strategy": "Enchantments" },
+			{ "colorPair": "WUR", "strategy": "Prowess" },
+			{ "colorPair": "RW", "strategy": "Equipment" },
+			{ "colorPair": "UW", "strategy": "Artifact creatures" }
+		]
+	},
+	{
+		"id": "aab0e11b-fc4a-4cf5-8151-3f11a244220c",
+		"name": "Dominaria United",
+		"image": "https://cards.scryfall.io/art_crop/front/8/4/8418c504-24fe-470f-8102-dcad68ba1520.jpg",
+		"difficulty": 2,
+		"type": "Cube",
+		"mechanics": [
+			"Kicker",
+			"Domain",
+			"Enlist",
+			"Sagas_Read_Ahead",
+			"Stun_Counters"
+		],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Go-wide Tempo" },
+			{ "colorPair": "UB", "strategy": "Control" },
+			{ "colorPair": "BR", "strategy": "Reckless Aggro" },
+			{ "colorPair": "RG", "strategy": "Big Domain" },
+			{ "colorPair": "GW", "strategy": "Go-wide" },
+			{ "colorPair": "WB", "strategy": "Go-wide Sacrifice" },
+			{ "colorPair": "UR", "strategy": "Spells Tempo" },
+			{ "colorPair": "BG", "strategy": "Self-mill" },
+			{ "colorPair": "RW", "strategy": "Go-wide Aggro" },
+			{ "colorPair": "GU", "strategy": "Ramp" },
+			{ "colorPair": "X", "strategy": "Defenders" }
+		]
+	},
+	{
+		"id": "8cab7ab1-9d36-4aa5-95dd-a80b82d669d7",
+		"name": "Brandon Sanderson Commander Cube",
+		"image": "https://cards.scryfall.io/art_crop/front/b/2/b2f4e969-242f-41a9-9d5f-90c7f95cf472.jpg",
+		"difficulty": 3.5,
+		"type": "Cube",
+		"mechanics": [],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": []
+	},
+	{
+		"id": "cc67c663-20d4-495b-afdf-6b973acf6bdb",
+		"name": "The Pauper Cube",
+		"image": "https://cards.scryfall.io/art_crop/front/4/f/4f3deefe-28bc-4e45-a0a0-ab03167e2e81.jpg",
+		"difficulty": 2,
+		"type": "Cube",
+		"mechanics": [],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"random": 15
+						},
+						"2": {
+							"random": 15
+						},
+						"3": {
+							"random": 15
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"random": 9
+						},
+						"2": {
+							"random": 9
+						},
+						"3": {
+							"random": 9
+						},
+						"4": {
+							"random": 9
+						},
+						"5": {
+							"random": 9
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Flicker" },
+			{ "colorPair": "UB", "strategy": "Control" },
+			{ "colorPair": "BR", "strategy": "Aggro (Aristocrats Subtheme)" },
+			{ "colorPair": "RG", "strategy": "Caveman Aggro / 4 Drops" },
+			{ "colorPair": "GW", "strategy": "+1/+1 Counters" },
+			{ "colorPair": "WB", "strategy": "Midrange" },
+			{ "colorPair": "UR", "strategy": "Tempo / Counterburn" },
+			{ "colorPair": "BG", "strategy": "Recursive Midrange" },
+			{ "colorPair": "RW", "strategy": "Go-wide Aggro" },
+			{ "colorPair": "GU", "strategy": "Tempo" }
+		]
+	},
+	{
+		"id": "0fc6bb89-56ed-4c68-ba4a-49f4820735b8",
+		"name": "Dominaria Reimagined",
+		"image": "https://cards.scryfall.io/art_crop/front/5/2/5233ad7b-2903-4736-b13a-5cd4a275eb61.jpg",
+		"difficulty": 2,
+		"type": "Cube",
+		"mechanics": [
+			"Sagas",
+			"Historic_Spells",
+			"Kicker",
+			"Legendary_Spells",
+			"Hexproof_From"
+		],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 8,
+							"uncommon": 3,
+							"rare": 2,
+							"timeshifted": 2
+						},
+						"2": {
+							"common": 8,
+							"uncommon": 3,
+							"rare": 2,
+							"timeshifted": 2
+						},
+						"3": {
+							"common": 8,
+							"uncommon": 3,
+							"rare": 1,
+							"mythic": 1,
+							"timeshifted": 2
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 4,
+							"uncommon": 2,
+							"rare": 2,
+							"timeshifted": 1
+						},
+						"2": {
+							"common": 5,
+							"uncommon": 2,
+							"rare": 1,
+							"timeshifted": 1
+						},
+						"3": {
+							"common": 5,
+							"uncommon": 2,
+							"rare": 1,
+							"timeshifted": 1
+						},
+						"4": {
+							"common": 5,
+							"uncommon": 2,
+							"rare": 1,
+							"timeshifted": 1
+						},
+						"5": {
+							"common": 4,
+							"uncommon": 1,
+							"rare": 1,
+							"mythic": 1,
+							"timeshifted": 2
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Historic" },
+			{ "colorPair": "UB", "strategy": "Control" },
+			{ "colorPair": "BR", "strategy": "Sacrifice" },
+			{ "colorPair": "RG", "strategy": "Kicker" },
+			{ "colorPair": "GW", "strategy": "Tokens" },
+			{ "colorPair": "WB", "strategy": "Legendary" },
+			{ "colorPair": "UR", "strategy": "Spellslinging Wizards" },
+			{ "colorPair": "BG", "strategy": "Saproling Sacrifice" },
+			{ "colorPair": "RW", "strategy": "Auras, Equipment" },
+			{ "colorPair": "GU", "strategy": "Ramp" }
+		]
+	},
+	{
+		"id": "4a42b788-4787-40e9-a599-75d6662fea88",
+		"name": "Bolt Cube",
+		"image": "https://cards.scryfall.io/art_crop/front/6/0/60eeb025-704c-4a82-90b2-f91202ae30d9.jpg",
+		"difficulty": 2,
+		"type": "Cube",
+		"mechanics": [],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": []
+	},
+	{
+		"id": "0620e520-820b-463e-9934-ae4f1cfa3fd8",
+		"name": "MTGO Vintage Cube",
+		"image": "https://cards.scryfall.io/art_crop/front/b/d/bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd.jpg",
+		"difficulty": 4.5,
+		"type": "Cube",
+		"mechanics": [],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"random": 15
+						},
+						"2": {
+							"random": 15
+						},
+						"3": {
+							"random": 15
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"random": 9
+						},
+						"2": {
+							"random": 9
+						},
+						"3": {
+							"random": 9
+						},
+						"4": {
+							"random": 9
+						},
+						"5": {
+							"random": 9
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [],
+		"rules": "Rules",
+		"notes": "All colors have treasure synergies."
+	},
+	{
+		"id": "dbcb547b-52c4-44b7-9d2f-25616a7497af",
+		"name": "Zendikar Rising",
+		"image": "https://cards.scryfall.io/art_crop/front/1/5/151bdf3a-4445-43b1-8cea-2737c13d9dee.jpg",
+		"difficulty": 2,
+		"type": "Cube",
+		"mechanics": ["Double_Faced", "Party", "Kicker", "Landfall"],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 11,
+							"uncommon": 3,
+							"rare_mythic": 1
+						},
+						"2": {
+							"common": 11,
+							"uncommon": 3,
+							"rare_mythic": 1
+						},
+						"3": {
+							"common": 11,
+							"uncommon": 3,
+							"rare_mythic": 1
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 6,
+							"uncommon": 2,
+							"rare_mythic": 1
+						},
+						"2": {
+							"common": 6,
+							"uncommon": 2,
+							"rare_mythic": 1
+						},
+						"3": {
+							"common": 6,
+							"uncommon": 2,
+							"rare_mythic": 1
+						},
+						"4": {
+							"common": 7,
+							"uncommon": 2
+						},
+						"5": {
+							"common": 7,
+							"uncommon": 2
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Party" },
+			{ "colorPair": "UB", "strategy": "Rogues / Mill" },
+			{ "colorPair": "BR", "strategy": "Party" },
+			{ "colorPair": "RG", "strategy": "Landfall" },
+			{ "colorPair": "GW", "strategy": "Landfall" },
+			{ "colorPair": "WB", "strategy": "Clerics / Lifegain" },
+			{ "colorPair": "UR", "strategy": "Wizards / Instant & Sorceries" },
+			{ "colorPair": "BG", "strategy": "+1/+1 Counters" },
+			{ "colorPair": "RW", "strategy": "Warriors / Equipment" },
+			{ "colorPair": "GU", "strategy": "Kicker / Ramp" }
+		]
+	},
+	{
+		"id": "f7260109-e8e4-43d3-8bc9-31e6052ba65c",
+		"name": "Jesguy’s Innistrad Cube",
+		"image": "https://cards.scryfall.io/art_crop/front/f/c/fcd2ecdd-37ee-4351-833a-f4eac3c55eca.jpg",
+		"difficulty": 3.5,
+		"type": "Cube",
+		"mechanics": [
+			"Delirium",
+			"Madness",
+			"Double_Faced",
+			"Flashback",
+			"Escalate"
+		],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Spirits" },
+			{ "colorPair": "UB", "strategy": "Zombies" },
+			{ "colorPair": "BR", "strategy": "Vampires / Madness" },
+			{ "colorPair": "RG", "strategy": "Werewolves" },
+			{ "colorPair": "GW", "strategy": "Humans" },
+			{ "colorPair": "WB", "strategy": "Tokens" },
+			{ "colorPair": "UR", "strategy": "Spells" },
+			{ "colorPair": "BG", "strategy": "Delirium" },
+			{ "colorPair": "RW", "strategy": "Aggro" },
+			{ "colorPair": "GU", "strategy": "Self-Mill" }
+		]
+	},
+	{
+		"id": "62c5bd8d-5afc-411a-8347-075cc30ed9d7",
+		"name": "Core M19 Realigned",
+		"image": "https://cards.scryfall.io/art_crop/front/a/4/a4c3ca8c-c77c-43b8-84ad-796313ecc813.jpg",
+		"difficulty": 1,
+		"type": "Cube",
+		"mechanics": [],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Flyers" },
+			{ "colorPair": "UB", "strategy": "Control" },
+			{ "colorPair": "BR", "strategy": "Sacrifice" },
+			{ "colorPair": "RG", "strategy": "Ramp / 4 Power Matters" },
+			{ "colorPair": "GW", "strategy": "Enchantments" },
+			{ "colorPair": "WB", "strategy": "Lifegain" },
+			{ "colorPair": "UR", "strategy": "Spellslinging" },
+			{ "colorPair": "BG", "strategy": "Attrition" },
+			{ "colorPair": "RW", "strategy": "Go-wide" },
+			{ "colorPair": "GU", "strategy": "Draw Matters" }
+		]
+	},
+	{
+		"id": "b0a56ad4-1aa9-40a8-8e12-f5fc131b4aa1",
+		"name": "DESCEND INTO AVERNUS",
+		"image": "https://cards.scryfall.io/art_crop/front/f/a/faadf72f-b2d5-4271-8d5c-a586acf63453.jpg?1674136498",
+		"difficulty": 3,
+		"type": "Cube",
+		"mechanics": [],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": []
+	},
+	{
+		"id": "eccd0304-d903-45c0-af89-5789a1bcc08a",
+		"name": "Vehicle Cube: Eiganjo Drift",
+		"image": "https://cards.scryfall.io/art_crop/front/4/3/436ce901-6ac6-4f8c-8ff0-18103f2642b8.jpg",
+		"difficulty": 2.5,
+		"type": "Cube",
+		"mechanics": [
+			"Vehicles",
+			"Historic",
+			"Pirates",
+			"Tokens",
+			"Reanimator",
+			"Dwarf"
+		],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Classic Cars (Historic)" },
+			{ "colorPair": "UB", "strategy": "Grand Theft Auto (Pirate Control)" },
+			{ "colorPair": "BR", "strategy": "Junkyard Scrap (Tokens)" },
+			{
+				"colorPair": "WB",
+				"strategy": "Antique Restoration (Recursion & Reanimator)"
+			},
+			{ "colorPair": "UR", "strategy": "Assembly Line (Artifacts)" },
+			{ "colorPair": "RW", "strategy": "Vehicular Assault (Dwarf Aggro)" }
+		]
+	},
+	{
+		"id": "94bdeb74-5c22-47f4-a886-1cc571a29182",
+		"name": "Kaldheim Reclaimed",
+		"image": "https://cards.scryfall.io/art_crop/front/8/9/89cef049-6a47-4264-b2bc-b9d291a09c4c.jpg",
+		"difficulty": 2,
+		"type": "Cube",
+		"mechanics": [
+			"Foretell",
+			"Snow_Permanents",
+			"Tribal",
+			"Vehicles",
+			"Changeling"
+		],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Foretell Control (Spirits)" },
+			{ "colorPair": "UB", "strategy": "Snow Midrange (Zombies)" },
+			{ "colorPair": "BR", "strategy": "Boast Aggro (Demons + Berserkers)" },
+			{ "colorPair": "RG", "strategy": "Ramp (Trols)" },
+			{ "colorPair": "GW", "strategy": "Go-wide Tokens (Humans)" },
+			{ "colorPair": "WB", "strategy": "2nd Spell Matters (Angels)" },
+			{ "colorPair": "UR", "strategy": "Spells (Giants)" },
+			{ "colorPair": "BG", "strategy": "Self-mill (Elfs)" },
+			{ "colorPair": "RW", "strategy": "Vehicles / Equipment (Dwarves)" },
+			{ "colorPair": "GU", "strategy": "Shapeshifters (Changelings)" }
+		]
+	},
+	{
+		"id": "9d002bbe-66a5-423a-be89-892a180c25fe",
+		"name": "Rise of the Eldrazi",
+		"image": "https://cards.scryfall.io/art_crop/front/6/7/67600383-bbb8-411c-b8e6-2296650bc747.jpg",
+		"difficulty": 1.5,
+		"type": "Cube",
+		"mechanics": ["Annihilator", "Level_Up", "Rebound", "Totem_Armor"],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"common": 1,
+							"uncommon": 2,
+							"rare": 3,
+							"mythic": 2,
+							"random": 15
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"2": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"3": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"4": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						},
+						"5": {
+							"common": 3,
+							"uncommon": 3,
+							"rare": 3
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [
+			{ "colorPair": "WU", "strategy": "Auras" },
+			{ "colorPair": "UB", "strategy": "Level Up" },
+			{ "colorPair": "BR", "strategy": "Eldrazi Spawns" },
+			{ "colorPair": "RG", "strategy": "Defenders" },
+			{ "colorPair": "GW", "strategy": "Defenders" },
+			{ "colorPair": "WB", "strategy": "Lifegain" },
+			{ "colorPair": "UR", "strategy": "Instant & Sorceries" },
+			{ "colorPair": "BG", "strategy": "Eldrazi Spawns" },
+			{ "colorPair": "RW", "strategy": "Defenders" },
+			{ "colorPair": "GU", "strategy": "Auras" }
+		]
+	},
+	{
+		"id": "aadce60f-7b4e-4b50-8d71-bd4bd9ab55ca",
+		"name": "Battle Box - Streets of New Capenna",
+		"image": "https://cards.scryfall.io/art_crop/front/2/9/29eb0e40-d184-423f-8484-ee288fda00cd.jpg",
+		"difficulty": 1.5,
+		"type": "BattleBox"
+	},
+	{
+		"id": "8a644b46-a5e5-4cf0-a40a-8bd9aea57bb2",
+		"name": "Battle Box - Original",
+		"image": "https://cards.scryfall.io/art_crop/front/3/1/31a500e6-01f5-4a3a-8839-68b9b515e919.jpg",
+		"difficulty": 1.5,
+		"type": "BattleBox"
+	},
+	{
+		"id": "3dc5239d-dead-4d63-9f3a-356319a50eb2",
+		"name": "Battle Box - D&D",
+		"image": "https://cards.scryfall.io/art_crop/front/3/7/376b3cee-9386-41b0-a5d9-f60d147caff7.jpg",
+		"difficulty": 1.5,
+		"type": "BattleBox"
+	},
+	{
+		"id": "020ff328-dcd2-4369-85f2-b01f89bae040",
+		"name": "Battle Box - Wilds of Eldraine",
+		"image": "https://cards.scryfall.io/art_crop/front/1/b/1be6786e-0569-42dd-b03c-82da7b32a14f.jpg",
+		"difficulty": 1.5,
+		"type": "BattleBox"
+	},
+	{
+		"id": "94453cdf-ecf1-4af7-980b-eaa0f3c69f2b",
+		"name": "Battle Box - Ravnica",
+		"image": "https://cards.scryfall.io/art_crop/front/5/e/5e84cb9c-9876-47a4-aea4-78574321bc36.jpg",
+		"difficulty": 1.5,
+		"type": "BattleBox"
+	},
+	{
+		"id": "4348a66f-1f55-4a90-882a-14dd0122ded8",
+		"name": "Battle Box - War of the Spark",
+		"image": "https://cards.scryfall.io/art_crop/front/5/a/5a10b543-d5d4-42a8-9ee8-dada59a2ad7e.jpg",
+		"difficulty": 1.5,
+		"type": "BattleBox"
+	},
+	{
+		"id": "b407a7db-1488-4de6-83d7-de83d9972136",
+		"name": "Battle Box - The Lord of the Rings",
+		"image": "https://cards.scryfall.io/art_crop/front/c/c/cc9cfcc7-be64-4871-8d52-851e43fe3305.jpg",
+		"difficulty": 1.5,
+		"type": "BattleBox"
+	}
+]

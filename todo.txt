@@ -1,0 +1,33 @@
+TODO
+- Arreglar el booster setup
+- Change cards cube-cobra (and Vintage updates)
+
+DONE
+- Keywords definition
+- Poner los cubes bien en mi perfil de cubecobra
+- Poner las id bien de los cubes de cubecobra
+- Arreglar el archetypes (diseño y fotos de los colores)
+- Agregar cartas cubes (kamigawa, eldraine, ravnica)
+- Rules and notes, only print the part of the overview (text) ??? (al final no)
+- Create booster cards type images
+
+BoosterSetup
+-Vintage
+-Pauper
+-Zendikar
+-Dominaria
+-Kaladesh Reinvented
+Essential Tarkir
+Dominaria United
+M19, 20, 21
+Kaldheim
+Innistrad
+Kamigawa
+Eldraine
+Ravnica War
+Spectrum
+Rise of the Eldrazi
+New Capenna Chroma Families
+The Bolt Cube
+Descend Into Avernus
+Eiganjo Drift (Vehicle Cube)
