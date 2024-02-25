@@ -168,7 +168,14 @@ const CardDetail_Cube = () => {
 															random,
 															timeshifted,
 															rare_mythic,
-															blue
+															white,
+															blue,
+															black,
+															red,
+															green,
+															artifact,
+															dedicatedmythic,
+															multicolor
 														} = packs[packNumber];
 														const packContents = [
 															{ type: "Common", count: common },
@@ -177,7 +184,14 @@ const CardDetail_Cube = () => {
 															{ type: "Mythic", count: mythic },
 															{ type: "Random", count: random },
 															{ type: "Timeshifted", count: timeshifted },
+															{ type: "White", count: white },
 															{ type: "Blue", count: blue },
+															{ type: "Black", count: black },
+															{ type: "Red", count: red },
+															{ type: "Green", count: green },
+															{ type: "Artifact", count: artifact },
+															{ type: "DedicatedMythic", count: dedicatedmythic },
+															{ type: "Multicolor", count: multicolor },
 															{
 																type: "Rare_Mythic",
 																count: rare_mythic,

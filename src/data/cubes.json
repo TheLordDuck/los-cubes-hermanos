@@ -22,7 +22,9 @@
 							"uncommon": 2,
 							"rare": 3,
 							"mythic": 2,
-							"random": 15
+							"random": 15,
+							"rare_mythic": 1,
+							"timeshifted": 1
 						},
 						"2": {
 							"common": 3,
