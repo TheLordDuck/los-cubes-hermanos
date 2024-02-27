@@ -175,7 +175,10 @@ const CardDetail_Cube = () => {
 															green,
 															artifact,
 															dedicatedmythic,
-															multicolor
+															multicolor,
+															land,
+															artifact_land,
+															random_any_color 
 														} = packs[packNumber];
 														const packContents = [
 															{ type: "Common", count: common },
@@ -192,6 +195,9 @@ const CardDetail_Cube = () => {
 															{ type: "Artifact", count: artifact },
 															{ type: "DedicatedMythic", count: dedicatedmythic },
 															{ type: "Multicolor", count: multicolor },
+															{ type: "Land", count: land },
+															{ type: "Artifact_Land", count: artifact_land },
+															{ type: "Random_Any_Color", count: random_any_color },
 															{
 																type: "Rare_Mythic",
 																count: rare_mythic,
