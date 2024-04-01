@@ -1545,5 +1545,26 @@
 		"image": "https://cards.scryfall.io/art_crop/front/c/c/cc9cfcc7-be64-4871-8d52-851e43fe3305.jpg",
 		"difficulty": 1.5,
 		"type": "BattleBox"
+	},
+	{
+		"id": "aadce60f-7b4e-4b50-8d71-bd4bd9ab55ca",
+		"name": "Battle Box - Streets of New Capenna",
+		"image": "https://cards.scryfall.io/art_crop/front/2/9/29eb0e40-d184-423f-8484-ee288fda00cd.jpg",
+		"difficulty": 1.5,
+		"type": "BattleBox"
+	},
+	{
+		"id": "536ee6e8-b948-433f-b838-4f1a32a0ab0e",
+		"name": "Battle Box - Phyrexia: All Will Be One",
+		"image": "https://cards.scryfall.io/art_crop/front/5/8/58d287e8-5297-415a-97d5-02002470c52b.jpg?1675957064",
+		"difficulty": 1.5,
+		"type": "BattleBox"
+	},
+	{
+		"id": "2c891c72-9f78-444e-a901-155a1fd5f510",
+		"name": "Battle Box - Strixhaven",
+		"image": "https://cards.scryfall.io/art_crop/front/d/3/d3350367-42bd-44af-be13-ad31c002f8ac.jpg?1627429830",
+		"difficulty": 1.5,
+		"type": "BattleBox"
 	}
 ]
