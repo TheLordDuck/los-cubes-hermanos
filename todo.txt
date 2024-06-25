@@ -1,8 +1,8 @@
 TODO
-- Change cards cube-cobra (and Vintage updates)
 - Refactor wildcard designs
 
 DONE
+- Change cards cube-cobra (and Vintage updates)
 - Keywords definition
 - Poner los cubes bien en mi perfil de cubecobra
 - Poner las id bien de los cubes de cubecobra
