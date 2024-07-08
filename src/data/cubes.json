@@ -997,6 +997,55 @@
 		"notes": "All colors have treasure synergies."
 	},
 	{
+		"id": "6113cc13-5fd2-4031-aa79-64c06a8b82c9",
+		"name": "Mini Vintage Cube",
+		"image": "https://cards.scryfall.io/art_crop/front/8/2/824423ff-6441-4be6-b754-810adf9ca6a2.jpg",
+		"difficulty": 4,
+		"type": "Cube",
+		"mechanics": [],
+		"booster_packs": [
+			{
+				"3": {
+					"players": "5-8",
+					"packs": {
+						"1": {
+							"random": 15
+						},
+						"2": {
+							"random": 15
+						},
+						"3": {
+							"random": 15
+						}
+					}
+				},
+				"5": {
+					"players": "2-4",
+					"packs": {
+						"1": {
+							"random": 9
+						},
+						"2": {
+							"random": 9
+						},
+						"3": {
+							"random": 9
+						},
+						"4": {
+							"random": 9
+						},
+						"5": {
+							"random": 9
+						}
+					}
+				}
+			}
+		],
+		"archetypes": [],
+		"rules": "Rules",
+		"notes": "All colors have treasure synergies."
+	},
+	{
 		"id": "dbcb547b-52c4-44b7-9d2f-25616a7497af",
 		"name": "Zendikar Rising",
 		"image": "https://cards.scryfall.io/art_crop/front/1/5/151bdf3a-4445-43b1-8cea-2737c13d9dee.jpg",

@@ -3,6 +3,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Rating from "@mui/material/Rating";
+import cubesList from "@/data/cubes.json";
 
 import {
 	Card,
@@ -16,37 +17,22 @@ import {
 
 interface CubeItemProps {
 	id: string;
-	name: string;
-	image: string;
-	difficulty: number;
-	type: string;
-	booster_packs: Object[] | undefined;
-	mechanics: Object[] | undefined;
-	archetypes: Object[] | undefined;
 }
 
 const CubeItem: React.FC<CubeItemProps> = ({
-	id,
-	name,
-	image,
-	difficulty,
-	type,
-	mechanics,
-	booster_packs,
-	archetypes,
+	id
 }) => {
 	const router = useRouter();
+
+	const getCube = (id: string) => {
+		const cube = cubesList.find(item => item.id === id);
+
+		return cube
+	};
 
 	const createQueryString = () => {
 		const params = new URLSearchParams();
 		params.set("id", id);
-		params.set("name", name);
-		params.set("image", image);
-		params.set("difficulty", String(difficulty));
-		params.set("type", type);
-		params.set("booster_packs", JSON.stringify(booster_packs));
-		params.set("mechanics", JSON.stringify(mechanics));
-		params.set("archetypes", JSON.stringify(archetypes));
 
 		return params.toString();
 	};
@@ -56,14 +42,16 @@ const CubeItem: React.FC<CubeItemProps> = ({
 		router.push(`/cube?${createQueryString()}`);
 	};
 
+	const cube = getCube(id);
+
 	return (
 		<div>
 			<Card sx={{ maxWidth: 345 }}>
 				<CardActionArea onClick={handleClick}>
-					<CardMedia component="img" src={`${image}`} alt={name} height={32} />
+					<CardMedia component="img" src={cube?.image ? cube.image : 'default-image.jpg'} alt={cube?.name} height={32} />
 					<CardContent sx={{ minHeight: 86 }}>
 						<Typography gutterBottom component="div">
-							{name}
+							{cube?.name}
 						</Typography>
 					</CardContent>
 				</CardActionArea>
@@ -71,7 +59,7 @@ const CubeItem: React.FC<CubeItemProps> = ({
 					<Rating
 						name="read-only"
 						precision={0.5}
-						value={difficulty}
+						value={cube?.difficulty}
 						readOnly
 					/>
 				</CardActions>

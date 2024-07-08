@@ -13,19 +13,31 @@ import {
 import Modal from "../Modal";
 import { mechanicText } from "@/utils/mechanics";
 import ExpandMoreIcon from "../ExpandMoreIcon";
+import cubesList from "@/data/cubes.json";
 
 const CardDetail_Cube = () => {
 	const params = useSearchParams();
 
-	const type = params.get("type");
-	const id = params.get("id");
-	const mechanics = params.get("mechanics");
-	const booster_packs = params.get("booster_packs");
-	const archetypes = params.get("archetypes");
+	const getCube = (id: string) => {
+		const cube = cubesList.find(item => item.id === id);
 
-	const parsedArchetypes = archetypes ? JSON.parse(archetypes) : null;
-	const parsedMechanics = mechanics ? JSON.parse(mechanics) : null;
-	const parsedBoosterPacks = booster_packs ? JSON.parse(booster_packs) : null;
+		return cube
+	};
+
+	const id = params.get("id");
+	const cube = getCube(id as string)
+
+	const parseIfString = <T,>(data: string | T): T => {
+        if (typeof data === 'string') {
+            return JSON.parse(data) as T;
+        }
+        return data as T;
+    };
+
+	const parsedArchetypes = cube?.archetypes ? parseIfString(cube.archetypes) : null;
+    const parsedMechanics = cube?.mechanics ? parseIfString(cube.mechanics) : null;
+    const parsedBoosterPacks = cube?.booster_packs ? parseIfString(cube.booster_packs) : null;
+
 	const [openModal, setOpenModal] = useState(false);
 	const [selectedMechanic, setSelectedMechanic] = useState<string>("");
 
@@ -41,7 +53,7 @@ const CardDetail_Cube = () => {
 	return (
 		<CardContent>
 			<Typography gutterBottom variant="h6" component="div">
-				Type: {type}
+				Type: {cube?.type}
 			</Typography>
 			<div>
 				<Accordion
@@ -58,10 +70,10 @@ const CardDetail_Cube = () => {
 					<AccordionDetails className="flex flex-col mt-2">
 						<div className="container py-2">
 							<div className="bg-gray-100 p-6 rounded-lg shadow-md">
-								{parsedMechanics.length === 0 && (
+								{parsedMechanics?.length === 0 && (
 									<p className="text-sm font-semibold ">No mechanics</p>
 								)}
-								{parsedMechanics.map((mechanic: string, index: number) => (
+								{parsedMechanics?.map((mechanic: string, index: number) => (
 									<a
 										onClick={() => openModalForMechanic(mechanic)}
 										key={index}
@@ -94,11 +106,11 @@ const CardDetail_Cube = () => {
 						<div className="container py-2">
 							<div className="bg-gray-100 p-1 rounded-lg shadow-md">
 								<CardContent>
-									{parsedArchetypes.length === 0 && (
+									{parsedArchetypes?.length === 0 && (
 										<p className="text-sm font-semibold ">No archetypes</p>
 									)}
-									{archetypes &&
-										parsedArchetypes.map(
+									{cube?.archetypes &&
+										parsedArchetypes?.map(
 											(
 												archetype: { colorPair: string; strategy: string },
 												index: number
@@ -149,7 +161,7 @@ const CardDetail_Cube = () => {
 					</AccordionSummary>
 					<AccordionDetails>
 						<div className="container py-2">
-							{parsedBoosterPacks.map((pack: any, index: number) => (
+							{parsedBoosterPacks?.map((pack: any, index: number) => (
 								<div key={index} className="mb-4">
 									{Object.keys(pack).map((packSize, i) => {
 										const { players, packs } = pack[packSize];

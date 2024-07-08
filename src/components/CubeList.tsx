@@ -18,14 +18,7 @@ const CubeList: React.FC<CubeListProps> = ({ searchQuery }) => {
 				{filteredCubes.map((cubeItem, index) => (
 					<CubeItem
 						id={cubeItem.id}
-						key={index}
-						name={cubeItem.name}
-						image={cubeItem.image}
-						difficulty={cubeItem.difficulty}
-						type={cubeItem.type}
-						booster_packs={cubeItem.booster_packs}
-						mechanics={cubeItem.mechanics}
-						archetypes={cubeItem.archetypes}
+						key={index}					
 					/>
 				))}
 			</div>

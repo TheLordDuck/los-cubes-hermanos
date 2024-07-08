@@ -8,14 +8,19 @@ import {
 	Rating,
 	Typography,
 } from "@mui/material";
+import cubesList from "@/data/cubes.json";
 
 const CardDetail_Intro = () => {
 	const params = useSearchParams();
 
+	const getCube = (id: string) => {
+		const cube = cubesList.find(item => item.id === id);
+
+		return cube
+	};
+
 	const id = params.get("id");
-	const name = params.get("name");
-	const difficulty = params.get("difficulty");
-	const image = params.get("image");
+	const cube = getCube(id as string)
 
 	return (
 		<div className="flex flex-row align-middle">
@@ -24,18 +29,18 @@ const CardDetail_Intro = () => {
 				className="content-center	"
 				component="img"
 				height="140"
-				image={image || ""}
+				image={cube?.image || ""}
 				alt="green iguana"
 			/>
 			<CardContent>
 				<Typography gutterBottom variant="h5" component="div">
-					{name}
+					{cube?.name}
 				</Typography>
 				<Typography variant="body2" color="text.secondary">
 					<Rating
 						name="read-only"
 						precision={0.5}
-						value={Number(difficulty)}
+						value={Number(cube?.difficulty)}
 						readOnly
 					/>
 				</Typography>
