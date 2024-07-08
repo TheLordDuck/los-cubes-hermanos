@@ -3,11 +3,11 @@
 import CubeItemDetail from "@/components/CubeItemDetail/CubeItemDetail";
 
 const CardDetail = () => {
-	return (
-		<>
-			<CubeItemDetail />
-		</>
-	);
+  return (
+    <>
+      <CubeItemDetail />
+    </>
+  );
 };
 
 export default CardDetail;

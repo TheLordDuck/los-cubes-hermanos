@@ -2,14 +2,14 @@ import "@/app/globals.css";
 import Header from "@/components/CubeItemDetail/Header";
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<section>
-			<Header />
-			{children}
-		</section>
-	);
+  return (
+    <section>
+      <Header />
+      {children}
+    </section>
+  );
 }

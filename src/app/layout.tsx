@@ -4,19 +4,19 @@ import { roboto } from "../utils/fonts";
 import Footer from "../components/App/Footer";
 
 export const metadata: Metadata = {
-	title: "Flavio's Cube Archive",
-	description: "Archive with all the stored cubes",
+  title: "Flavio's Cube Archive",
+  description: "Archive with all the stored cubes",
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang="es">
-			<body className={roboto.className}>{children}</body>
-			<Footer />
-		</html>
-	);
+  return (
+    <html lang="es">
+      <body className={roboto.className}>{children}</body>
+      <Footer />
+    </html>
+  );
 }

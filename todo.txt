@@ -2,6 +2,8 @@ TODO
 - Refactor wildcard designs
 
 DONE
+- When cube not found display 404 not found page
+- Fetch for id instead of passing the entire object for url
 - Change cards cube-cobra (and Vintage updates)
 - Keywords definition
 - Poner los cubes bien en mi perfil de cubecobra
