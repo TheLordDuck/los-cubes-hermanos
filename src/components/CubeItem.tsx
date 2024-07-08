@@ -3,7 +3,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Rating from "@mui/material/Rating";
-import cubesList from "@/data/cubes.json";
 
 import {
   Card,
@@ -14,6 +13,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { getCube } from "@/utils/getCube";
 
 interface CubeItemProps {
   id: string;
@@ -21,12 +21,6 @@ interface CubeItemProps {
 
 const CubeItem: React.FC<CubeItemProps> = ({ id }) => {
   const router = useRouter();
-
-  const getCube = (id: string) => {
-    const cube = cubesList.find((item) => item.id === id);
-
-    return cube;
-  };
 
   const createQueryString = () => {
     const params = new URLSearchParams();
@@ -40,7 +34,7 @@ const CubeItem: React.FC<CubeItemProps> = ({ id }) => {
     router.push(`/cube?${createQueryString()}`);
   };
 
-  const cube = getCube(id);
+  const cube = getCube(id as string);
 
   return (
     <div>

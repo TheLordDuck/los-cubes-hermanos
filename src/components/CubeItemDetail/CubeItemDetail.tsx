@@ -6,20 +6,13 @@ import CubeItemDetail_CardBody_Cube from "@/components/CubeItemDetail/CubeItemDe
 import CubeItemDetail_CardBody_BattleBox from "@/components/CubeItemDetail/CubeItemDetail_CardBody_BattleBox";
 import { CubeType } from "@/utils/cubeTypes";
 import CubeItemDetail_CardHeader from "./CubeItemDetail_CardHeader";
-import cubesList from "@/data/cubes.json";
 import NotFoundPage from "../404";
+import { getCube } from "@/utils/getCube";
 
 const CardDetail = () => {
   const params = useSearchParams();
 
-  const getCube = (id: string) => {
-    const cube = cubesList.find((item) => item.id === id);
-
-    return cube;
-  };
-
-  const id = params.get("id");
-  const cube = getCube(id as string);
+  const cube = getCube(params.get("id") as string);
 
   return (
     <>

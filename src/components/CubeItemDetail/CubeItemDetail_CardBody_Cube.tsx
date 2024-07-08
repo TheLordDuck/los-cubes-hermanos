@@ -13,16 +13,10 @@ import {
 import Modal from "../Modal";
 import { mechanicText } from "@/utils/mechanics";
 import ExpandMoreIcon from "../ExpandMoreIcon";
-import cubesList from "@/data/cubes.json";
+import { getCube } from "@/utils/getCube";
 
 const CardDetail_Cube = () => {
   const params = useSearchParams();
-
-  const getCube = (id: string) => {
-    const cube = cubesList.find((item) => item.id === id);
-
-    return cube;
-  };
 
   const id = params.get("id");
   const cube = getCube(id as string);
@@ -119,7 +113,7 @@ const CardDetail_Cube = () => {
                     parsedArchetypes?.map(
                       (
                         archetype: { colorPair: string; strategy: string },
-                        index: number,
+                        index: number
                       ) => (
                         <div
                           key={index}
@@ -147,7 +141,7 @@ const CardDetail_Cube = () => {
                             </p>
                           </div>
                         </div>
-                      ),
+                      )
                     )}
                 </CardContent>
               </div>
@@ -256,7 +250,7 @@ const CardDetail_Cube = () => {
                                             {count}
                                           </Typography>
                                         </div>
-                                      ),
+                                      )
                                   )}
                                 </div>
                               </div>

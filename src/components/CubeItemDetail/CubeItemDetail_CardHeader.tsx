@@ -8,19 +8,13 @@ import {
   Rating,
   Typography,
 } from "@mui/material";
-import cubesList from "@/data/cubes.json";
+import { getCube } from "@/utils/getCube";
 
 const CardDetail_Intro = () => {
   const params = useSearchParams();
 
-  const getCube = (id: string) => {
-    const cube = cubesList.find((item) => item.id === id);
-
-    return cube;
-  };
-
   const id = params.get("id");
-  const cube = getCube(id as string);
+  const cube = getCube(params.get("id") as string);
 
   return (
     <div className="flex flex-row align-middle">

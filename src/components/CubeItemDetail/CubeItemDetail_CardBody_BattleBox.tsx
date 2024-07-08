@@ -9,16 +9,10 @@ import {
   Accordion,
 } from "@mui/material";
 import ExpandMoreIcon from "../ExpandMoreIcon";
-import cubesList from "@/data/cubes.json";
+import { getCube } from "@/utils/getCube";
 
 const CardDetail_BattleBox = () => {
   const params = useSearchParams();
-
-  const getCube = (id: string) => {
-    const cube = cubesList.find((item) => item.id === id);
-
-    return cube;
-  };
 
   const id = params.get("id");
   const cube = getCube(id as string);
