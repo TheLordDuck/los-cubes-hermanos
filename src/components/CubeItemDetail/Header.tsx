@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
+import HomeImage from "../HomeImage";
 
 const Header: React.FC = () => {
   return (
     <header className="bg-gray-800 text-white p-4">
-      <h1 className="text-2xl font-bold">Cubes List</h1>
+      <HomeImage />
     </header>
   );
 };

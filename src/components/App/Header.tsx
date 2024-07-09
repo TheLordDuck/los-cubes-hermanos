@@ -1,4 +1,5 @@
 import React from "react";
+import HomeImage from "../HomeImage";
 
 interface HeaderProps {
   searchQuery: string;
@@ -11,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header className="bg-gray-800 text-white p-4 flex justify-between items-center">
-      <h1 className="text-2xl font-bold">Cubes</h1>
+      <HomeImage />
       <div className="flex flex-col items-center p-1">
         <input
           type="text"
