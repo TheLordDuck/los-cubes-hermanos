@@ -1,5 +1,65 @@
 [
   {
+    "id": "5a90c398-c7e3-41cf-b398-a4c8ac140f92",
+    "name": "Devoid Cube",
+    "image": "https://cards.scryfall.io/art_crop/front/6/0/60682c00-c661-4a9d-8326-f3f014a04e3e.jpg",
+    "difficulty": 3,
+    "type": "Cube",
+    "mechanics": [],
+    "booster_packs": [
+      {
+        "3": {
+          "players": "5-8",
+          "packs": {
+            "1": {
+              "random": 15
+            },
+            "2": {
+              "random": 15
+            },
+            "3": {
+              "random": 15
+            }
+          }
+        },
+        "5": {
+          "players": "2-4",
+          "packs": {
+            "1": {
+              "random": 9
+            },
+            "2": {
+              "random": 9
+            },
+            "3": {
+              "random": 9
+            },
+            "4": {
+              "random": 9
+            },
+            "5": {
+              "random": 9
+            }
+          }
+        }
+      }
+    ],
+    "archetypes": [
+      { "colorPair": "C", "strategy": "Low-Curve Affinity Aggro" },
+      { "colorPair": "C", "strategy": "Counters Matter" },
+      { "colorPair": "C", "strategy": "Eldrazi Midrange" },
+      { "colorPair": "R", "strategy": "Red Aggro" },
+      { "colorPair": "C", "strategy": "Juggernaut Beatdown Tribal" },
+      { "colorPair": "C", "strategy": "Eldrazi Ramp" },
+      { "colorPair": "C", "strategy": "Big Mana Ramp" },
+      { "colorPair": "WUBRG", "strategy": "5 Colors/Field of the Dead" },
+      { "colorPair": "C", "strategy": "Control" },
+      { "colorPair": "C", "strategy": "Ironworks combo" },
+      { "colorPair": "WU", "strategy": "ETB Midrange" },
+      { "colorPair": "C", "strategy": "Discard Matter" }
+    ]
+  },
+  {
     "id": "6542268e-c817-457e-a214-89f5035e38e1",
     "name": "Kamigawa: Neon Dynasty",
     "image": "https://cards.scryfall.io/art_crop/front/5/3/5366900b-2abf-4e5c-8507-f51aca9c7ce8.jpg",
