@@ -6,7 +6,7 @@ import { Button, Input, Link } from "@mui/material";
 import { Search, Star } from "lucide-react";
 import cubesList from "@/data/cubes.json";
 import { cubeCobraUrl } from "../utils/cubeCobraUrl";
-import { useRouter } from "next/navigation"; // Import useRouter from Next.js
+import { useRouter } from "next/navigation";
 import { StarsDifficulty } from "@/components/StarsDificulty/StarsDificulty";
 
 interface CubeListProps {
@@ -14,10 +14,7 @@ interface CubeListProps {
   cubeType: string;
 }
 
-export const CubeSelection: React.FC<CubeListProps> = ({
-  searchQuery,
-  cubeType,
-}) => {
+const CubeSelection: React.FC<CubeListProps> = ({ searchQuery, cubeType }) => {
   const router = useRouter(); // Initialize router
 
   const cubes = cubesList.filter((cubeItem) => cubeItem.type === cubeType);
@@ -99,3 +96,6 @@ export const CubeSelection: React.FC<CubeListProps> = ({
     </main>
   );
 };
+
+// Default export
+export default CubeSelection;

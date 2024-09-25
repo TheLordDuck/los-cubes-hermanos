@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Footer } from "../components/Footer/Footer";
-import { CubeSelection } from "../pages/CubeSelection";
 import React from "react";
 import { Header } from "@/components/Header/Header";
+import CubeSelection from "@/pages/CubeSelection";
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
