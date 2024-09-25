@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { roboto } from "../utils/fonts";
-import Footer from "../components/App/Footer";
 
 export const metadata: Metadata = {
   title: "Flavio's Cube Archive",
@@ -16,7 +15,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={roboto.className}>{children}</body>
-      <Footer />
     </html>
   );
 }

@@ -31,3 +31,11 @@ body {
 		text-wrap: balance;
 	}
 }
+
+.bg-bluemarine {
+	background-color: #343A40;
+  }
+
+.card-gray {
+	background-color: #efefef
+}
