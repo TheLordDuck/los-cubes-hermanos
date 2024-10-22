@@ -6,7 +6,7 @@ interface ModalProps {
   content: string;
 }
 
-const MechanicsModal: React.FC<ModalProps> = ({ isOpen, onClose, content }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, content }) => {
   if (!isOpen) return null;
 
   return (
@@ -44,4 +44,4 @@ const MechanicsModal: React.FC<ModalProps> = ({ isOpen, onClose, content }) => {
   );
 };
 
-export default MechanicsModal;
+export default Modal;

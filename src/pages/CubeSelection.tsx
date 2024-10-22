@@ -19,9 +19,11 @@ const CubeSelection: React.FC<CubeListProps> = ({ searchQuery, cubeType }) => {
 
   const cubes = cubesList.filter((cubeItem) => cubeItem.type === cubeType);
 
-  const filteredCubes = cubes.filter((cubeItem) =>
-    cubeItem.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredCubes = cubes
+    .filter((cubeItem) =>
+      cubeItem.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   const handleCardClick = (id: string) => {
     // Navigate to CubeDetail with the given id

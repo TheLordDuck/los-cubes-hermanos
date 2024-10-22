@@ -58,6 +58,18 @@ enum Mechanics {
   Enchantments = "Enchantment is a card type that represents persistent magical effects, usually remaining in play indefinitely.",
   Landfall = "Landfall — Whenever a land enters the battlefield under your control, … (nonland permanents). Landfall — If you had a land enter the battlefield under your control this turn, … (instants and sorceries)",
   Party = "(Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.)",
+  Connive = "Connive (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+  Alliance = "Alliance — Whenever another creature enters the battlefield under your control, … (creatures)",
+  Shield_Counter = "Shield counters provide two benefits. First, if a permanent with a shield counter on it would be destroyed by an effect, a shield counter is removed from the permanent instead of it being destroyed.",
+  Casualty = "Casualty N (As you cast this spell, you may sacrifice a creature with power N or greater. When you do, copy this spell.)",
+  Blitz = "Blitz [cost] (If you cast this spell for its blitz cost, it gains haste and 'When this creature dies, draw a card'. Sacrifice it at the beginning of the next end step.)",
+  Treasure = "{T}, Sacrifice this artifact: Add one mana of any color.",
+  Venture_into_the_Dungeon = "Venture into the dungeon (Enter the first room or advance to the next room) Venture into [quality] (If you’re in a dungeon, advance to the next room.If you’re not, enter[quality].Enter the first room or advance to the next room) ",
+  Roll_a_dice = "Roll a X Dice: (Roll a dice and see the result to and the effect in the card of the result)",
+  Enchantment_Class = "Each Class has three abilities in sections of its text box, called Class abilities. The abilities are arranged vertically like Sagas and have vertical artwork of the D&D symbol of the creature class in its art.",
+  Equipment = "Equipment is an artifact subtype that has the 'equip' keyword ability. By paying the equip cost (which can only be done at sorcery speed), it attaches to a creature you control. If that creature leaves play, the Equipment becomes unattached and remains in play. Paying the equip cost also allows the Equipment to be moved from one creature to another.",
+  Pack_tactics = "Pack tactics — Whenever CARDNAME attacks, if you attacked with creatures with total power 6 or greater this combat, ...",
+  Choose_one = "When a Choose one card is played select one of the options, and for the rest of the game that option is selected until the card is removed.",
 }
 
 interface MechanicsIndex {
@@ -124,6 +136,18 @@ const mechanicText: MechanicsIndex = {
   Enchantments: Mechanics.Enchantments,
   Landfall: Mechanics.Landfall,
   Party: Mechanics.Party,
+  Connive: Mechanics.Connive,
+  Alliance: Mechanics.Alliance,
+  Shield_Counter: Mechanics.Shield_Counter,
+  Casualty: Mechanics.Casualty,
+  Blitz: Mechanics.Blitz,
+  Treasure: Mechanics.Treasure,
+  Venture_into_the_Dungeon: Mechanics.Venture_into_the_Dungeon,
+  Roll_a_dice: Mechanics.Roll_a_dice,
+  Enchantment_Class: Mechanics.Enchantment_Class,
+  Equipment: Mechanics.Equipment,
+  Pack_tactics: Mechanics.Pack_tactics,
+  Choose_one: Mechanics.Choose_one,
 };
 
 export { mechanicText };

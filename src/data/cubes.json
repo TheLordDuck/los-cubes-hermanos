@@ -1,5 +1,106 @@
 [
   {
+    "id": "30025e64-1510-4d7b-981e-7ae58472aa09",
+    "name": "100 Ornithopters",
+    "image": "https://cards.scryfall.io/art_crop/front/8/d/8d784214-dc69-42d4-b897-995ca5751e13.jpg",
+    "difficulty": 3,
+    "type": "Cube",
+    "mechanics": [],
+    "booster_packs": [
+      {
+        "3": {
+          "players": "5-8",
+          "packs": {
+            "1": {
+              "random": 15
+            },
+            "2": {
+              "random": 15
+            },
+            "3": {
+              "random": 15
+            }
+          }
+        },
+        "5": {
+          "players": "2-4",
+          "packs": {
+            "1": {
+              "random": 9
+            },
+            "2": {
+              "random": 9
+            },
+            "3": {
+              "random": 9
+            },
+            "4": {
+              "random": 9
+            },
+            "5": {
+              "random": 9
+            }
+          }
+        }
+      }
+    ],
+    "archetypes": []
+  },
+  {
+    "id": "1c7b18b4-a960-43f7-8b67-4de5b67321d1",
+    "name": "Breya Cube",
+    "image": "https://cards.scryfall.io/art_crop/front/5/8/581591f0-b3c7-4fca-b4b9-1d1d098ca7fb.jpg",
+    "difficulty": 3,
+    "type": "Cube",
+    "mechanics": [],
+    "booster_packs": [
+      {
+        "3": {
+          "players": "5-8",
+          "packs": {
+            "1": {
+              "random": 15
+            },
+            "2": {
+              "random": 15
+            },
+            "3": {
+              "random": 15
+            }
+          }
+        },
+        "5": {
+          "players": "2-4",
+          "packs": {
+            "1": {
+              "random": 9
+            },
+            "2": {
+              "random": 9
+            },
+            "3": {
+              "random": 9
+            },
+            "4": {
+              "random": 9
+            },
+            "5": {
+              "random": 9
+            }
+          }
+        }
+      }
+    ],
+    "archetypes": [
+      { "colorPair": "WU", "strategy": "Enter the Battlefield / Ramp" },
+      { "colorPair": "UB", "strategy": "Artifact Control / Animation" },
+      { "colorPair": "BR", "strategy": "Sacrifice-Value / Sacrifice-Burn" },
+      { "colorPair": "WB", "strategy": "Recursion / Aristocrats" },
+      { "colorPair": "UR", "strategy": "Tokens" },
+      { "colorPair": "RW", "strategy": "Modular / Eggs" }
+    ]
+  },
+  {
     "id": "5a90c398-c7e3-41cf-b398-a4c8ac140f92",
     "name": "Devoid Cube",
     "image": "https://cards.scryfall.io/art_crop/front/6/0/60682c00-c661-4a9d-8326-f3f014a04e3e.jpg",
@@ -231,34 +332,13 @@
           "players": "5-8",
           "packs": {
             "1": {
-              "white": 2,
-              "blue": 2,
-              "black": 2,
-              "red": 2,
-              "green": 2,
-              "multicolor": 3,
-              "artifact": 1,
-              "land": 1
+              "random": 15
             },
             "2": {
-              "white": 2,
-              "blue": 2,
-              "black": 2,
-              "red": 2,
-              "green": 2,
-              "multicolor": 3,
-              "artifact": 1,
-              "land": 1
+              "random": 15
             },
             "3": {
-              "white": 2,
-              "blue": 2,
-              "black": 2,
-              "red": 2,
-              "green": 2,
-              "multicolor": 3,
-              "artifact": 1,
-              "land": 1
+              "random": 15
             }
           }
         },
@@ -266,52 +346,19 @@
           "players": "2-4",
           "packs": {
             "1": {
-              "random_any_color": 2,
-              "white": 1,
-              "blue": 1,
-              "black": 1,
-              "red": 1,
-              "green": 1,
-              "multicolor": 2
+              "random": 9
             },
             "2": {
-              "random_any_color": 2,
-              "white": 1,
-              "blue": 1,
-              "black": 1,
-              "red": 1,
-              "green": 1,
-              "multicolor": 2
+              "random": 9
             },
             "3": {
-              "white": 1,
-              "blue": 1,
-              "black": 1,
-              "red": 1,
-              "green": 1,
-              "multicolor": 2,
-              "artifact": 1,
-              "land": 1
+              "random": 9
             },
             "4": {
-              "white": 1,
-              "blue": 1,
-              "black": 1,
-              "red": 1,
-              "green": 1,
-              "multicolor": 2,
-              "artifact": 1,
-              "land": 1
+              "random": 9
             },
             "5": {
-              "white": 1,
-              "blue": 1,
-              "black": 1,
-              "red": 1,
-              "green": 1,
-              "multicolor": 2,
-              "artifact": 1,
-              "land": 1
+              "random": 9
             }
           }
         }
@@ -354,31 +401,13 @@
           "players": "5-8",
           "packs": {
             "1": {
-              "white": 2,
-              "blue": 2,
-              "black": 2,
-              "red": 2,
-              "green": 2,
-              "multicolor": 3,
-              "artifact_land": 2
+              "random": 15
             },
             "2": {
-              "white": 2,
-              "blue": 2,
-              "black": 2,
-              "red": 2,
-              "green": 2,
-              "multicolor": 3,
-              "artifact_land": 2
+              "random": 15
             },
             "3": {
-              "white": 2,
-              "blue": 2,
-              "black": 2,
-              "red": 2,
-              "green": 2,
-              "multicolor": 3,
-              "artifact_land": 2
+              "random": 15
             }
           }
         },
@@ -386,49 +415,19 @@
           "players": "2-4",
           "packs": {
             "1": {
-              "white": 2,
-              "blue": 1,
-              "black": 1,
-              "red": 1,
-              "green": 1,
-              "multicolor": 2,
-              "artifact_land": 1
+              "random": 9
             },
             "2": {
-              "white": 1,
-              "blue": 2,
-              "black": 1,
-              "red": 1,
-              "green": 1,
-              "multicolor": 2,
-              "artifact_land": 1
+              "random": 9
             },
             "3": {
-              "white": 1,
-              "blue": 1,
-              "black": 2,
-              "red": 1,
-              "green": 1,
-              "multicolor": 2,
-              "artifact_land": 1
+              "random": 9
             },
             "4": {
-              "white": 1,
-              "blue": 1,
-              "black": 1,
-              "red": 2,
-              "green": 1,
-              "multicolor": 2,
-              "artifact_land": 1
+              "random": 9
             },
             "5": {
-              "white": 1,
-              "blue": 1,
-              "black": 1,
-              "red": 1,
-              "green": 2,
-              "multicolor": 2,
-              "artifact_land": 1
+              "random": 9
             }
           }
         }
@@ -506,35 +505,15 @@
         "strategy": "Sacrifice, +1/+1 Counters, Tokens"
       },
       {
-        "colorPair": "WBG",
-        "strategy": "Tokens, Pump, +1/+1 Counters, Sacrifice"
-      },
-      {
-        "colorPair": "URG",
-        "strategy": "Spells, Damage, +1/+1 Counters"
-      },
-      {
-        "colorPair": "WGR",
+        "colorPair": "RGW",
         "strategy": "Tokens, +1/+1 Counters, Fight"
       },
-      {
-        "colorPair": "WUR",
-        "strategy": "Tokens, First/Double Strike, Pump"
-      },
-      {
-        "colorPair": "UBG",
-        "strategy": "Graveyard Interaction, +1/+1 Counters"
-      },
-      {
-        "colorPair": "WBR",
-        "strategy": "Sacrifice, Recursion, Drain Life"
-      },
       { "colorPair": "UBR", "strategy": "Spells, Damage, Control" },
-      { "colorPair": "WUG", "strategy": "Tokens, +1/+1 Counters" }
+      { "colorPair": "GWU", "strategy": "Tokens, +1/+1 Counters" }
     ]
   },
   {
-    "id": "51e1790e-7e58-417d-8a6c-e6c68e798f5a",
+    "id": "41d8e50c-31a0-47f4-953b-add5a7ec245e",
     "name": "Kaladesh Reinvented",
     "image": "https://cards.scryfall.io/art_crop/front/1/d/1df70ef3-8919-43ac-9317-23548437a181.jpg",
     "difficulty": 0.5,
@@ -753,7 +732,7 @@
       { "colorPair": "BG", "strategy": "Self-mill" },
       { "colorPair": "RW", "strategy": "Go-wide Aggro" },
       { "colorPair": "GU", "strategy": "Ramp" },
-      { "colorPair": "X", "strategy": "Defenders" }
+      { "colorPair": "WUBRGD", "strategy": "Defender Subtheme" }
     ]
   },
   {
@@ -769,13 +748,13 @@
           "players": "5-8",
           "packs": {
             "1": {
-              "random": 15
+              "random": 21
             },
             "2": {
-              "random": 15
+              "random": 21
             },
             "3": {
-              "random": 15
+              "random": 21
             }
           }
         },
@@ -783,19 +762,19 @@
           "players": "2-4",
           "packs": {
             "1": {
-              "random": 15
+              "random": 13
             },
             "2": {
-              "random": 15
+              "random": 13
             },
             "3": {
-              "random": 15
+              "random": 13
             },
             "4": {
-              "random": 15
+              "random": 13
             },
             "5": {
-              "random": 15
+              "random": 13
             }
           }
         }
@@ -804,7 +783,7 @@
     "archetypes": []
   },
   {
-    "id": "cc67c663-20d4-495b-afdf-6b973acf6bdb",
+    "id": "thepaupercube",
     "name": "The Pauper Cube",
     "image": "https://cards.scryfall.io/art_crop/front/4/f/4f3deefe-28bc-4e45-a0a0-ab03167e2e81.jpg",
     "difficulty": 2,
@@ -862,7 +841,7 @@
     ]
   },
   {
-    "id": "0fc6bb89-56ed-4c68-ba4a-49f4820735b8",
+    "id": "fadbb3e1-27e7-43f9-85da-f4f2fbf610c9",
     "name": "Dominaria Reimagined",
     "image": "https://cards.scryfall.io/art_crop/front/5/2/5233ad7b-2903-4736-b13a-5cd4a275eb61.jpg",
     "difficulty": 2,
@@ -952,7 +931,7 @@
     ]
   },
   {
-    "id": "4a42b788-4787-40e9-a599-75d6662fea88",
+    "id": "335676bd-c36f-4c43-b06a-79414ea618cb",
     "name": "Bolt Cube",
     "image": "https://cards.scryfall.io/art_crop/front/6/0/60eeb025-704c-4a82-90b2-f91202ae30d9.jpg",
     "difficulty": 2,
@@ -1008,7 +987,7 @@
     "archetypes": []
   },
   {
-    "id": "0620e520-820b-463e-9934-ae4f1cfa3fd8",
+    "id": "9abeb860-be51-456c-a7ac-a0f6ed1e971a",
     "name": "MTGO Vintage Cube",
     "image": "https://cards.scryfall.io/art_crop/front/b/d/bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd.jpg",
     "difficulty": 4.5,
@@ -1349,7 +1328,7 @@
     "archetypes": []
   },
   {
-    "id": "eccd0304-d903-45c0-af89-5789a1bcc08a",
+    "id": "c0560a21-a6f6-4bde-b44f-c5fce383c6c3",
     "name": "Vehicle Cube: Eiganjo Drift",
     "image": "https://cards.scryfall.io/art_crop/front/4/3/436ce901-6ac6-4f8c-8ff0-18103f2642b8.jpg",
     "difficulty": 2.5,
@@ -1611,69 +1590,94 @@
     "name": "Battle Box - Streets of New Capenna",
     "image": "https://cards.scryfall.io/art_crop/front/2/9/29eb0e40-d184-423f-8484-ee288fda00cd.jpg",
     "difficulty": 1.5,
-    "type": "BattleBox"
+    "type": "BattleBox",
+    "mechanics": [
+      "Connive",
+      "Alliance",
+      "Shield_Counter",
+      "Casualty",
+      "Blitz",
+      "Treasure"
+    ]
   },
   {
     "id": "8a644b46-a5e5-4cf0-a40a-8bd9aea57bb2",
     "name": "Battle Box - Original",
     "image": "https://cards.scryfall.io/art_crop/front/3/1/31a500e6-01f5-4a3a-8839-68b9b515e919.jpg",
     "difficulty": 1.5,
-    "type": "BattleBox"
+    "type": "BattleBox",
+    "mechanics": []
   },
   {
     "id": "3dc5239d-dead-4d63-9f3a-356319a50eb2",
     "name": "Battle Box - D&D",
     "image": "https://cards.scryfall.io/art_crop/front/3/7/376b3cee-9386-41b0-a5d9-f60d147caff7.jpg",
     "difficulty": 1.5,
-    "type": "BattleBox"
+    "type": "BattleBox",
+    "mechanics": [
+      "Venture_into_the_Dungeon",
+      "Roll_a_dice",
+      "Enchantment_Class",
+      "Equipment",
+      "Pack_tactics",
+      "Choose_one",
+      "Treasure"
+    ]
   },
   {
     "id": "020ff328-dcd2-4369-85f2-b01f89bae040",
     "name": "Battle Box - Wilds of Eldraine",
     "image": "https://cards.scryfall.io/art_crop/front/1/b/1be6786e-0569-42dd-b03c-82da7b32a14f.jpg",
     "difficulty": 1.5,
-    "type": "BattleBox"
+    "type": "BattleBox",
+    "mechanics": []
   },
   {
     "id": "94453cdf-ecf1-4af7-980b-eaa0f3c69f2b",
     "name": "Battle Box - Ravnica",
     "image": "https://cards.scryfall.io/art_crop/front/5/e/5e84cb9c-9876-47a4-aea4-78574321bc36.jpg",
     "difficulty": 1.5,
-    "type": "BattleBox"
+    "type": "BattleBox",
+    "mechanics": []
   },
   {
     "id": "4348a66f-1f55-4a90-882a-14dd0122ded8",
     "name": "Battle Box - War of the Spark",
     "image": "https://cards.scryfall.io/art_crop/front/5/a/5a10b543-d5d4-42a8-9ee8-dada59a2ad7e.jpg",
     "difficulty": 1.5,
-    "type": "BattleBox"
+    "type": "BattleBox",
+    "mechanics": []
   },
   {
     "id": "b407a7db-1488-4de6-83d7-de83d9972136",
     "name": "Battle Box - The Lord of the Rings",
     "image": "https://cards.scryfall.io/art_crop/front/c/c/cc9cfcc7-be64-4871-8d52-851e43fe3305.jpg",
     "difficulty": 1.5,
-    "type": "BattleBox"
+    "type": "BattleBox",
+    "mechanics": []
   },
   {
     "id": "da5e4fef-a177-4c04-bb2d-325556886b7c",
     "name": "Battle Box - Outlaws of Thunder Junction",
     "image": "https://cards.scryfall.io/art_crop/front/1/8/180d6528-c524-4bb8-8a72-b3775cd2c177.jpg",
     "difficulty": 1.5,
-    "type": "BattleBox"
+    "type": "BattleBox",
+    "mechanics": []
   },
   {
     "id": "536ee6e8-b948-433f-b838-4f1a32a0ab0e",
     "name": "Battle Box - Phyrexia: All Will Be One",
     "image": "https://cards.scryfall.io/art_crop/front/5/8/58d287e8-5297-415a-97d5-02002470c52b.jpg?1675957064",
     "difficulty": 1.5,
-    "type": "BattleBox"
+    "type": "BattleBox",
+    "mechanics": []
   },
   {
     "id": "2c891c72-9f78-444e-a901-155a1fd5f510",
     "name": "Battle Box - Strixhaven",
     "image": "https://cards.scryfall.io/art_crop/front/d/3/d3350367-42bd-44af-be13-ad31c002f8ac.jpg?1627429830",
     "difficulty": 1.5,
-    "type": "BattleBox"
+    "type": "BattleBox",
+    "mechanics": []
   }
 ]

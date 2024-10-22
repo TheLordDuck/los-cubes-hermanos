@@ -1,14 +1,36 @@
 import { mechanicText } from "@/utils/mechanics";
 import React, { useState } from "react";
-import MechanicsModal from "../Modal/Modal";
-import { CardContent, Typography } from "@mui/material";
+import MechanicsModal from "../MechanicsModal/MechanicsModal";
+import { CardContent } from "@mui/material";
 import Image from "next/image";
-import { CubeType } from "@/utils/cubeTypes";
-import { IconMechanics } from "../Icons/IconMechanics";
-import { IconArchetypes } from "../Icons/IconArchetypes";
-import { IconBoosterSetup } from "../Icons/IconBoosterSetup";
-import { IconRulesAndNotes } from "../Icons/IconRulesAndNotes";
-import Modal from "../Modal/Modal";
+import { FaScrewdriverWrench } from "react-icons/fa6";
+import { FaHandsHoldingCircle } from "react-icons/fa6";
+import { GiCubes } from "react-icons/gi";
+import { GiWhiteBook } from "react-icons/gi";
+
+const IconMechanics = () => (
+  <div className="flex items-center justify-center h-full">
+    <FaScrewdriverWrench />
+  </div>
+);
+
+const IconArchetypes = () => (
+  <div className="flex items-center justify-center h-full">
+    <FaHandsHoldingCircle />
+  </div>
+);
+
+const IconBoosterSetup = () => (
+  <div className="flex items-center justify-center h-full">
+    <GiCubes />
+  </div>
+);
+
+const IconRulesAndNotes = () => (
+  <div className="flex items-center justify-center h-full">
+    <GiWhiteBook />
+  </div>
+);
 
 interface Archetype {
   colorPair: string;
@@ -59,38 +81,22 @@ interface TabsTriggerProps {
   active: boolean;
   onClick: () => void;
   children: React.ReactNode;
-  cubeType?: CubeType;
-}
-interface TabsTriggerProps {
-  value: string;
-  active: boolean;
-  onClick: () => void;
-  disabled?: boolean; // Add a disabled prop
-  children: React.ReactNode;
 }
 
 const TabsTrigger: React.FC<TabsTriggerProps> = ({
   value,
   active,
   onClick,
-  disabled = false,
   children,
 }) => {
   return (
     <button
-      className={`flex-1 py-2 px-4 text-center transition-colors duration-200 ${
+      className={`flex-1 py-2 px-4 text-center cursor-pointer transition-colors duration-200 ${
         active
-          ? "bg-active text-white font-semibold"
-          : "bg-inactive text-gray-800 hover:bg-gray-200"
-      } ${
-        disabled
-          ? "cursor-not-allowed bg-disabled text-gray-500"
-          : "cursor-pointer"
-      } ${
-        disabled ? "hover:bg-disabled focus:bg-disabled active:bg-disabled" : "" // Prevent focus and active styles when disabled
+          ? "bg-blue-600 text-white font-semibold"
+          : "bg-white text-gray-800 hover:bg-gray-200"
       }`}
-      onClick={!disabled ? onClick : undefined}
-      disabled={disabled}
+      onClick={onClick}
     >
       {children}
     </button>
@@ -139,17 +145,17 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
     ? parseIfString(cubeItem.booster_packs)
     : null;
 
-  const [openModalBoolean, setOpenModalBoolean] = useState(false);
-  const [selectedModalText, setSelectedModalText] = useState<string>("");
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedMechanic, setSelectedMechanic] = useState<string>("");
 
-  const openModal = (mechanic: string) => {
+  const openModalForMechanic = (mechanic: string) => {
     console.log("Open modal for mechanic:", mechanic);
-    setSelectedModalText(mechanic);
-    setOpenModalBoolean(true);
+    setSelectedMechanic(mechanic);
+    setOpenModal(true);
   };
 
   const closeModal = () => {
-    setOpenModalBoolean(false);
+    setOpenModal(false);
   };
 
   // State to manage the accordion
@@ -171,17 +177,15 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
           active={activeTab === "mechanics"}
           onClick={() => handleTabChange("mechanics")}
         >
-          <span className="hidden md:inline py-10">Mechanics</span>
+          <span className="hidden md:inline">Mechanics</span>
           <span className="md:hidden">
             <IconMechanics />
           </span>
         </TabsTrigger>
-
         <TabsTrigger
           value="archetypes"
           active={activeTab === "archetypes"}
           onClick={() => handleTabChange("archetypes")}
-          disabled={cubeItem.type === CubeType.BattleBox} // Disable when cube type is "battlebox"
         >
           <span className="hidden md:inline">Archetypes</span>
           <span className="md:hidden">
@@ -192,7 +196,6 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
           value="boosterSetup"
           active={activeTab === "boosterSetup"}
           onClick={() => handleTabChange("boosterSetup")}
-          disabled={cubeItem.type === CubeType.BattleBox} // Disable when cube type is "battlebox"
         >
           <span className="hidden md:inline">Booster Setup</span>
           <span className="md:hidden">
@@ -204,37 +207,35 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
           active={activeTab === "rulesAndNotes"}
           onClick={() => handleTabChange("rulesAndNotes")}
         >
-          <span className="hidden md:inline ">Rules and Notes</span>
+          <span className="hidden md:inline">Rules and Notes</span>
           <span className="md:hidden">
             <IconRulesAndNotes />
           </span>
         </TabsTrigger>
       </TabsList>
-      <div className="bg-white rounded-lg shadow-md p-6 py-10">
-        <Modal
-          isOpen={openModalBoolean}
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <MechanicsModal
+          isOpen={openModal}
           onClose={closeModal}
-          content={selectedModalText}
+          content={selectedMechanic}
         />
         <TabsContent value="mechanics" active={activeTab === "mechanics"}>
           <h3 className="text-xl font-semibold mb-2 text-gray-900">
             Mechanics
             <div className="container py-2">
               <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-                <CardContent>
-                  {parsedMechanics?.length === 0 && (
-                    <p className="text-sm font-semibold ">No mechanics</p>
-                  )}
-                  {parsedMechanics?.map((mechanic: string, index: number) => (
-                    <a
-                      onClick={() => openModal(mechanicText[mechanic])}
-                      key={index}
-                      className="mb-2 text-blue-900 text-sm font-semibold flex items-center"
-                    >
-                      <div>{mechanic.split("_").join(" ")}</div>
-                    </a>
-                  ))}
-                </CardContent>
+                {parsedMechanics?.length === 0 && (
+                  <p className="text-sm font-semibold ">No mechanics</p>
+                )}
+                {parsedMechanics?.map((mechanic: string, index: number) => (
+                  <a
+                    onClick={() => openModalForMechanic(mechanicText[mechanic])}
+                    key={index}
+                    className="mb-2 text-blue-900 text-sm font-semibold flex items-center"
+                  >
+                    <div>{mechanic.split("_").join(" ")}</div>
+                  </a>
+                ))}
               </div>
             </div>
           </h3>
@@ -243,7 +244,7 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
           <h3 className="text-xl font-semibold mb-2 text-gray-900">
             Archetypes
             <div className="container py-2">
-              <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+              <div className="bg-gray-100 p-4 rounded-lg shadow-md">
                 <CardContent>
                   {parsedArchetypes?.length === 0 && (
                     <p className="text-sm font-semibold">No archetypes</p>
@@ -402,7 +403,7 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
                                         count > 0 && (
                                           <div
                                             onClick={() =>
-                                              openModal(
+                                              openModalForMechanic(
                                                 "Wildcard: " +
                                                   type.split("_").join(" ")
                                               )
@@ -411,7 +412,7 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
                                             className="flex flex-col items-center"
                                           >
                                             <Image
-                                              src={`/wildcards/${type.toLowerCase()}.jpg`}
+                                              src={`/wildcards/${type.toLowerCase()}.png`}
                                               alt={type}
                                               height={32}
                                               width={32}

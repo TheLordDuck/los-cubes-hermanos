@@ -35,7 +35,28 @@ body {
 .bg-bluemarine {
 	background-color: #343A40;
   }
-
+  
+  .bg-active {
+	background-color: #636363;
+  }
+  
+  .bg-inactive {
+	background-color: #e4e4e4;
+  }
+  
+  .bg-disabled {
+	background-color: #ffd4d4; /* This will now be used consistently when disabled */
+  }
+ /* Add styles to prevent focus and active changes for disabled buttons */
+button:disabled {
+	background-color: #ffd4d4 !important; /* Ensure disabled background is always applied */
+  }
+  button:disabled:hover,
+  button:disabled:focus,
+  button:disabled:active {
+	background-color: #ffd4d4 !important; /* Prevent hover, focus, or active color change */
+  }
+  
 .card-gray {
 	background-color: #efefef
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react"; // Import useState and useEffect
 import { useRouter } from "next/router"; // Import useRouter from Next.js
 import Image from "next/image";
 import Link from "next/link"; // Change to Link from next/link
@@ -6,26 +6,48 @@ import cubesList from "@/data/cubes.json";
 import { ChevronLeft, Star } from "lucide-react";
 import YourComponent, { CubeItem } from "@/components/Tabs/Tabs";
 import { cubeCobraUrl } from "@/utils/cubeCobraUrl";
-import { Header } from "@/components/Header/Header"; // Import Header
-import { Footer } from "@/components/Footer/Footer"; // Import Footer
 import { HeaderCubeDetail } from "@/components/Header/HeaderCubeDetail";
 import "../../app/globals.css";
+import { NotFound } from "@/components/404/page";
+import { Loading } from "@/components/Loading/page";
 
 const CubeDetail: React.FC = () => {
   const router = useRouter();
   const { id } = router.query; // Extract the id from the query
+  const [loading, setLoading] = useState(true); // State to handle loading
+  const [cubeItem, setCubeItem] = useState<CubeItem | undefined>(undefined); // State to hold the cube item
 
-  // Fetch or find the cube item based on the id (this could be from a JSON file or an API)
-  const cubeItem = cubesList.find((item) => item.id === id) as
-    | CubeItem
-    | undefined;
+  useEffect(() => {
+    if (id) {
+      const foundCubeItem = cubesList.find(
+        (item) => item.id === id
+      ) as CubeItem;
+      setCubeItem(foundCubeItem);
+      setLoading(false); // Set loading to false once the data is fetched
+    }
+  }, [id]);
 
-  if (!cubeItem) return <div>Loading...</div>; // Handle loading state or not found
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col bg-gray-50">
+        <HeaderCubeDetail />
+        <Loading />;
+      </div>
+    );
+  }
+
+  if (!cubeItem) {
+    return (
+      <div className="min-h-screen flex flex-col bg-gray-50">
+        <HeaderCubeDetail />
+        <NotFound />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <HeaderCubeDetail />
-      {/* Include Header */}
       <main className="flex-grow container mx-auto px-4 py-8 pb-32 md:pb-8">
         <div className="mb-6">
           <Link
