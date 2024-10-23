@@ -44,7 +44,11 @@
         }
       }
     ],
-    "archetypes": []
+    "archetypes": [
+      { "colorPair": "GWUC", "strategy": "All that Ornithopter" },
+      { "colorPair": "BRUG", "strategy": "Ornithopter Bombardement" },
+      { "colorPair": "URGW", "strategy": "Combo Thopter" }
+    ]
   },
   {
     "id": "1c7b18b4-a960-43f7-8b67-4de5b67321d1",
@@ -1630,7 +1634,7 @@
     "image": "https://cards.scryfall.io/art_crop/front/1/b/1be6786e-0569-42dd-b03c-82da7b32a14f.jpg",
     "difficulty": 1.5,
     "type": "BattleBox",
-    "mechanics": []
+    "mechanics": ["Adventure", "Celebration", "Role_Token", "Sagas", "Bargain", "Food_Token"]
   },
   {
     "id": "94453cdf-ecf1-4af7-980b-eaa0f3c69f2b",
@@ -1638,7 +1642,7 @@
     "image": "https://cards.scryfall.io/art_crop/front/5/e/5e84cb9c-9876-47a4-aea4-78574321bc36.jpg",
     "difficulty": 1.5,
     "type": "BattleBox",
-    "mechanics": []
+    "mechanics": ["Mentor", "Convoke", "Tokens", "Surveil", "Undergrowth", "Gate"]
   },
   {
     "id": "4348a66f-1f55-4a90-882a-14dd0122ded8",
@@ -1646,7 +1650,7 @@
     "image": "https://cards.scryfall.io/art_crop/front/5/a/5a10b543-d5d4-42a8-9ee8-dada59a2ad7e.jpg",
     "difficulty": 1.5,
     "type": "BattleBox",
-    "mechanics": []
+    "mechanics": ["Proliferate", "Planeswalker", "Amass", "+1/+1_Counters"]
   },
   {
     "id": "b407a7db-1488-4de6-83d7-de83d9972136",
@@ -1654,7 +1658,7 @@
     "image": "https://cards.scryfall.io/art_crop/front/c/c/cc9cfcc7-be64-4871-8d52-851e43fe3305.jpg",
     "difficulty": 1.5,
     "type": "BattleBox",
-    "mechanics": []
+    "mechanics": ["Legendary", "Food_Token", "Scry", "Amass_Orcs", "The_Ring_Tempts_You"]
   },
   {
     "id": "da5e4fef-a177-4c04-bb2d-325556886b7c",
@@ -1662,7 +1666,7 @@
     "image": "https://cards.scryfall.io/art_crop/front/1/8/180d6528-c524-4bb8-8a72-b3775cd2c177.jpg",
     "difficulty": 1.5,
     "type": "BattleBox",
-    "mechanics": []
+    "mechanics": ["Mount", "Saddle", "Outlaw", "Mercenary_Token", "Spree", "Commit_A_Crime", "Plot"]
   },
   {
     "id": "536ee6e8-b948-433f-b838-4f1a32a0ab0e",
@@ -1670,7 +1674,7 @@
     "image": "https://cards.scryfall.io/art_crop/front/5/8/58d287e8-5297-415a-97d5-02002470c52b.jpg?1675957064",
     "difficulty": 1.5,
     "type": "BattleBox",
-    "mechanics": []
+    "mechanics": ["Toxic", "Corrupted", "Oil_Counter", "For_Mirrodin!", "Proliferate", "Affinity_For_Equipment"]
   },
   {
     "id": "2c891c72-9f78-444e-a901-155a1fd5f510",
@@ -1678,6 +1682,6 @@
     "image": "https://cards.scryfall.io/art_crop/front/d/3/d3350367-42bd-44af-be13-ad31c002f8ac.jpg?1627429830",
     "difficulty": 1.5,
     "type": "BattleBox",
-    "mechanics": []
+    "mechanics": ["Magecraft", "Learn", "+1/+1_Counters", "Tokens"]
   }
 ]

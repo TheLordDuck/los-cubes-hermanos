@@ -1,7 +1,6 @@
 import { mechanicText } from "@/utils/mechanics";
 import React, { useState } from "react";
-import MechanicsModal from "../Modal/Modal";
-import { CardContent, Typography } from "@mui/material";
+import { CardContent } from "@mui/material";
 import Image from "next/image";
 import { CubeType } from "@/utils/cubeTypes";
 import { IconMechanics } from "../Icons/IconMechanics";
@@ -9,6 +8,8 @@ import { IconArchetypes } from "../Icons/IconArchetypes";
 import { IconBoosterSetup } from "../Icons/IconBoosterSetup";
 import { IconRulesAndNotes } from "../Icons/IconRulesAndNotes";
 import Modal from "../Modal/Modal";
+import CubeContent from "@/components/CubeContent/CubeContent";
+import { generatePackContents } from "@/utils/packContents";
 
 interface Archetype {
   colorPair: string;
@@ -340,53 +341,10 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
                             } gap-6`}
                           >
                             {Object.keys(packs).map((packNumber, j) => {
-                              const {
-                                common = 0,
-                                uncommon = 0,
-                                rare = 0,
-                                mythic = 0,
-                                random = 0,
-                                timeshifted = 0,
-                                rare_mythic = 0,
-                                white = 0,
-                                blue = 0,
-                                black = 0,
-                                red = 0,
-                                green = 0,
-                                artifact = 0,
-                                dedicatedmythic = 0,
-                                multicolor = 0,
-                                land = 0,
-                                artifact_land = 0,
-                                random_any_color = 0,
-                              } = packs[packNumber] || {};
-
-                              const packContents = [
-                                { type: "Common", count: common },
-                                { type: "Uncommon", count: uncommon },
-                                { type: "Rare", count: rare },
-                                { type: "Mythic", count: mythic },
-                                { type: "Random", count: random },
-                                { type: "Timeshifted", count: timeshifted },
-                                { type: "White", count: white },
-                                { type: "Blue", count: blue },
-                                { type: "Black", count: black },
-                                { type: "Red", count: red },
-                                { type: "Green", count: green },
-                                { type: "Artifact", count: artifact },
-                                {
-                                  type: "DedicatedMythic",
-                                  count: dedicatedmythic,
-                                },
-                                { type: "Multicolor", count: multicolor },
-                                { type: "Land", count: land },
-                                { type: "Artifact_Land", count: artifact_land },
-                                {
-                                  type: "Random_Any_Color",
-                                  count: random_any_color,
-                                },
-                                { type: "Rare_Mythic", count: rare_mythic },
-                              ];
+                              const packContents = generatePackContents(
+                                packs,
+                                packNumber
+                              );
 
                               return (
                                 <div
@@ -443,15 +401,13 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
           <h3 className="text-xl font-semibold mb-2 text-gray-900">
             Rules and Notes
           </h3>
-          <div className="container py-2">
-            <div className="bg-gray-100 p-0 rounded-lg shadow-md">
-              <iframe
-                src={`https://cubecobra.com/cube/overview/${cubeItem.id}#card-body`}
-                title="Your Embedded Page"
-                width="100%"
-                height="500"
-              />
-            </div>
+          <div className="bg-gray-100 p-0 rounded-lg shadow-md">
+            <iframe
+              src={`https://cubecobra.com/cube/overview/${cubeItem.id}#card-body`}
+              title="Your Embedded Page"
+              width="100%"
+              height="500"
+            />
           </div>
         </TabsContent>
       </div>
