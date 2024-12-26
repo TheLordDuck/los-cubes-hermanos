@@ -51,9 +51,9 @@
     ]
   },
   {
-    "id": "1c7b18b4-a960-43f7-8b67-4de5b67321d1",
+    "id": "63fec3ba02c0886f86a19719",
     "name": "Breya Cube",
-    "image": "https://cards.scryfall.io/art_crop/front/4/6/468e5d5a-01cc-4d01-88fb-ab556e2383cb.jpg",
+    "image": "https://cards.scryfall.io/art_crop/front/5/8/581591f0-b3c7-4fca-b4b9-1d1d098ca7fb.jpg",
     "difficulty": 3,
     "type": "Cube",
     "mechanics": [],
@@ -105,7 +105,7 @@
     ]
   },
   {
-    "id": "5a90c398-c7e3-41cf-b398-a4c8ac140f92",
+    "id": "5dc9a64553f3101ce8e1d08c",
     "name": "Devoid Cube",
     "image": "https://cards.scryfall.io/art_crop/front/6/0/60682c00-c661-4a9d-8326-f3f014a04e3e.jpg",
     "difficulty": 3,
@@ -600,7 +600,7 @@
     ]
   },
   {
-    "id": "24e567ba-49f5-4e5d-aba5-d5bd00d51c3e",
+    "id": "5dd5b7fc0b7832541fb5fe69",
     "name": "Spectrum",
     "image": "https://cards.scryfall.io/art_crop/front/5/9/59243436-b55d-44c3-962b-751eff429f71.jpg",
     "difficulty": 1.5,
@@ -787,7 +787,7 @@
     "archetypes": []
   },
   {
-    "id": "thepaupercube",
+    "id": "5d617ac6c2a85f3b75fe95a4",
     "name": "The Pauper Cube",
     "image": "https://cards.scryfall.io/art_crop/front/4/f/4f3deefe-28bc-4e45-a0a0-ab03167e2e81.jpg",
     "difficulty": 2,
