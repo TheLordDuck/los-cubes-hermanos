@@ -3,8 +3,8 @@ import "./globals.css";
 import { roboto } from "../utils/fonts";
 
 export const metadata: Metadata = {
-  title: "Flavio's Cube Archive",
-  description: "Archive with all the stored cubes",
+  title: "Los Cubes Hermanos",
+  description: "Archive with all the stored cubes with my brother :D",
 };
 
 export default function RootLayout({

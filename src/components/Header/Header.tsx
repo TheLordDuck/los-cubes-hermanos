@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="bg-bluemarine shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <Image src="/favicon.png" alt="Logo" width={40} height={40} />
+          <Image src="/favicon.png" alt="Logo" width={80} height={80} />
         </div>
         <div className="hidden md:flex flex-grow items-center justify-center md:justify-start space-x-6 ml-6">
           <Button
