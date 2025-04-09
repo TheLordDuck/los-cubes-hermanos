@@ -6,10 +6,11 @@ import { CubeType } from "@/utils/cubeTypes";
 import { IconMechanics } from "../Icons/IconMechanics";
 import { IconArchetypes } from "../Icons/IconArchetypes";
 import { IconBoosterSetup } from "../Icons/IconBoosterSetup";
-import { IconRulesAndNotes } from "../Icons/IconRulesAndNotes";
+import { IconOverview } from "../Icons/IconOverview";
 import Modal from "../Modal/Modal";
 import CubeContent from "@/components/CubeContent/CubeContent";
 import { generatePackContents } from "@/utils/packContents";
+import DraftTable from "../DraftTable/DraftTable";
 
 interface Archetype {
   colorPair: string;
@@ -24,8 +25,9 @@ interface BoosterPackConfig {
 }
 
 interface BoosterSetup {
-  players: string; // "5-8" or "2-4" based on the JSON data
-  packs: Record<string, BoosterPackConfig>; // Mapping of pack numbers to BoosterPackConfig
+  type: string;
+  rarities: string[];
+  text: string; // Mapping of pack numbers to BoosterPackConfig
 }
 
 export interface CubeItem {
@@ -35,7 +37,7 @@ export interface CubeItem {
   difficulty: number;
   type: string;
   mechanics?: string[]; // Mechanics is an array of strings (even if it's empty)
-  booster_packs?: Record<string, BoosterSetup[]>; // Booster pack details mapped by player count
+  booster_packs?: BoosterSetup; // Booster pack details mapped by player count
   archetypes?: Archetype[]; // Archetypes array with color pair and strategy
 }
 
@@ -117,7 +119,7 @@ interface YourComponentProps {
 }
 
 const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
-  const [activeTab, setActiveTab] = useState<string>("mechanics");
+  const [activeTab, setActiveTab] = useState<string>("overview");
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
@@ -139,6 +141,8 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
   const parsedBoosterPacks = cubeItem?.booster_packs
     ? parseIfString(cubeItem.booster_packs)
     : null;
+
+  console.log("parsedBoosterPacks", parsedBoosterPacks);
 
   const [openModalBoolean, setOpenModalBoolean] = useState(false);
   const [selectedModalText, setSelectedModalText] = useState<string>("");
@@ -164,17 +168,20 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
     );
   };
 
+  // Loading for overviwe iframe
+  const [loading, setLoading] = useState(true);
+
   return (
     <Tabs>
       <TabsList>
         <TabsTrigger
-          value="mechanics"
-          active={activeTab === "mechanics"}
-          onClick={() => handleTabChange("mechanics")}
+          value="overview"
+          active={activeTab === "overview"}
+          onClick={() => handleTabChange("overview")}
         >
-          <span className="hidden md:inline py-10">Mechanics</span>
+          <span className="hidden md:inline ">Overview</span>
           <span className="md:hidden">
-            <IconMechanics />
+            <IconOverview />
           </span>
         </TabsTrigger>
 
@@ -189,6 +196,18 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
             <IconArchetypes />
           </span>
         </TabsTrigger>
+
+        <TabsTrigger
+          value="mechanics"
+          active={activeTab === "mechanics"}
+          onClick={() => handleTabChange("mechanics")}
+        >
+          <span className="hidden md:inline py-10">Mechanics</span>
+          <span className="md:hidden">
+            <IconMechanics />
+          </span>
+        </TabsTrigger>
+
         <TabsTrigger
           value="boosterSetup"
           active={activeTab === "boosterSetup"}
@@ -200,18 +219,8 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
             <IconBoosterSetup />
           </span>
         </TabsTrigger>
-        <TabsTrigger
-          value="rulesAndNotes"
-          active={activeTab === "rulesAndNotes"}
-          onClick={() => handleTabChange("rulesAndNotes")}
-        >
-          <span className="hidden md:inline ">Rules and Notes</span>
-          <span className="md:hidden">
-            <IconRulesAndNotes />
-          </span>
-        </TabsTrigger>
       </TabsList>
-      <div className="bg-white rounded-lg shadow-md p-6 py-10">
+      <div className="bg-white rounded-lg shadow-md">
         <Modal
           isOpen={openModalBoolean}
           onClose={closeModal}
@@ -219,8 +228,7 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
         />
         <TabsContent value="mechanics" active={activeTab === "mechanics"}>
           <h3 className="text-xl font-semibold mb-2 text-gray-900">
-            Mechanics
-            <div className="container py-2">
+            <div className="container">
               <div className="bg-gray-100 p-6 rounded-lg shadow-md">
                 <CardContent>
                   {parsedMechanics?.length === 0 && (
@@ -242,8 +250,7 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
         </TabsContent>
         <TabsContent value="archetypes" active={activeTab === "archetypes"}>
           <h3 className="text-xl font-semibold mb-2 text-gray-900">
-            Archetypes
-            <div className="container py-2">
+            <div className="container">
               <div className="bg-gray-100 p-6 rounded-lg shadow-md">
                 <CardContent>
                   {parsedArchetypes?.length === 0 && (
@@ -296,117 +303,76 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
           </h3>
         </TabsContent>
         <TabsContent value="boosterSetup" active={activeTab === "boosterSetup"}>
-          <h3 className="text-xl font-semibold mb-4 text-gray-900">
-            Booster Setup
-          </h3>
-
-          <div className="space-y-4">
-            {// @ts-ignore
-            parsedBoosterPacks?.map((pack: any, packIndex: number) => (
-              <div key={packIndex}>
-                {Object.keys(pack).map((packSize, i) => {
-                  const { players, packs } = pack[packSize];
-
-                  // Create a unique key for each section (combine outer and inner loop indices)
-                  const uniqueAccordionIndex = `${packIndex}-${i}`;
-
-                  return (
-                    <div
-                      key={i}
-                      className="mb-4 bg-white border border-gray-200 rounded-lg shadow"
-                    >
-                      {/* Header for the accordion */}
-                      <button
-                        onClick={() => toggleAccordion(uniqueAccordionIndex)}
-                        className="w-full text-left p-4 bg-gray-100 rounded-t-lg focus:outline-none"
-                      >
-                        <h4 className="text-lg font-semibold text-black">
-                          {`${packSize} Packs (For ${players} Players)`}
-                        </h4>
-                      </button>
-
-                      {/* Accordion content */}
-                      {openIndices.includes(uniqueAccordionIndex) && (
-                        <div className="p-4">
-                          {/* Dynamically set grid columns based on the number of packs */}
-                          <div
-                            className={`grid grid-cols-1 ${
-                              Object.keys(packs).length === 1
-                                ? "md:grid-cols-1" // 1 column if there's only 1 pack
-                                : Object.keys(packs).length === 2
-                                  ? "md:grid-cols-2" // 2 columns for 2 packs
-                                  : Object.keys(packs).length === 3
-                                    ? "md:grid-cols-3" // 3 columns for 3 packs
-                                    : "md:grid-cols-4" // Default to 4 columns for 4 or more packs
-                            } gap-6`}
-                          >
-                            {Object.keys(packs).map((packNumber, j) => {
-                              const packContents = generatePackContents(
-                                packs,
-                                packNumber
-                              );
-
-                              return (
-                                <div
-                                  key={j}
-                                  className="p-4 bg-gray-50 rounded-lg shadow-md"
-                                >
-                                  <h5 className="text-md font-medium mb-4 text-center text-black">
-                                    Pack {packNumber}
-                                  </h5>
-                                  <div className="grid grid-cols-3 gap-2 justify-center items-center">
-                                    {packContents.map(
-                                      ({ type, count }, index) =>
-                                        count > 0 && (
-                                          <div
-                                            onClick={() =>
-                                              openModal(
-                                                "Wildcard: " +
-                                                  type.split("_").join(" ")
-                                              )
-                                            }
-                                            key={index}
-                                            className="flex flex-col items-center"
-                                          >
-                                            <Image
-                                              src={`/wildcards/${type.toLowerCase()}.jpg`}
-                                              alt={type}
-                                              height={32}
-                                              width={32}
-                                            />
-                                            <p className="text-sm font-semibold mt-2 text-black">
-                                              {count}
-                                            </p>
-                                          </div>
-                                        )
-                                    )}
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
-        </TabsContent>
-        <TabsContent
-          value="rulesAndNotes"
-          active={activeTab === "rulesAndNotes"}
-        >
           <h3 className="text-xl font-semibold mb-2 text-gray-900">
-            Rules and Notes
+            <div className="container">
+              <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+                {/* Wildcards */}
+                <div className="mt-6">
+                  <h2 className="text-lg font-bold mb-2">Wildcards</h2>
+                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                    {parsedBoosterPacks?.rarities.map((type) => (
+                      <div
+                        key={type}
+                        className="flex flex-col items-center space-y-1"
+                      >
+                        <Image
+                          src={`/wildcards/${type.toLowerCase()}.jpg`}
+                          alt={type}
+                          height={64}
+                          width={64}
+                          className="rounded shadow-sm"
+                        />
+                        <span className="text-xs text-gray-700 capitalize">
+                          {type}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {parsedBoosterPacks?.type === "normal" ? (
+                    <main className="rounded-md">
+                      <div className="mt-6">
+                        <h2 className="text-lg font-bold mb-2">
+                          {" "}
+                          Booster Setup
+                        </h2>
+                      </div>
+                      <DraftTable />
+                    </main>
+                  ) : (
+                    <>
+                      <div className="mt-6">
+                        <h2 className="text-lg font-bold mb-2">
+                          Booster Setup
+                        </h2>
+                        <h1 className="text-sm mb-2">
+                          See overview for custom booster packs.
+                        </h1>
+                        <h1 className="text-sm mb-2">
+                          Additional notes: {parsedBoosterPacks?.text}
+                        </h1>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
           </h3>
-          <div className="bg-gray-100 p-0 rounded-lg shadow-md">
+        </TabsContent>
+        <TabsContent value="overview" active={activeTab === "overview"}>
+          <div className="relative w-full h-[500px]">
+            {loading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
+                <div className="animate-spin rounded-full h-8 w-8 border-2 border-gray-300 border-t-blue-500"></div>
+              </div>
+            )}
             <iframe
-              src={`https://cubecobra.com/cube/overview/${cubeItem.id}#card-body`}
-              title="Your Embedded Page"
+              src={`https://cubecobra.com/cube/overview/${cubeItem.id}`}
+              title="CubeCobra Overview"
               width="100%"
               height="500"
+              className={`w-full h-full border-none ${loading ? "invisible" : "visible"}`}
+              onLoad={() => setLoading(false)}
             />
           </div>
         </TabsContent>

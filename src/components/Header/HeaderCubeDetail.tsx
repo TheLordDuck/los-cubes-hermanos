@@ -14,8 +14,8 @@ export const HeaderCubeDetail: React.FC = () => {
             <Image
               src="/favicon.png"
               alt="Logo"
-              width={120}
-              height={120}
+              width={80}
+              height={80}
               className="cursor-pointer"
             />
           </Link>
