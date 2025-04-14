@@ -26,7 +26,7 @@
     ]
   },
   {
-    "id": "620a9f770810a7592dac3843",
+    "id": "aebbfa89-6f57-4a3c-9046-931bd527281e",
     "name": "A Study in Harmony",
     "image": "https://cards.scryfall.io/art_crop/front/d/1/d1682673-e947-44e2-b9c9-cbcb9a16892b.jpg",
     "difficulty": 5,
@@ -39,10 +39,10 @@
         "text": ""
       },
     "archetypes": [
-      { "colorPair": "WBR", "strategy": "Enchantments" },
+      { "colorPair": "GWB", "strategy": "Enchantments" },
       { "colorPair": "URW", "strategy": "Artifacts" },
-      { "colorPair": "BRU", "strategy": "Self-Mill/Graveyard" },
-      { "colorPair": "RUB", "strategy": "Sacrifice" },
+      { "colorPair": "BGU", "strategy": "Self-Mill/Graveyard" },
+      { "colorPair": "WBR", "strategy": "Sacrifice" },
       { "colorPair": "GUR", "strategy": "Lands" }
     ]
   },
