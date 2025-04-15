@@ -379,7 +379,7 @@
     "booster_packs": 
       {
         "type": "normal",
-        "rarities": ["common", "uncommon", "rare_mythic"],
+        "rarities": ["common", "uncommon", "rare_mythic", "land"],
         "text": ""
       },
     "archetypes": [
@@ -634,7 +634,7 @@
     "booster_packs": 
       {
         "type": "normal",
-        "rarities": ["common", "uncommon", "rare", "mythic", "land"],
+        "rarities": ["random"],
         "text": ""
       },
     "archetypes": [
