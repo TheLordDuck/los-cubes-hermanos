@@ -10,6 +10,7 @@ import { HeaderCubeDetail } from "@/components/Header/HeaderCubeDetail";
 import "../../app/globals.css";
 import { NotFound } from "@/components/404/page";
 import { Loading } from "@/components/Loading/page";
+import { StarsDifficulty } from "@/components/StarsDificulty/StarsDificulty";
 
 const CubeDetail: React.FC = () => {
   const router = useRouter();
@@ -75,12 +76,7 @@ const CubeDetail: React.FC = () => {
                 {cubeItem.name}
               </h2>
               <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-5 h-5 ${i < cubeItem.difficulty ? "text-yellow-400 fill-current" : "text-gray-300"}`}
-                  />
-                ))}
+                <StarsDifficulty difficulty={cubeItem.difficulty} />
               </div>
               <Link
                 href={cubeCobraUrl(cubeItem.id)}

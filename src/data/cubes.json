@@ -618,8 +618,8 @@
     "archetypes": []
   },
   {
-    "id": "c0560a21-a6f6-4bde-b44f-c5fce383c6c3",
-    "name": "Vehicle Cube: Eiganjo Drift",
+    "id": "62028de443cd0c53e6e1d661",
+    "name": "Eiganjo Drift",
     "image": "https://cards.scryfall.io/art_crop/front/4/3/436ce901-6ac6-4f8c-8ff0-18103f2642b8.jpg",
     "difficulty": 2.5,
     "type": "Cube",
@@ -641,12 +641,16 @@
       { "colorPair": "WU", "strategy": "Classic Cars (Historic)" },
       { "colorPair": "UB", "strategy": "Grand Theft Auto (Pirate Control)" },
       { "colorPair": "BR", "strategy": "Junkyard Scrap (Tokens)" },
+      { "colorPair": "RG", "strategy": "For the boostgod! (Exhaust Aggro)" },
+      { "colorPair": "GW", "strategy": "Aftermarket Upgrades (+1/+1 Counters)" },
       {
         "colorPair": "WB",
-        "strategy": "Antique Restoration (Recursion & Reanimator)"
+        "strategy": "Antique Restoration (Recursion)"
       },
-      { "colorPair": "UR", "strategy": "Assembly Line (Artifacts)" },
-      { "colorPair": "RW", "strategy": "Vehicular Assault (Dwarf Aggro)" }
+      { "colorPair": "UR", "strategy": "Shipwreck Looters (Pirate Aggro)" },
+      { "colorPair": "BG", "strategy": "Scrapyard Salvo (Artifacts in graveyard)" },
+      { "colorPair": "RW", "strategy": "Driver's ED (Tokens To Pilot)" },
+      { "colorPair": "GU", "strategy": "Race to Value Town (Exhaust Ramp)" }
     ]
   },
   {
