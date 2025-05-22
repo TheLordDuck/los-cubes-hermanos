@@ -97,6 +97,10 @@ enum Mechanics {
   Celebration = "Celebration — If two or more nonland permanents entered the battlefield under your turn, ....",
   Role_Token = "Roles are colorless aura enchantment tokens, with 'Enchant creature', that attach to creatures upon creation giving them different abilities. No more than one Role controlled by the same player can be attached to the same creature at the same time. If a new Role is attached to that creature by the same player, the old one is put into the graveyard and then ceases to exist.[3] A single creature can have several Roles if each Role was created by a different player. ",
   Bargain = "Bargain (You may sacrifice an artifact, enchantment, or token as you cast this spell.)",
+  Snowshift = "If your control four or more snow permanents, ...",
+  Unrest = "As long as a card has left your graveyard this turn, ...",
+  Rime = "Whenever you spend your second snow mana while paying for abilities each turn, ...",
+  Freeze = "Whenever you tap an untapped creature an opponent controls, ..."
 }
 interface MechanicsIndex {
   [key: string]: string;
@@ -201,6 +205,10 @@ const mechanicText: MechanicsIndex = {
   Celebration: Mechanics.Celebration,
   Role_Token: Mechanics.Role_Token,
   Bargain: Mechanics.Bargain,
+  Snowshift: Mechanics.Snowshift,
+  Unrest: Mechanics.Unrest,
+  Rime: Mechanics.Rime,
+  Freeze: Mechanics.Freeze,
 };
 
 export { mechanicText };
