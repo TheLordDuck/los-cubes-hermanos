@@ -337,39 +337,6 @@
     ]
   },
   {
-    "id": "41d8e50c-31a0-47f4-953b-add5a7ec245e",
-    "name": "Kaladesh Reinvented",
-    "image": "https://cards.scryfall.io/art_crop/front/1/d/1df70ef3-8919-43ac-9317-23548437a181.jpg",
-    "difficulty": 1,
-    "type": "Cube",
-    "mechanics": [
-      "Artifacts",
-      "Vehicles",
-      "Energy_Counters",
-      "Fabricate",
-      "Improvise",
-      "Revolt"
-    ],
-    "booster_packs": 
-      {
-        "type": "normal",
-        "rarities": ["common", "uncommon", "rare", "mythic"],
-        "text": ""
-      },
-    "archetypes": [
-      { "colorPair": "WU", "strategy": "Flicker / Flyers" },
-      { "colorPair": "UB", "strategy": "Artifact Midrange / Improvise" },
-      { "colorPair": "BR", "strategy": "Artifact Midrange / Vehicles" },
-      { "colorPair": "RG", "strategy": "Energy Beatdown" },
-      { "colorPair": "GW", "strategy": "Beatdown, +1/+1 Counters" },
-      { "colorPair": "WB", "strategy": "Artifact Value / Revolt" },
-      { "colorPair": "UR", "strategy": "Energy / Artifacts" },
-      { "colorPair": "BG", "strategy": "+1/+1 Counters" },
-      { "colorPair": "RW", "strategy": "Vehicles Aggro" },
-      { "colorPair": "GU", "strategy": "Energy" }
-    ]
-  },
-  {
     "id": "e466b712-7078-40dc-89e8-bfecfc0ccbf0",
     "name": "Spectrum",
     "image": "https://cards.scryfall.io/art_crop/front/5/9/59243436-b55d-44c3-962b-751eff429f71.jpg",
@@ -470,38 +437,6 @@
       { "colorPair": "BG", "strategy": "Recursive Midrange" },
       { "colorPair": "RW", "strategy": "Go-wide Aggro" },
       { "colorPair": "GU", "strategy": "Tempo" }
-    ]
-  },
-  {
-    "id": "fadbb3e1-27e7-43f9-85da-f4f2fbf610c9",
-    "name": "Dominaria Reimagined",
-    "image": "https://cards.scryfall.io/art_crop/front/5/2/5233ad7b-2903-4736-b13a-5cd4a275eb61.jpg",
-    "difficulty": 2,
-    "type": "Cube",
-    "mechanics": [
-      "Sagas",
-      "Historic_Spells",
-      "Kicker",
-      "Legendary_Spells",
-      "Hexproof_From"
-    ],
-    "booster_packs": 
-      {
-        "type": "normal",
-        "rarities": ["common", "uncommon", "rare" , "timeshifted", "mythic"],
-        "text": ""
-      },
-    "archetypes": [
-      { "colorPair": "WU", "strategy": "Historic" },
-      { "colorPair": "UB", "strategy": "Control" },
-      { "colorPair": "BR", "strategy": "Sacrifice" },
-      { "colorPair": "RG", "strategy": "Kicker" },
-      { "colorPair": "GW", "strategy": "Tokens" },
-      { "colorPair": "WB", "strategy": "Legendary" },
-      { "colorPair": "UR", "strategy": "Spellslinging Wizards" },
-      { "colorPair": "BG", "strategy": "Saproling Sacrifice" },
-      { "colorPair": "RW", "strategy": "Auras, Equipment" },
-      { "colorPair": "GU", "strategy": "Ramp" }
     ]
   },
   {
@@ -668,9 +603,9 @@
     ],
     "booster_packs": 
       {
-        "type": "normal",
+        "type": "special",
         "rarities": ["random"],
-        "text": ""
+        "text": "Draft 3 packs of 13 cards"
       },
     "archetypes": [
       { "colorPair": "WU", "strategy": "Classic Cars (Historic)" },
@@ -792,14 +727,6 @@
     "difficulty": 1.5,
     "type": "BattleBox",
     "mechanics": ["Adventure", "Celebration", "Role_Token", "Sagas", "Bargain", "Food_Token"]
-  },
-  {
-    "id": "94453cdf-ecf1-4af7-980b-eaa0f3c69f2b",
-    "name": "Battle Box - Ravnica",
-    "image": "https://cards.scryfall.io/art_crop/front/5/e/5e84cb9c-9876-47a4-aea4-78574321bc36.jpg",
-    "difficulty": 1.5,
-    "type": "BattleBox",
-    "mechanics": ["Mentor", "Convoke", "Tokens", "Surveil", "Undergrowth", "Gate"]
   },
   {
     "id": "4348a66f-1f55-4a90-882a-14dd0122ded8",
