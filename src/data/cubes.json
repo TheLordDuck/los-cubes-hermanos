@@ -82,9 +82,9 @@
     ]
   },
   {
-    "id": "616f6b81302701102974518b",
+    "id": "72e65d84-9636-46dc-b53d-d511ca5a46d5",
     "name": "Standard Cube - Peasant Edition",
-    "image": "https://cards.scryfall.io/art_crop/front/e/e/ee386cd0-934a-4b33-9db3-0a9033ab577e.jpg",
+    "image": "https://cards.scryfall.io/art_crop/front/e/5/e5857b1b-73bc-458e-b26b-7ed8bef785f3.jpg",
     "difficulty": 3.5,
     "type": "Cube",
     "mechanics": [],
@@ -97,14 +97,14 @@
     "archetypes": [
       { "colorPair": "WU", "strategy": "Enchantments Matter" },
       { "colorPair": "UB", "strategy": "Enchantments Matter/Graveyard matters" },
-      { "colorPair": "BR", "strategy": "Outlaws matter/Damage matters" },
+      { "colorPair": "BR", "strategy": "Aggressive Aristocrats" },
       { "colorPair": "RG", "strategy": "Power 4+ Matters/Combat Tricks" },
       { "colorPair": "WG", "strategy": "Combat Tricks/+1/+1 Counters" },
-      { "colorPair": "WB", "strategy": "Aristocrats/Reanimator" },
+      { "colorPair": "WB", "strategy": "Reanimator/Aristocrats" },
       { "colorPair": "UR", "strategy": "Spellslinger" },
-      { "colorPair": "BG", "strategy": "Graveyard Matters" },
+      { "colorPair": "BG", "strategy": "Graveyard Matters/Reanimator" },
       { "colorPair": "RW", "strategy": "Buffs Matter" },
-      { "colorPair": "UG", "strategy": "Ramp+Monsters/Value" }
+      { "colorPair": "UG", "strategy": "Ramp/+1/+1 counters" }
     ]
   },
   {
