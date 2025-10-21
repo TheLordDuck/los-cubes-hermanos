@@ -280,7 +280,7 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
                                   >
                                     <Image
                                       src={`/colors/${letter}.png`}
-                                      alt={`${letter} color`}
+                                      alt={`${letter}`}
                                       width={30}
                                       height={30}
                                       className="object-cover"

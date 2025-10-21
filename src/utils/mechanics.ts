@@ -100,7 +100,9 @@ enum Mechanics {
   Snowshift = "If your control four or more snow permanents, ...",
   Unrest = "As long as a card has left your graveyard this turn, ...",
   Rime = "Whenever you spend your second snow mana while paying for abilities each turn, ...",
-  Freeze = "Whenever you tap an untapped creature an opponent controls, ..."
+  Freeze = "Whenever you tap an untapped creature an opponent controls, ...",
+  Mayhem = "Mayhem [cost] (You may cast this card from your graveyard for [cost] if you discarded it this turn. Timing rules still apply.)",
+  "Web-Slinging" = "Web-slinging [cost] (You may cast this spell for [cost] if you also return a tapped creature you control to its owner's hand.)"
 }
 interface MechanicsIndex {
   [key: string]: string;
@@ -209,6 +211,8 @@ const mechanicText: MechanicsIndex = {
   Unrest: Mechanics.Unrest,
   Rime: Mechanics.Rime,
   Freeze: Mechanics.Freeze,
+  Mayhem: Mechanics.Mayhem,
+  "Web-Slinging": Mechanics["Web-Slinging"],
 };
 
 export { mechanicText };

@@ -656,12 +656,12 @@
     ]
   },
   {
-    "id": "9d002bbe-66a5-423a-be89-892a180c25fe",
-    "name": "Rise of the Eldrazi",
-    "image": "https://cards.scryfall.io/art_crop/front/6/7/67600383-bbb8-411c-b8e6-2296650bc747.jpg",
+    "id": "511ba844-2a1d-4605-8c44-b49acaa18954",
+    "name": "Spider-Man",
+    "image": "https://cards.scryfall.io/art_crop/front/8/9/897418bc-df8c-4c97-b6bf-7c9133a8a577.jpg",
     "difficulty": 2,
     "type": "Cube",
-    "mechanics": ["Annihilator", "Level_Up", "Rebound", "Totem_Armor"],
+    "mechanics": ["Modified", "Connive", "Mayhem", "Web-Slinging"],
    "booster_packs": 
       {
         "type": "normal",
@@ -669,16 +669,16 @@
         "text": ""
       },
     "archetypes": [
-      { "colorPair": "WU", "strategy": "Auras" },
-      { "colorPair": "UB", "strategy": "Level Up" },
-      { "colorPair": "BR", "strategy": "Eldrazi Spawns" },
-      { "colorPair": "RG", "strategy": "Defenders" },
-      { "colorPair": "GW", "strategy": "Defenders" },
-      { "colorPair": "WB", "strategy": "Lifegain" },
-      { "colorPair": "UR", "strategy": "Instant & Sorceries" },
-      { "colorPair": "BG", "strategy": "Eldrazi Spawns" },
-      { "colorPair": "RW", "strategy": "Defenders" },
-      { "colorPair": "GU", "strategy": "Auras" }
+      { "colorPair": "WU", "strategy": "Modified" },
+      { "colorPair": "UB", "strategy": "Villains Connive" },
+      { "colorPair": "BR", "strategy": "Mayhem" },
+      { "colorPair": "RG", "strategy": "Expensive Spells (4+)" },
+      { "colorPair": "GW", "strategy": "Web-Slinging" },
+      { "colorPair": "WU+G", "strategy": "Modified Midrange" },
+      { "colorPair": "UB+R", "strategy": "Villains Discard Control" },
+      { "colorPair": "BR+G", "strategy": "All-in Tempo" },
+      { "colorPair": "WG+R", "strategy": "Spider Typal" },
+      { "colorPair": "RG+(WUB)", "strategy": "Big Spell Ramp" }
     ]
   },
   {
