@@ -93,6 +93,7 @@ const Home = () => {
       >
         <div className="min-h-screen flex flex-col bg-gray-50">
           {/* Implementation ocr reading decklist from image */}
+          {/*
           <div>
             <h1>Upload Your Deck Image</h1>
             <input
@@ -107,6 +108,7 @@ const Home = () => {
             <h2>Detected Cards</h2>
             <pre>{JSON.stringify(result, null, 2)}</pre>
           </div>
+          */}
 
           {/* Implementation of submit decks to platform (archiketk) */}
           {/* <button onClick={handleClick}>Submit Deck</button> */}
