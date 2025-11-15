@@ -6,7 +6,7 @@ import { CubeType } from "@/utils/cubeTypes";
 import { IconMechanics } from "../Icons/IconMechanics";
 import { IconArchetypes } from "../Icons/IconArchetypes";
 import { IconBoosterSetup } from "../Icons/IconBoosterSetup";
-import { IconOverview } from "../Icons/IconOverview";
+import { IconListCards } from "../Icons/IconListCards";
 import Modal from "../Modal/Modal";
 import CubeContent from "@/components/CubeContent/CubeContent";
 import { generatePackContents } from "@/utils/packContents";
@@ -39,6 +39,7 @@ export interface CubeItem {
   mechanics?: string[]; // Mechanics is an array of strings (even if it's empty)
   booster_packs?: BoosterSetup; // Booster pack details mapped by player count
   archetypes?: Archetype[]; // Archetypes array with color pair and strategy
+  isTwobert?: boolean;
 }
 
 interface TabsProps {
@@ -119,7 +120,7 @@ interface YourComponentProps {
 }
 
 const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
-  const [activeTab, setActiveTab] = useState<string>("overview");
+  const [activeTab, setActiveTab] = useState<string>("List of cards");
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
@@ -175,13 +176,13 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
     <Tabs>
       <TabsList>
         <TabsTrigger
-          value="overview"
-          active={activeTab === "overview"}
-          onClick={() => handleTabChange("overview")}
+          value="List of cards"
+          active={activeTab === "List of cards"}
+          onClick={() => handleTabChange("List of cards")}
         >
-          <span className="hidden md:inline ">Overview</span>
+          <span className="hidden md:inline ">List of cards</span>
           <span className="md:hidden">
-            <IconOverview />
+            <IconListCards />
           </span>
         </TabsTrigger>
 
@@ -359,18 +360,21 @@ const YourComponent: React.FC<YourComponentProps> = ({ cubeItem }) => {
             </div>
           </h3>
         </TabsContent>
-        <TabsContent value="overview" active={activeTab === "overview"}>
-          <div className="relative w-full h-[500px]">
+        <TabsContent
+          value="List of cards"
+          active={activeTab === "List of cards"}
+        >
+          <div className="relative w-full h-[800px]">
             {loading && (
               <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
                 <div className="animate-spin rounded-full h-8 w-8 border-2 border-gray-300 border-t-blue-500"></div>
               </div>
             )}
             <iframe
-              src={`https://cubecobra.com/cube/overview/${cubeItem.id}`}
-              title="CubeCobra Overview"
+              src={`https://cubecobra.com/cube/list/${cubeItem.id}?view=spoiler`}
+              title="CubeCobra Overview - Spoiler"
               width="100%"
-              height="500"
+              height="800"
               className={`w-full h-full border-none ${loading ? "invisible" : "visible"}`}
               onLoad={() => setLoading(false)}
             />

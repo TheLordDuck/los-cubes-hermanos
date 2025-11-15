@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@google-cloud/vision": "^5.2.0",
     "@mui/material": "^5.16.7",
     "@radix-ui/react-tabs": "^1.1.0",
     "body-parser": "^1.20.3",
@@ -24,17 +25,19 @@
     "puppeteer-extra-plugin-recaptcha": "^3.6.8",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.5.2"
+    "tailwind-merge": "^2.5.2",
+    "tesseract.js": "^2.1.5"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^20",
+    "@types/node": "22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "axios": "^1.7.9",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
+    "formidable": "^3.5.4",
     "framer-motion": "^12.6.3",
     "jsdom": "^25.0.1",
     "postcss": "^8",

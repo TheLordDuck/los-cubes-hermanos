@@ -39,7 +39,17 @@ const CubeSelection: React.FC<CubeListProps> = ({ searchQuery, cubeType }) => {
             className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer" // Add cursor-pointer for better UX
             onClick={() => handleCardClick(item.id)} // Attach click handler
           >
-            <div className="sm:hidden">
+            <div className="sm:hidden relative">
+              {/* Twobert Badge */}
+              {item.isTwobert && (
+                <div
+                  className="absolute top-2 left-2 bg-cyan-800 text-white text-xs font-semibold px-2 py-1 rounded-md shadow border border-black"
+                  title="This cube is a twobert"
+                >
+                  Twobert
+                </div>
+              )}
+
               <Image
                 src={item.image}
                 alt={item.name}
@@ -47,11 +57,14 @@ const CubeSelection: React.FC<CubeListProps> = ({ searchQuery, cubeType }) => {
                 height={200}
                 className="w-full h-48 object-cover"
               />
+
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-2 text-black">
                   {item.name}
                 </h2>
+
                 <StarsDifficulty difficulty={item.difficulty} />
+
                 <Link
                   href={cubeCobraUrl(item.id)}
                   target="_blank"
@@ -62,7 +75,16 @@ const CubeSelection: React.FC<CubeListProps> = ({ searchQuery, cubeType }) => {
                 </Link>
               </div>
             </div>
-            <div className="hidden sm:block">
+            <div className="hidden sm:block relative">
+              {item.isTwobert && (
+                <div
+                  className="absolute top-2 left-2 bg-cyan-800 text-white text-xs font-semibold px-2 py-1 rounded-md shadow border border-black"
+                  title="This cube is a twobert"
+                >
+                  Twobert
+                </div>
+              )}
+
               <Image
                 src={item.image}
                 alt={item.name}
@@ -70,6 +92,7 @@ const CubeSelection: React.FC<CubeListProps> = ({ searchQuery, cubeType }) => {
                 height={200}
                 className="w-full h-48 object-cover"
               />
+
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-2 text-black">
                   {item.name}

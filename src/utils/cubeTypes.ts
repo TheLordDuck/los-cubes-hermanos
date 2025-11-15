@@ -1,6 +1,6 @@
 enum CubeType {
   Cube = "Cube",
-  BattleBox = "BattleBox",
+  BattleBox = "BattleBox"
 }
 
 export { CubeType };

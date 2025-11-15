@@ -62,7 +62,16 @@ const CubeDetail: React.FC = () => {
 
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
           <div className="flex flex-col md:flex-row">
-            <div className="md:flex-shrink-0">
+            <div className="md:flex-shrink-0 relative">
+              {cubeItem.isTwobert && (
+                <div
+                  className="absolute top-2 left-2 bg-cyan-800 text-white text-xs font-semibold px-2 py-1 rounded-md shadow border border-black"
+                  title="This cube is a twobert"
+                >
+                  Twobert
+                </div>
+              )}
+
               <Image
                 src={cubeItem.image}
                 alt={cubeItem.name}
@@ -71,13 +80,16 @@ const CubeDetail: React.FC = () => {
                 className="w-full h-64 object-cover md:w-64 md:h-full"
               />
             </div>
+
             <div className="p-8">
               <h2 className="text-2xl font-bold mb-2 text-gray-900">
                 {cubeItem.name}
               </h2>
+
               <div className="flex items-center mb-4">
                 <StarsDifficulty difficulty={cubeItem.difficulty} />
               </div>
+
               <Link
                 href={cubeCobraUrl(cubeItem.id)}
                 target="_blank"
