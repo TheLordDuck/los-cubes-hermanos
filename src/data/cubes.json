@@ -74,9 +74,9 @@
     ]
   },
   {
-    "id": "72e65d84-9636-46dc-b53d-d511ca5a46d5",
+    "id": "616f6b81302701102974518b",
     "name": "Standard Cube - Peasant Edition",
-    "image": "https://cards.scryfall.io/art_crop/front/e/5/e5857b1b-73bc-458e-b26b-7ed8bef785f3.jpg",
+    "image": "https://cards.scryfall.io/art_crop/front/4/7/47c25e41-f43c-4447-81b5-b9631448bd29.jpg",
     "difficulty": 3.5,
     "type": "Cube",
     "mechanics": [],
@@ -117,27 +117,6 @@
       { "colorPair": "GWUC", "strategy": "All that Ornithopter" },
       { "colorPair": "BRUG", "strategy": "Ornithopter Bombardement" },
       { "colorPair": "URGW", "strategy": "Combo Thopter" }
-    ]
-  },
-  {
-    "id": "63fec3ba02c0886f86a19719",
-    "name": "Breya Cube",
-    "image": "https://cards.scryfall.io/art_crop/front/5/8/581591f0-b3c7-4fca-b4b9-1d1d098ca7fb.jpg",
-    "difficulty": 3.5,
-    "type": "Cube",
-    "mechanics": [],
-    "booster_packs": {
-      "type": "normal",
-      "rarities": ["random"],
-      "text": ""
-    },
-    "archetypes": [
-      { "colorPair": "WU", "strategy": "Enter the Battlefield / Ramp" },
-      { "colorPair": "UB", "strategy": "Artifact Control / Animation" },
-      { "colorPair": "BR", "strategy": "Sacrifice-Value / Sacrifice-Burn" },
-      { "colorPair": "WB", "strategy": "Recursion / Aristocrats" },
-      { "colorPair": "UR", "strategy": "Tokens" },
-      { "colorPair": "RW", "strategy": "Modular / Eggs" }
     ]
   },
   {
@@ -294,36 +273,7 @@
     ]
   },
   {
-    "id": "7c26ea10-e791-4eb7-bcc2-2ec7197498f5",
-    "name": "New Capenna Chroma Families",
-    "image": "https://cards.scryfall.io/art_crop/front/c/d/cd22723d-855f-4b31-827f-a4e388ebbc07.jpg",
-    "difficulty": 3,
-    "type": "Cube",
-    "mechanics": [],
-    "booster_packs": {
-      "type": "normal",
-      "rarities": ["random"],
-      "text": ""
-    },
-    "archetypes": [
-      {
-        "colorPair": "WUB",
-        "strategy": "Flicker, ETB, Graveyard Interaction, Control"
-      },
-      {
-        "colorPair": "BRG",
-        "strategy": "Sacrifice, +1/+1 Counters, Tokens"
-      },
-      {
-        "colorPair": "RGW",
-        "strategy": "Tokens, +1/+1 Counters, Fight"
-      },
-      { "colorPair": "UBR", "strategy": "Spells, Damage, Control" },
-      { "colorPair": "GWU", "strategy": "Tokens, +1/+1 Counters" }
-    ]
-  },
-  {
-    "id": "e466b712-7078-40dc-89e8-bfecfc0ccbf0",
+    "id": "5dd5b7fc0b7832541fb5fe69",
     "name": "Spectrum",
     "image": "https://cards.scryfall.io/art_crop/front/5/9/59243436-b55d-44c3-962b-751eff429f71.jpg",
     "difficulty": 2,
