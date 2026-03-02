@@ -234,7 +234,7 @@
   },
   {
     "id": "f46a2523-17df-4a06-80f9-eb1379216b2c",
-    "name": "Essential Tarkir",
+    "name": "Tarkir Block",
     "image": "https://cards.scryfall.io/art_crop/front/a/4/a42b2c9c-1650-468e-94d6-e09b3518447f.jpg",
     "difficulty": 2.5,
     "type": "Cube",
@@ -330,6 +330,31 @@
       { "colorPair": "RW", "strategy": "Go-wide Aggro" },
       { "colorPair": "GU", "strategy": "Ramp" },
       { "colorPair": "WUBRGD", "strategy": "Defender Subtheme" }
+    ]
+  },
+  {
+    "id": "860afd3a-1d3d-40a2-bced-41b4b6f5332e",
+    "name": "Kaladesh Block",
+    "image": "https://cards.scryfall.io/art_crop/front/1/d/1df70ef3-8919-43ac-9317-23548437a181.jpg",
+    "difficulty": 2.5,
+    "type": "Cube",
+    "mechanics": ["Energy", "Revolt"],
+    "booster_packs": {
+      "type": "normal",
+      "rarities": ["common", "uncommon", "rare_mythic", "land"],
+      "text": ""
+    },
+    "archetypes": [
+      { "colorPair": "WR", "strategy": "Vehicles // Go-wide Energy" },
+      { "colorPair": "WB", "strategy": "Artifacts // Revolt" },
+      { "colorPair": "WG", "strategy": "Go-wide // +1/+1 Counters" },
+      { "colorPair": "WU", "strategy": "Flicker // Artifacts" },
+      { "colorPair": "UG", "strategy": "Energy" },
+      { "colorPair": "UR", "strategy": "Energy // Artifacts" },
+      { "colorPair": "UB", "strategy": "Improvise Midrange" },
+      { "colorPair": "RB", "strategy": "Artifact Midrange // Vehicles" },
+      { "colorPair": "RG", "strategy": "Energy Beatdown" },
+      { "colorPair": "BG", "strategy": "+1/+1 Counters Energy" }
     ]
   },
   {
@@ -444,7 +469,7 @@
   },
   {
     "id": "f7260109-e8e4-43d3-8bc9-31e6052ba65c",
-    "name": "Jesguy’s Innistrad Cube",
+    "name": "Innistrad Block",
     "image": "https://cards.scryfall.io/art_crop/front/f/c/fcd2ecdd-37ee-4351-833a-f4eac3c55eca.jpg",
     "difficulty": 3,
     "type": "Cube",
@@ -475,7 +500,7 @@
   },
   {
     "id": "62c5bd8d-5afc-411a-8347-075cc30ed9d7",
-    "name": "Core M19 Realigned",
+    "name": "Magic Core 19, 20 and 21 Block",
     "image": "https://cards.scryfall.io/art_crop/front/a/4/a4c3ca8c-c77c-43b8-84ad-796313ecc813.jpg",
     "difficulty": 1,
     "type": "Cube",
@@ -555,7 +580,7 @@
   },
   {
     "id": "94bdeb74-5c22-47f4-a886-1cc571a29182",
-    "name": "Kaldheim Reclaimed",
+    "name": "Kaldheim",
     "image": "https://cards.scryfall.io/art_crop/front/8/9/89cef049-6a47-4264-b2bc-b9d291a09c4c.jpg",
     "difficulty": 2,
     "type": "Cube",
@@ -643,7 +668,7 @@
   },
   {
     "id": "511ba844-2a1d-4605-8c44-b49acaa18954",
-    "name": "Spider-Man",
+    "name": "Marvel's Spider-Man",
     "image": "https://cards.scryfall.io/art_crop/front/8/9/897418bc-df8c-4c97-b6bf-7c9133a8a577.jpg",
     "difficulty": 2,
     "type": "Cube",
@@ -853,7 +878,7 @@
   },
   {
     "id": "2c891c72-9f78-444e-a901-155a1fd5f510",
-    "name": "Strixhaven",
+    "name": "Strixhaven: School of Mages",
     "image": "https://cards.scryfall.io/art_crop/front/d/3/d3350367-42bd-44af-be13-ad31c002f8ac.jpg?1627429830",
     "difficulty": 1.5,
     "type": "Cube",
