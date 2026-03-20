@@ -17,7 +17,7 @@ const Home = () => {
   const [result, setResult] = useState<Record<string, number>>({});
 
   const handleSearchInputChange = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     setSearchQuery(event.target.value);
   };
@@ -45,7 +45,7 @@ const Home = () => {
     } catch (error: any) {
       console.error(
         "Error submitting the deck:",
-        error.response?.data?.error || error.message
+        error.response?.data?.error || error.message,
       );
     }
   };
@@ -53,7 +53,7 @@ const Home = () => {
   const handleClick = () => {
     console.log(
       "process.env.ARCHIDEKT_USERNAME",
-      process.env.ARCHIDEKT_USERNAME
+      process.env.ARCHIDEKT_USERNAME,
     );
     submitDeck({
       deckName: crypto.randomUUID(),

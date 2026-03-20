@@ -1,0 +1,341 @@
+{
+  "id": "season-2026",
+  "bestOf": 5,
+  "players": [
+    {
+      "id": "001",
+      "name": "Player 1",
+      "jornadas": [
+        {
+          "rounds": [
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 0, "losses": 2 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 0, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 0, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 0, "losses": 2 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 0, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "002",
+      "name": "Player 2",
+      "jornadas": [
+        {
+          "rounds": [
+            { "wins": 0, "losses": 2 },
+            { "wins": 0, "losses": 2 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 0, "losses": 2 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 1, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "003",
+      "name": "Player 3",
+      "jornadas": [
+        {
+          "rounds": [
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 0 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 0 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 0 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 0, "losses": 2 },
+            { "wins": 1, "losses": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "004",
+      "name": "Player 4",
+      "jornadas": [
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 0, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 0, "losses": 2 },
+            { "wins": 1, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 0, "losses": 2 },
+            { "wins": 2, "losses": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "005",
+      "name": "Player 5",
+      "jornadas": [
+        {
+          "rounds": [
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 0 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 0 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "006",
+      "name": "Player 6",
+      "jornadas": [
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 0 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 1, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 0, "losses": 2 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 0, "losses": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "007",
+      "name": "Player 7",
+      "jornadas": [
+        {
+          "rounds": [
+            { "wins": 0, "losses": 2 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 0, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 0, "losses": 2 },
+            { "wins": 1, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 1, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 0, "losses": 2 },
+            { "wins": 0, "losses": 2 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 0, "losses": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "008",
+      "name": "Player 8",
+      "jornadas": [
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 1, "losses": 2 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 0 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 0 }
+          ]
+        },
+        {
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 2 }
+          ]
+        }
+      ]
+    }
+  ]
+}

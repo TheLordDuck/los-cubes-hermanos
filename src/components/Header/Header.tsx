@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   searchQuery: string;
@@ -17,12 +18,17 @@ export const Header: React.FC<HeaderProps> = ({
   cubeType,
   handleCubeTypeChange,
 }) => {
+  const router = useRouter();
+
   return (
     <header className="bg-bluemarine shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        {/* LOGO */}
         <div className="flex items-center space-x-4">
           <Image src="/favicon.png" alt="Logo" width={80} height={80} />
         </div>
+
+        {/* NAV BUTTONS */}
         <div className="hidden md:flex flex-grow items-center justify-center md:justify-start space-x-6 ml-6">
           <Button
             name="Cube"
@@ -36,6 +42,7 @@ export const Header: React.FC<HeaderProps> = ({
           >
             Cube
           </Button>
+
           <Button
             name="BattleBox"
             onClick={handleCubeTypeChange}
@@ -48,14 +55,25 @@ export const Header: React.FC<HeaderProps> = ({
           >
             BattleBox
           </Button>
+
+          {/* NEW SEASON BUTTON */}
+          <Button
+            onClick={() => router.push("/season/2026-spring")}
+            variant="outlined"
+            className="bg-transparent text-cyan-700 border border-cyan-700 hover:bg-cyan-600 hover:text-white transition-all duration-300"
+          >
+            Season
+          </Button>
         </div>
+
+        {/* SEARCH */}
         <div className="relative w-4/5 md:w-1/2 ml-4">
           <input
             type="text"
             placeholder="Search cubes..."
             value={searchQuery}
             onChange={handleSearchInputChange}
-            className="border border-gray-300 rounded px-4 py-2 text-black w-full" // Set width to full
+            className="border border-gray-300 rounded px-4 py-2 text-black w-full"
           />
         </div>
       </div>

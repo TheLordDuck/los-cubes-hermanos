@@ -1,16 +1,5 @@
 TODO
-- Refactor wildcard designs
+- 
 
 DONE
-- When cube not found display 404 not found page
-- Fetch for id instead of passing the entire object for url
-- Change cards cube-cobra (and Vintage updates)
-- Keywords definition
-- Poner los cubes bien en mi perfil de cubecobra
-- Poner las id bien de los cubes de cubecobra
-- Arreglar el archetypes (diseño y fotos de los colores)
-- Agregar cartas cubes (kamigawa, eldraine, ravnica)
-- Rules and notes, only print the part of the overview (text) ??? (al final no)
-- Create booster cards type images
-- Arreglar el booster setup
-- wildcard (land, artifact_land, random_any_color)
+- 
