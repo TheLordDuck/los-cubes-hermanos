@@ -199,7 +199,9 @@ export default function SeasonPage() {
                       }`}
                     >
                       <td className="p-2 text-gray-800">{i + 1}</td>
-                      <td className="p-2 font-semibold">{j.points}</td>
+                      <td className="p-2 text-gray-800 font-semibold">
+                        {j.points}
+                      </td>
                       <td className="p-2 text-gray-800">{j.matchWins}</td>
                       <td className="p-2 text-gray-800">{j.matchDraws}</td>
                       <td className="p-2 text-gray-800">{j.matchLosses}</td>
