@@ -55,15 +55,6 @@ export const Header: React.FC<HeaderProps> = ({
           >
             BattleBox
           </Button>
-
-          {/* NEW SEASON BUTTON */}
-          <Button
-            onClick={() => router.push("/season/2026-spring")}
-            variant="outlined"
-            className="bg-transparent text-cyan-700 border border-cyan-700 hover:bg-cyan-600 hover:text-white transition-all duration-300"
-          >
-            Season
-          </Button>
         </div>
 
         {/* SEARCH */}

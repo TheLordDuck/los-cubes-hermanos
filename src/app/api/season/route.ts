@@ -11,7 +11,7 @@ type AddJornadaBody = {
 export async function POST(req: NextRequest) {
     const body: AddJornadaBody = await req.json();
 
-    const filePath = path.join(process.cwd(), "data/season-2026.json");
+    const filePath = path.join(process.cwd(), "data/season1.json");
 
     const raw = fs.readFileSync(filePath, "utf-8");
     const season: Season = JSON.parse(raw);

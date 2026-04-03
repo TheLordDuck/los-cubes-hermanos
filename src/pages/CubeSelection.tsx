@@ -21,7 +21,7 @@ const CubeSelection: React.FC<CubeListProps> = ({ searchQuery, cubeType }) => {
 
   const filteredCubes = cubes
     .filter((cubeItem) =>
-      cubeItem.name.toLowerCase().includes(searchQuery.toLowerCase())
+      cubeItem.name.toLowerCase().includes(searchQuery.toLowerCase()),
     )
     .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -32,6 +32,12 @@ const CubeSelection: React.FC<CubeListProps> = ({ searchQuery, cubeType }) => {
 
   return (
     <main className="flex-grow container mx-auto p-4 pb-24 md:pb-4">
+      <Link
+        href="/season/1"
+        className="inline-flex items-center gap-1 pb-4 px-2 text-sm text-gray-500 hover:text-gray-900 transition"
+      >
+        ← Go to League
+      </Link>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredCubes.map((item) => (
           <div

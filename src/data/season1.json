@@ -1,0 +1,63 @@
+{
+  "id": "season1",
+  "seasonNumber": 1,
+  "bestOf": 5,
+  "players": [
+    {
+      "id": "001",
+      "name": "thelordduck22",
+      "jornadas": [
+        {
+          "decklistLink": "H8AjTBGf2UGsEWyIqIXPOA",
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 0, "losses": 2 },
+            { "wins": 2, "losses": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "002",
+      "name": "luisaocarl",
+      "jornadas": [
+        {
+          "decklistLink": "TnQ-fjGICUe0URfFFb_xhw",
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "003",
+      "name": "pabloosmo",
+      "jornadas": [
+        {
+          "decklistLink": "ICmGHQWFmUuelXitbs_W8w",
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 0, "losses": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "004",
+      "name": "carlos",
+      "jornadas": [
+        {
+          "decklistLink": "DQENIe3pGEO2l77f4Gt1IQ",
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 0, "losses": 2 }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -2,14 +2,13 @@
 
 import { BookOpen } from "lucide-react";
 import { useState } from "react";
-import seasonRaw from "@/data/season-2026.json";
+import seasonRaw from "@/data/season1.json";
 import {
   getPlayerDetailedStats,
   markBestJornadas,
   getMatchWR,
   getGameWR,
 } from "@/utils/league/league";
-
 import { HeaderCubeDetail } from "@/components/Header/HeaderCubeDetail";
 import "../../app/globals.css";
 import { WideFooter } from "@/components/Footer/WideFooter";
@@ -72,7 +71,7 @@ export default function SeasonPage() {
       <main className="flex-grow container mx-auto px-4 py-8 pb-32 md:pb-8">
         {/* TITLE */}
         <h1 className="text-3xl font-bold text-gray-900 text-center mb-8">
-          Season {season.id}
+          Season {season.seasonNumber}: Standard Cube
         </h1>
 
         {/* STANDINGS */}
