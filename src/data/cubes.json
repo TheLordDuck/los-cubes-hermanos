@@ -74,10 +74,10 @@
     ]
   },
   {
-    "id": "616f6b81302701102974518b",
+    "id": "e758ca7f-d4ca-48a1-a0d8-c2d64da97377",
     "name": "Standard Cube - Peasant Edition",
-    "image": "https://cards.scryfall.io/art_crop/front/4/7/47c25e41-f43c-4447-81b5-b9631448bd29.jpg",
-    "difficulty": 3.5,
+    "image": "https://cards.scryfall.io/art_crop/front/d/f/dfb18239-d373-4795-8598-c82abae2cb62.jpg",
+    "difficulty": 3,
     "type": "Cube",
     "mechanics": [],
     "booster_packs": {
@@ -86,20 +86,34 @@
       "text": ""
     },
     "archetypes": [
-      { "colorPair": "WU", "strategy": "Enchantments Matter" },
+      { "colorPair": "WU", "strategy": "Flyers" },
       {
         "colorPair": "UB",
-        "strategy": "Enchantments Matter/Graveyard matters"
+        "strategy": "Flash/Draw 2 cards"
       },
       { "colorPair": "BR", "strategy": "Aggressive Aristocrats" },
-      { "colorPair": "RG", "strategy": "Power 4+ Matters/Combat Tricks" },
-      { "colorPair": "WG", "strategy": "Combat Tricks/+1/+1 Counters" },
-      { "colorPair": "WB", "strategy": "Reanimator/Aristocrats" },
+      { "colorPair": "RG", "strategy": "Power 4+ Midrange" },
+      { "colorPair": "WG", "strategy": "+1/+1 Counters" },
+      { "colorPair": "WB", "strategy": "Aristocrats" },
       { "colorPair": "UR", "strategy": "Spellslinger" },
-      { "colorPair": "BG", "strategy": "Graveyard Matters/Reanimator" },
-      { "colorPair": "RW", "strategy": "Buffs Matter" },
-      { "colorPair": "UG", "strategy": "Ramp/+1/+1 counters" }
+      { "colorPair": "BG", "strategy": "Aristocrats" },
+      { "colorPair": "RW", "strategy": "Go-Wide" },
+      { "colorPair": "UG", "strategy": "Ramp/Landfall" }
     ]
+  },
+  {
+    "id": "320534cb-7d35-47b2-95f1-342ed25a2715",
+    "name": "Limited All Stars",
+    "image": "https://cards.scryfall.io/art_crop/front/4/9/49307ab6-392e-4b61-ad60-e6ea53da39f7.jpg",
+    "difficulty": 3,
+    "type": "Cube",
+    "mechanics": [],
+    "booster_packs": {
+      "type": "normal",
+      "rarities": ["random"],
+      "text": ""
+    },
+    "archetypes": []
   },
   {
     "id": "30025e64-1510-4d7b-981e-7ae58472aa09",
@@ -120,7 +134,7 @@
     ]
   },
   {
-    "id": "633e7c86-3bf0-4888-96b3-e65fbc381c73",
+    "id": "5dc9a64553f3101ce8e1d08c",
     "name": "Devoid Cube",
     "image": "https://cards.scryfall.io/art_crop/front/6/0/60682c00-c661-4a9d-8326-f3f014a04e3e.jpg",
     "difficulty": 3,

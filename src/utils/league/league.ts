@@ -11,11 +11,12 @@ export function getGameWR(gameWins: number, gameLosses: number) {
     return total === 0 ? 0 : gameWins / total;
 }
 
-export function computeJornada(rounds: RawRound[]): Jornada {
+export function computeJornada(rounds: RawRound[], decklistLink: string): Jornada {
     let matchWins = 0;
     let matchLosses = 0;
     let matchDraws = 0;
-    let points = 2; // +2 por asistir
+    let assistPoint = 1;
+    let points = 0;
 
     for (const r of rounds) {
         if (r.wins > r.losses) matchWins++;
@@ -25,12 +26,15 @@ export function computeJornada(rounds: RawRound[]): Jornada {
     console.log("matchWins", matchWins, "matchLosses", matchLosses, "matchDraws", matchDraws);
 
     // Calcular bonus según resultado final de la jornada
-    if (matchWins === 3 && matchLosses === 0) points += 2; // 3-0 → +2
-    if (matchWins === 2 && (matchLosses === 1 || matchLosses === 0)) points += 1; // 2-1, 2-0 → +1
+    if (matchWins === 3) points += 3;
+    if (matchWins === 2) points += 2;
+    if (matchWins === 1) points += 1;
     // No hay bonus para otros resultados (1-2, 0-3, empates totales)
 
-    points = points + (matchWins * 3);
-    points = points + (matchDraws * 1);
+    //points = points + (matchWins * 2);
+    //points = points + (matchDraws * 1);
+
+    points = (points * 3) + assistPoint;
 
     return {
         rounds,
@@ -38,11 +42,12 @@ export function computeJornada(rounds: RawRound[]): Jornada {
         matchWins,
         matchLosses,
         matchDraws,
+        decklistLink
     };
 }
 
 export function getPlayerDetailedStats(player: RawPlayer, bestOf: number): PlayerStats {
-    const jornadasStats = player.jornadas.map(j => computeJornada(j.rounds));
+    const jornadasStats = player.jornadas.map(j => computeJornada(j.rounds, j.decklistLink));
     const totalStats = {
         points: jornadasStats.reduce((sum, j) => sum + j.points, 0),
         matchWins: jornadasStats.reduce((sum, j) => sum + j.matchWins, 0),
@@ -50,6 +55,7 @@ export function getPlayerDetailedStats(player: RawPlayer, bestOf: number): Playe
         matchLosses: jornadasStats.reduce((sum, j) => sum + j.matchLosses, 0),
         gameWins: jornadasStats.reduce((sum, j) => sum + j.rounds.reduce((a, r) => a + r.wins, 0), 0),
         gameLosses: jornadasStats.reduce((sum, j) => sum + j.rounds.reduce((a, r) => a + r.losses, 0), 0),
+        decklistLink: jornadasStats.reduce((sum, j) => sum + j.decklistLink, ""),
     };
     const bestJornadas = jornadasStats
         .map((j, i) => ({ idx: i, points: j.points }))

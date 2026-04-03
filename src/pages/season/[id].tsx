@@ -1,5 +1,6 @@
 "use client";
 
+import { BookOpen } from "lucide-react";
 import { useState } from "react";
 import seasonRaw from "@/data/season-2026.json";
 import {
@@ -24,9 +25,37 @@ const season = {
 export default function SeasonPage() {
   const [activePlayerId, setActivePlayerId] = useState(season.players[0].id);
 
-  const sortedPlayers = [...season.players].sort(
-    (a, b) => b.stats.bestStats.points - a.stats.bestStats.points,
-  );
+  const sortedPlayers = [...season.players].sort((a, b) => {
+    const aStats = a.stats.bestStats;
+    const bStats = b.stats.bestStats;
+
+    // 1. Points
+    if (bStats.points !== aStats.points) {
+      return bStats.points - aStats.points;
+    }
+
+    // 2. Match Winrate
+    const aMatchWR = getMatchWR(
+      aStats.matchWins,
+      aStats.matchDraws,
+      aStats.matchLosses,
+    );
+    const bMatchWR = getMatchWR(
+      bStats.matchWins,
+      bStats.matchDraws,
+      bStats.matchLosses,
+    );
+
+    if (bMatchWR !== aMatchWR) {
+      return bMatchWR - aMatchWR;
+    }
+
+    // 3. Game Winrate
+    const aGameWR = getGameWR(aStats.gameWins, aStats.gameLosses);
+    const bGameWR = getGameWR(bStats.gameWins, bStats.gameLosses);
+
+    return bGameWR - aGameWR;
+  });
 
   const activePlayer =
     sortedPlayers.find((p) => p.id === activePlayerId) || sortedPlayers[0];
@@ -48,7 +77,7 @@ export default function SeasonPage() {
 
         {/* STANDINGS */}
         <div className="bg-white rounded-xl shadow-sm border mb-8 overflow-hidden">
-          <h2 className="text-lg font-semibold p-4 border-b bg-gray-50">
+          <h2 className="text-lg text-gray-900 font-semibold p-4 border-b bg-gray-50">
             Standings
           </h2>
 
@@ -117,7 +146,7 @@ export default function SeasonPage() {
         {/* PLAYER TABS */}
         <div className="bg-white rounded-xl shadow-sm border mb-8">
           <div className="flex flex-wrap gap-2 p-4 border-b">
-            {sortedPlayers.map((p) => (
+            {season.players.map((p) => (
               <button
                 key={p.id}
                 onClick={() => setActivePlayerId(p.id)}
@@ -183,10 +212,11 @@ export default function SeasonPage() {
                     <th className="p-2">#</th>
                     <th className="p-2">Pts</th>
                     <th className="p-2">W</th>
-                    <th className="p-2">D</th>
                     <th className="p-2">L</th>
+                    <th className="p-2">D</th>
                     <th className="p-2">⭐</th>
                     <th className="p-2">Rounds</th>
+                    <th className="p-2">DeckList</th>
                   </tr>
                 </thead>
 
@@ -203,8 +233,8 @@ export default function SeasonPage() {
                         {j.points}
                       </td>
                       <td className="p-2 text-gray-800">{j.matchWins}</td>
-                      <td className="p-2 text-gray-800">{j.matchDraws}</td>
                       <td className="p-2 text-gray-800">{j.matchLosses}</td>
+                      <td className="p-2 text-gray-800">{j.matchDraws}</td>
                       <td className="p-2">{j.counts && "⭐"}</td>
                       <td className="p-2 text-gray-800 text-xs">
                         <strong>
@@ -214,6 +244,20 @@ export default function SeasonPage() {
                         {j.rounds
                           .map((r) => `${r.wins}-${r.losses}`)
                           .join(", ")}
+                      </td>
+                      <td className="p-2">
+                        {j.decklistLink && (
+                          <a
+                            href={
+                              "https://moxfield.com/decks/" + j.decklistLink
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex justify-center"
+                          >
+                            <BookOpen className="w-5 h-5 text-blue-600 hover:text-blue-800 transition" />
+                          </a>
+                        )}
                       </td>
                     </tr>
                   ))}

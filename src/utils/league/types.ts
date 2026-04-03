@@ -5,7 +5,7 @@ export interface RawRound {
     draws?: number; // Nuevo: partidas empatadas en la ronda
 }
 
-export interface RawJornada { rounds: RawRound[]; }
+export interface RawJornada { rounds: RawRound[], decklistLink: string; }
 export interface RawPlayer { id: string; name: string; jornadas: RawJornada[]; }
 export interface RawSeason { id: string; bestOf: number; players: RawPlayer[]; }
 
@@ -16,6 +16,7 @@ export interface Jornada {
     matchLosses: number;
     matchDraws: number;
     counts?: boolean; // bestOf marker
+    decklistLink: string;
 }
 
 export interface PlayerStats {

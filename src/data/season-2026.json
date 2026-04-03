@@ -7,45 +7,11 @@
       "name": "Player 1",
       "jornadas": [
         {
+          "decklistLink": "5b_mcT-WQkChEPBWkhTSew",
           "rounds": [
             { "wins": 2, "losses": 0 },
-            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 1 },
             { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 0, "losses": 2 },
-            { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 0, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 0, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 0, "losses": 2 },
-            { "wins": 2, "losses": 0 },
-            { "wins": 0, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 1, "losses": 2 }
           ]
         }
       ]
@@ -57,37 +23,10 @@
         {
           "rounds": [
             { "wins": 0, "losses": 2 },
-            { "wins": 0, "losses": 2 },
+            { "wins": 1, "losses": 1 },
             { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 0, "losses": 2 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 1, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 1, "losses": 2 },
-            { "wins": 1, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 1, "losses": 2 },
-            { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 0 },
-            { "wins": 2, "losses": 0 },
-            { "wins": 2, "losses": 1 }
-          ]
+          ],
+          "decklistLink": ""
         }
       ]
     },
@@ -100,28 +39,8 @@
             { "wins": 2, "losses": 0 },
             { "wins": 2, "losses": 0 },
             { "wins": 2, "losses": 0 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 0 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 2, "losses": 0 },
-            { "wins": 2, "losses": 0 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 0, "losses": 2 },
-            { "wins": 1, "losses": 2 }
-          ]
+          ],
+          "decklistLink": ""
         }
       ]
     },
@@ -134,35 +53,8 @@
             { "wins": 1, "losses": 2 },
             { "wins": 2, "losses": 0 },
             { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 1, "losses": 2 },
-            { "wins": 0, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 1, "losses": 2 },
-            { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 0, "losses": 2 },
-            { "wins": 1, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 0, "losses": 2 },
-            { "wins": 2, "losses": 0 }
-          ]
+          ],
+          "decklistLink": ""
         }
       ]
     },
@@ -175,42 +67,8 @@
             { "wins": 2, "losses": 0 },
             { "wins": 2, "losses": 0 },
             { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 0 },
-            { "wins": 1, "losses": 2 },
-            { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 0 },
-            { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 0 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 0 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 1 }
-          ]
+          ],
+          "decklistLink": ""
         }
       ]
     },
@@ -223,35 +81,8 @@
             { "wins": 1, "losses": 2 },
             { "wins": 1, "losses": 2 },
             { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 0 },
-            { "wins": 1, "losses": 2 },
-            { "wins": 1, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 1, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 0, "losses": 2 },
-            { "wins": 2, "losses": 0 },
-            { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 1, "losses": 2 },
-            { "wins": 0, "losses": 2 }
-          ]
+          ],
+          "decklistLink": ""
         }
       ]
     },
@@ -264,35 +95,8 @@
             { "wins": 0, "losses": 2 },
             { "wins": 1, "losses": 2 },
             { "wins": 0, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 0, "losses": 2 },
-            { "wins": 1, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 1, "losses": 2 },
-            { "wins": 1, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 0, "losses": 2 },
-            { "wins": 0, "losses": 2 },
-            { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 1, "losses": 2 },
-            { "wins": 0, "losses": 2 }
-          ]
+          ],
+          "decklistLink": ""
         }
       ]
     },
@@ -305,35 +109,8 @@
             { "wins": 2, "losses": 1 },
             { "wins": 2, "losses": 0 },
             { "wins": 1, "losses": 2 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 0 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 1, "losses": 2 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 1 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 0 },
-            { "wins": 1, "losses": 2 },
-            { "wins": 2, "losses": 0 }
-          ]
-        },
-        {
-          "rounds": [
-            { "wins": 2, "losses": 1 },
-            { "wins": 2, "losses": 1 },
-            { "wins": 1, "losses": 2 }
-          ]
+          ],
+          "decklistLink": ""
         }
       ]
     }
