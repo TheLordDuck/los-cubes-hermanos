@@ -4,7 +4,7 @@
   "players": [
     {
       "id": "001",
-      "name": "Player 1",
+      "name": "13_chars_user",
       "jornadas": [
         {
           "decklistLink": "5b_mcT-WQkChEPBWkhTSew",
@@ -18,7 +18,7 @@
     },
     {
       "id": "002",
-      "name": "Player 2",
+      "name": "thelordduck22",
       "jornadas": [
         {
           "rounds": [
@@ -26,7 +26,7 @@
             { "wins": 1, "losses": 1 },
             { "wins": 2, "losses": 1 }
           ],
-          "decklistLink": ""
+          "decklistLink": "5b_mcT-WQkChEPBWkhTSew"
         }
       ]
     },
@@ -40,7 +40,7 @@
             { "wins": 2, "losses": 0 },
             { "wins": 2, "losses": 0 }
           ],
-          "decklistLink": ""
+          "decklistLink": "5b_mcT-WQkChEPBWkhTSew"
         }
       ]
     },
@@ -54,7 +54,7 @@
             { "wins": 2, "losses": 0 },
             { "wins": 2, "losses": 1 }
           ],
-          "decklistLink": ""
+          "decklistLink": "5b_mcT-WQkChEPBWkhTSew"
         }
       ]
     },
@@ -68,7 +68,7 @@
             { "wins": 2, "losses": 0 },
             { "wins": 2, "losses": 1 }
           ],
-          "decklistLink": ""
+          "decklistLink": "5b_mcT-WQkChEPBWkhTSew"
         }
       ]
     },
@@ -82,7 +82,7 @@
             { "wins": 1, "losses": 2 },
             { "wins": 2, "losses": 1 }
           ],
-          "decklistLink": ""
+          "decklistLink": "5b_mcT-WQkChEPBWkhTSew"
         }
       ]
     },
@@ -96,7 +96,7 @@
             { "wins": 1, "losses": 2 },
             { "wins": 0, "losses": 2 }
           ],
-          "decklistLink": ""
+          "decklistLink": "5b_mcT-WQkChEPBWkhTSew"
         }
       ]
     },
@@ -110,7 +110,7 @@
             { "wins": 2, "losses": 0 },
             { "wins": 1, "losses": 2 }
           ],
-          "decklistLink": ""
+          "decklistLink": "5b_mcT-WQkChEPBWkhTSew"
         }
       ]
     }

@@ -205,11 +205,10 @@ export default function SeasonPage() {
             </div>
 
             {/* JORNADAS */}
-            <div className="overflow-x-auto">
+            <div className="">
               <table className="w-full text-sm text-center">
                 <thead className="text-gray-500 border-b">
                   <tr>
-                    <th className="p-2">#</th>
                     <th className="p-2">Pts</th>
                     <th className="p-2">W</th>
                     <th className="p-2">L</th>
@@ -228,7 +227,6 @@ export default function SeasonPage() {
                         j.counts ? "bg-yellow-50" : "hover:bg-gray-50"
                       }`}
                     >
-                      <td className="p-2 text-gray-800">{i + 1}</td>
                       <td className="p-2 text-gray-800 font-semibold">
                         {j.points}
                       </td>
