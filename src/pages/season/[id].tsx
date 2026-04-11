@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen } from "lucide-react";
+import { BookOpen, Heading1, Heading3 } from "lucide-react";
 import { useState } from "react";
 import seasonRaw from "@/data/season1.json";
 import {
@@ -164,14 +164,26 @@ export default function SeasonPage() {
           <div className="p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
               {activePlayer.name}
+              <p className="text-sm text-gray-500"></p>
             </h2>
 
             {/* STATS */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
               <div className="bg-gray-50 rounded-lg p-4 border">
-                <p className="text-sm text-gray-500">Best {season.bestOf}</p>
+                <p className="text-sm text-gray-500">League Points</p>
+
                 <p className="text-xl font-bold text-gray-900">
                   {activePlayer.stats.bestStats.points} pts
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-4 border">
+                <p className="text-sm text-gray-500">
+                  Minimum matchdays played:
+                </p>
+
+                <p className="text-xl font-bold text-gray-900">
+                  {activePlayer.jornadas.length} / {season.bestOf}
                 </p>
               </div>
 

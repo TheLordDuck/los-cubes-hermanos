@@ -14,6 +14,14 @@
             { "wins": 0, "losses": 2 },
             { "wins": 2, "losses": 0 }
           ]
+        },
+        {
+          "decklistLink": "oLZKilmq7kaA6ZRf2-Zf6w",
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 1 }
+          ]
         }
       ]
     },
@@ -28,12 +36,20 @@
             { "wins": 2, "losses": 1 },
             { "wins": 2, "losses": 0 }
           ]
+        },
+        {
+          "decklistLink": "VdR1MmQB3UyOPWbOALjhsA",
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 2, "losses": 0 },
+            { "wins": 2, "losses": 0 }
+          ]
         }
       ]
     },
     {
       "id": "003",
-      "name": "pabloosmo",
+      "name": "pablo",
       "jornadas": [
         {
           "decklistLink": "ICmGHQWFmUuelXitbs_W8w",
@@ -55,6 +71,62 @@
             { "wins": 2, "losses": 1 },
             { "wins": 1, "losses": 2 },
             { "wins": 0, "losses": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "005",
+      "name": "juanjo",
+      "jornadas": [
+        {
+          "decklistLink": "KgMFdjHZlEadOPLzoRidCQ",
+          "rounds": [
+            { "wins": 2, "losses": 0 },
+            { "wins": 1, "losses": 2 },
+            { "wins": 0, "losses": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "006",
+      "name": "xavi",
+      "jornadas": [
+        {
+          "decklistLink": "58KMwiOEYkCl54AkHMgRrg",
+          "rounds": [
+            { "wins": 2, "losses": 1 },
+            { "wins": 1, "losses": 1 },
+            { "wins": 1, "losses": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "007",
+      "name": "eric",
+      "jornadas": [
+        {
+          "decklistLink": "Hnu_fTnAcUm4fO8sbDfSKg",
+          "rounds": [
+            { "wins": 1, "losses": 2 },
+            { "wins": 1, "losses": 1 },
+            { "wins": 2, "losses": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "008",
+      "name": "roma",
+      "jornadas": [
+        {
+          "decklistLink": "ZoPU0EQJNEO4ws3HCcfztg",
+          "rounds": [
+            { "wins": 0, "losses": 2 },
+            { "wins": 0, "losses": 2 },
+            { "wins": 1, "losses": 2 }
           ]
         }
       ]

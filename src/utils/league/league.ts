@@ -1,14 +1,29 @@
 // /utils/league/league.ts
 import { RawRound, RawPlayer, Jornada, PlayerStats } from "./types";
 
+const MIN_WR = 0.33; // MTG floor (33%)
+
+export function getMatchPoints(wins: number, draws: number, losses: number) {
+    return wins * 3 + draws;
+}
+
 export function getMatchWR(wins: number, draws: number, losses: number) {
-    const total = wins + losses + draws;
-    return total === 0 ? 0 : wins / total;
+    const rounds = wins + draws + losses;
+    if (rounds === 0) return 0;
+
+    const matchPoints = getMatchPoints(wins, draws, losses);
+    const wr = matchPoints / (rounds * 3);
+
+    return Math.max(wr, MIN_WR);
 }
 
 export function getGameWR(gameWins: number, gameLosses: number) {
     const total = gameWins + gameLosses;
-    return total === 0 ? 0 : gameWins / total;
+    if (total === 0) return 0;
+
+    const wr = gameWins / total;
+
+    return Math.max(wr, MIN_WR);
 }
 
 export function computeJornada(rounds: RawRound[], decklistLink: string): Jornada {
@@ -19,22 +34,22 @@ export function computeJornada(rounds: RawRound[], decklistLink: string): Jornad
     let points = 0;
 
     for (const r of rounds) {
-        if (r.wins > r.losses) matchWins++;
-        else if (r.wins < r.losses) matchLosses++;
-        else matchDraws++;
+        if (r.wins > r.losses) points += 3, matchWins++;
+        else if (r.wins < r.losses) points += 0, matchLosses++;
+        else points += 1, matchDraws++;
     }
     console.log("matchWins", matchWins, "matchLosses", matchLosses, "matchDraws", matchDraws);
 
     // Calcular bonus según resultado final de la jornada
-    if (matchWins === 3) points += 3;
-    if (matchWins === 2) points += 2;
-    if (matchWins === 1) points += 1;
+    //if (matchWins === 3) points += 3;
+    //if (matchWins === 2) points += 2;
+    //if (matchWins === 1) points += 1;
     // No hay bonus para otros resultados (1-2, 0-3, empates totales)
 
     //points = points + (matchWins * 2);
     //points = points + (matchDraws * 1);
 
-    points = (points * 3) + assistPoint;
+    points = points + assistPoint;
 
     return {
         rounds,
