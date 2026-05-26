@@ -1,6 +1,6 @@
-# Bri-LLAR Invoice Generator
+# Los Cubes Hermanos
 
-This project generates invoices in pdf with given purchases of the services and can send these invoices to customers by email.
+Cubes I own with my brother
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
