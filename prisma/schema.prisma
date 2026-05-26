@@ -1,0 +1,132 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ── Cubes ──────────────────────────────────────────────────────────────────
+
+model Cubes {
+  id         Int          @id @default(autoincrement())
+  code       String       @unique
+  name       String
+  imageUrl   String
+  difficulty String
+  type       CUBE_TYPE
+  isTwobert  Boolean      @default(false)
+  created_at DateTime     @default(now())
+  archetypes Archetypes[]
+}
+
+model Archetypes {
+  id        Int    @id @default(autoincrement())
+  cube_id   Int
+  colorPair String
+  strategy  String
+  cube      Cubes  @relation(fields: [cube_id], references: [id])
+}
+
+enum CUBE_TYPE {
+  CUBE
+  BATTLEBOX
+}
+
+// ── League ─────────────────────────────────────────────────────────────────
+
+model Players {
+  id           Int            @id @default(autoincrement())
+  username     String         @unique
+  seasonPlayer SeasonPlayer[]
+}
+
+model Seasons {
+  id        Int            @id @default(autoincrement())
+  name      String
+  players   SeasonPlayer[]
+  matchdays Matchdays[]
+}
+
+model SeasonPlayer {
+  id        Int     @id @default(autoincrement())
+  season_id Int
+  player_id Int
+  season    Seasons @relation(fields: [season_id], references: [id], onDelete: Cascade)
+  player    Players @relation(fields: [player_id], references: [id])
+
+  // Cached standings (byes excluded from WR)
+  points   Int @default(0)
+  wins     Int @default(0) // real wins (no byes)
+  losses   Int @default(0)
+  draws    Int @default(0)
+  bye_wins Int @default(0) // bye "wins" tracked separately
+
+  matchesAsP1 Matches[]          @relation("Player1Matches")
+  matchesAsP2 Matches[]          @relation("Player2Matches")
+  decklists   MatchdayDecklist[]
+
+  @@unique([season_id, player_id])
+}
+
+// A matchday = one full event (e.g. saturday session)
+model Matchdays {
+  id        Int                @id @default(autoincrement())
+  season_id Int
+  number    Int
+  played_at DateTime           @default(now())
+  season    Seasons            @relation(fields: [season_id], references: [id], onDelete: Cascade)
+  rounds    Rounds[]
+  decklists MatchdayDecklist[]
+
+  @@unique([season_id, number])
+}
+
+// General decklist per player per matchday (not tied to a specific round)
+model MatchdayDecklist {
+  id           Int          @id @default(autoincrement())
+  matchday_id  Int
+  player_id    Int // SeasonPlayer id
+  decklist_url String
+  matchday     Matchdays    @relation(fields: [matchday_id], references: [id], onDelete: Cascade)
+  player       SeasonPlayer @relation(fields: [player_id], references: [id])
+}
+
+// A round within a matchday (round 1, 2, 3)
+// All matches in this round happen simultaneously
+model Rounds {
+  id           Int       @id @default(autoincrement())
+  matchday_id  Int
+  round_number Int // 1, 2, 3
+  matchday     Matchdays @relation(fields: [matchday_id], references: [id], onDelete: Cascade)
+  matches      Matches[]
+
+  @@unique([matchday_id, round_number])
+}
+
+// A single match between two players in a round (best of 3 games)
+model Matches {
+  id          Int           @id @default(autoincrement())
+  round_id    Int
+  player1_id  Int
+  player2_id  Int? // null when is_bye = true
+  p1_games    Int           @default(0)
+  p2_games    Int           @default(0)
+  is_bye      Boolean       @default(false)
+  result      MATCH_RESULT  @default(PENDING)
+  decklist_p1 String?
+  decklist_p2 String?
+  round       Rounds        @relation(fields: [round_id], references: [id], onDelete: Cascade)
+  player1     SeasonPlayer  @relation("Player1Matches", fields: [player1_id], references: [id])
+  player2     SeasonPlayer? @relation("Player2Matches", fields: [player2_id], references: [id])
+}
+
+enum MATCH_RESULT {
+  PENDING
+  P1_WIN
+  P2_WIN
+  DRAW
+}
