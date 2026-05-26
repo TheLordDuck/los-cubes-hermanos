@@ -8,6 +8,16 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/engines",
+      "esbuild",
+      "prisma",
+      "sharp",
+      "tesseract.js",
+      "unrs-resolver"
+    ]
+  },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.98.0",
     "@hookform/resolvers": "^5.2.2",
