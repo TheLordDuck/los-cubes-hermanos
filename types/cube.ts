@@ -16,7 +16,7 @@ import { CUBE_TYPE, MATCH_RESULT } from "@/lib/generated/prisma/enums";
 export type Cube = Cubes;
 export type Archetype = Archetypes;
 export { CUBE_TYPE };
-export type TabKey = "all" | "CUBE" | "BATTLEBOX";
+export type TabKey = "all" | "CUBE" | "BATTLEBOX" | "TWOBERT";
 
 // ── League ─────────────────────────────────────────────────────────────────
 export type Player = Players;

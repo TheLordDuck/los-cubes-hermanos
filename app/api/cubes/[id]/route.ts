@@ -29,7 +29,7 @@ export async function PUT(request: NextRequest, { params }: RouteContext) {
   const { id } = await params
   const numericId = parseInt(id)
   const body = await request.json()
-  const { code, name, type, difficulty, imageUrl, isTwobert, archetypes } = body
+  const { code, name, type, difficulty, imageUrl, isTwobert, archetypes, isRandomBoosterPacked } = body
 
   if (!code || !name || !type || !difficulty) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -45,6 +45,7 @@ export async function PUT(request: NextRequest, { params }: RouteContext) {
         difficulty,
         imageUrl: imageUrl ?? '',
         isTwobert: isTwobert ?? false,
+        isRandomBoosterPacked: isRandomBoosterPacked ?? true,
       },
     })
 

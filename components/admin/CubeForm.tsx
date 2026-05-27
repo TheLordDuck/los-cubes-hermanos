@@ -18,7 +18,7 @@ interface ArchetypeRow {
 }
 
 const DIFFICULTIES = ['easy', 'medium', 'hard']
-const COLORS = ['W', 'U', 'B', 'R', 'G', 'C'] as const
+const COLORS = ['W', 'U', 'B', 'R', 'G'] as const
 
 function toColorArray(colorPair: string): string[] {
   return colorPair
@@ -159,6 +159,7 @@ export function CubeForm({ cube, archetypes = [] }: CubeFormProps) {
       difficulty: fd.get('difficulty') as string,
       imageUrl: fd.get('imageUrl') as string,
       isTwobert: isBattlebox ? false : fd.get('isTwobert') === 'true',
+      isRandomBoosterPacked: fd.get('isRandomBoosterPacked') === 'true',
       archetypes: rows
         .filter((r) => r.strategy.trim() !== '')
         .map((r) => ({
@@ -290,6 +291,31 @@ export function CubeForm({ cube, archetypes = [] }: CubeFormProps) {
             ))}
           </div>
         )}
+      </Field>
+
+      {/* Booster packing mode */}
+      <Field label="Booster packing">
+        <div className="flex items-center gap-4 h-9">
+          {(['true', 'false'] as const).map((val) => (
+            <label
+              key={val}
+              className="flex items-center gap-1.5 text-sm text-neutral-700 dark:text-neutral-300 cursor-pointer"
+            >
+              <input
+                type="radio"
+                name="isRandomBoosterPacked"
+                value={val}
+                defaultChecked={
+                  cube
+                    ? String(cube.isRandomBoosterPacked) === val
+                    : val === 'true'
+                }
+                className="accent-blue-500"
+              />
+              {val === 'true' ? 'Random' : 'Color-balanced (CubeCobra)'}
+            </label>
+          ))}
+        </div>
       </Field>
 
       {/* Archetypes */}

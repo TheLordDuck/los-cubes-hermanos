@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import type { Cube, Archetype } from '@/types/cube'
+import { BoosterSetup } from '@/components/BoosterSetup'
 
 interface CubeTabsProps {
   cube: Cube & { archetypes: Archetype[] }
@@ -11,11 +12,62 @@ interface CubeTabsProps {
 type Tab = 'archetypes' | 'booster'
 
 const TABS: { key: Tab; label: string }[] = [
-  { key: 'archetypes', label: 'Archetypes'    },
-  { key: 'booster',    label: 'Booster Setup' },
+  { key: 'archetypes', label: 'Archetypes' },
+  { key: 'booster', label: 'Booster Setup' },
 ]
 
 const COLORS = ['W', 'U', 'B', 'R', 'G', 'C'] as const
+
+const RANDOM_ROWS = [
+  {
+    players: 3,
+    packs: 8,
+    packSize: 6,
+    picks: 48,
+    totalPacks: 24,
+    totalCards: 144,
+  },
+  {
+    players: 4,
+    packs: 6,
+    packSize: 8,
+    picks: 48,
+    totalPacks: 24,
+    totalCards: 192,
+  },
+  {
+    players: 5,
+    packs: 6,
+    packSize: 8,
+    picks: 48,
+    totalPacks: 30,
+    totalCards: 240,
+  },
+  {
+    players: 6,
+    packs: 4,
+    packSize: 12,
+    picks: 48,
+    totalPacks: 24,
+    totalCards: 288,
+  },
+  {
+    players: 7,
+    packs: 4,
+    packSize: 12,
+    picks: 48,
+    totalPacks: 28,
+    totalCards: 336,
+  },
+  {
+    players: 8,
+    packs: 3,
+    packSize: 15,
+    picks: 45,
+    totalPacks: 24,
+    totalCards: 360,
+  },
+]
 
 function ColorPips({ colorPair }: { colorPair: string }) {
   const colors = COLORS.filter((c) => colorPair.includes(c))
@@ -23,7 +75,10 @@ function ColorPips({ colorPair }: { colorPair: string }) {
   return (
     <div className="flex items-center gap-1 sm:gap-1.5">
       {colors.map((c) => (
-        <div key={c} className="relative w-5 h-5 sm:w-7 sm:h-7 lg:w-9 lg:h-9 shrink-0">
+        <div
+          key={c}
+          className="relative w-5 h-5 sm:w-7 sm:h-7 lg:w-9 lg:h-9 shrink-0"
+        >
           <Image
             src={`/colors/${c}.png`}
             alt={c}
@@ -48,6 +103,61 @@ function ArchetypeCard({ archetype }: { archetype: Archetype }) {
   )
 }
 
+function RandomBoosterTable() {
+  return (
+    <div className="overflow-x-auto -mx-1">
+      <table className="w-full text-xs sm:text-sm">
+        <thead>
+          <tr className="border-b border-neutral-200 dark:border-neutral-800">
+            {[
+              'Players',
+              'Packs',
+              'Cards',
+              'Picks',
+              'Total Packs',
+              'Total Cards',
+            ].map((h) => (
+              <th
+                key={h}
+                className="px-2 sm:px-3 py-2.5 text-center font-medium text-neutral-500 dark:text-neutral-400 whitespace-nowrap"
+              >
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800">
+          {RANDOM_ROWS.map((r) => (
+            <tr
+              key={r.players}
+              className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors"
+            >
+              <td className="px-2 sm:px-3 py-2.5 text-center font-medium text-neutral-900 dark:text-neutral-100">
+                {r.players}
+              </td>
+              <td className="px-2 sm:px-3 py-2.5 text-center text-neutral-600 dark:text-neutral-400">
+                {r.packs}
+              </td>
+              <td className="px-2 sm:px-3 py-2.5 text-center text-neutral-600 dark:text-neutral-400">
+                {r.packSize}
+              </td>
+              <td className="px-2 sm:px-3 py-2.5 text-center text-neutral-600 dark:text-neutral-400">
+                {r.picks}
+              </td>
+              <td className="px-2 sm:px-3 py-2.5 text-center text-neutral-600 dark:text-neutral-400">
+                {r.totalPacks}
+              </td>
+              <td className="px-2 sm:px-3 py-2.5 text-center font-medium text-neutral-900 dark:text-neutral-100">
+                {r.totalCards}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function TabContent({
   tab,
   cube,
@@ -68,40 +178,29 @@ function TabContent({
       </div>
     )
   }
-  const rows = [
-    { players: 3, packs: 8,  cards: 6,  picks: 48, totalPacks: 24, totalCards: 144 },
-    { players: 4, packs: 6,  cards: 8,  picks: 48, totalPacks: 24, totalCards: 192 },
-    { players: 5, packs: 6,  cards: 8,  picks: 48, totalPacks: 30, totalCards: 240 },
-    { players: 6, packs: 4,  cards: 12, picks: 48, totalPacks: 24, totalCards: 288 },
-    { players: 7, packs: 4,  cards: 12, picks: 48, totalPacks: 28, totalCards: 336 },
-    { players: 8, packs: 3,  cards: 15, picks: 45, totalPacks: 24, totalCards: 360 },
-  ]
+
+  // Booster tab
+  if (cube.isRandomBoosterPacked) {
+    return (
+      <div className="flex flex-col gap-3">
+        <div className="flex items-center gap-2">
+          <span className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 uppercase tracking-wide font-medium">
+            Random packs
+          </span>
+        </div>
+        <RandomBoosterTable />
+      </div>
+    )
+  }
 
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-xs sm:text-sm">
-        <thead>
-          <tr className="border-b border-neutral-200 dark:border-neutral-800">
-            {['Players', 'Packs', 'Cards', 'Picks', 'Total Packs', 'Total Cards'].map((h) => (
-              <th key={h} className="px-3 py-2.5 text-center font-medium text-neutral-500 dark:text-neutral-400 whitespace-nowrap">
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800">
-          {rows.map((r) => (
-            <tr key={r.players} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
-              <td className="px-3 py-2.5 text-center font-medium text-neutral-900 dark:text-neutral-100">{r.players}</td>
-              <td className="px-3 py-2.5 text-center text-neutral-600 dark:text-neutral-400">{r.packs}</td>
-              <td className="px-3 py-2.5 text-center text-neutral-600 dark:text-neutral-400">{r.cards}</td>
-              <td className="px-3 py-2.5 text-center text-neutral-600 dark:text-neutral-400">{r.picks}</td>
-              <td className="px-3 py-2.5 text-center text-neutral-600 dark:text-neutral-400">{r.totalPacks}</td>
-              <td className="px-3 py-2.5 text-center font-medium text-neutral-900 dark:text-neutral-100">{r.totalCards}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="flex flex-col gap-3">
+      <div className="flex items-center gap-2">
+        <span className="text-xs px-2 py-0.5 rounded-full bg-blue-950 text-blue-300 uppercase tracking-wide font-medium">
+          Color-balanced packs
+        </span>
+      </div>
+      <BoosterSetup cubeCode={cube.code} />
     </div>
   )
 }

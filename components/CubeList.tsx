@@ -9,19 +9,21 @@ interface CubeListProps {
 }
 
 const TABS: { key: TabKey; label: string }[] = [
-  { key: 'all',       label: 'All'         },
-  { key: 'CUBE',      label: 'Cubes'       },
+  { key: 'all', label: 'All' },
+  { key: 'CUBE', label: 'Cubes' },
   { key: 'BATTLEBOX', label: 'Battleboxes' },
+  { key: 'TWOBERT', label: 'Twoberts' },
 ]
 
 export function CubeList({ initialCubes }: CubeListProps) {
-  const [tab, setTab]       = useState<TabKey>('all')
+  const [tab, setTab] = useState<TabKey>('all')
   const [search, setSearch] = useState('')
   const [, startTransition] = useTransition()
 
   const filtered = useMemo(() => {
     return initialCubes.filter((c) => {
-      const matchType   = tab === 'all' || c.type === tab
+      const matchType =
+        tab === 'all' ? true : tab === 'TWOBERT' ? c.isTwobert : c.type === tab
       const matchSearch = c.name.toLowerCase().includes(search.toLowerCase())
       return matchType && matchSearch
     })
@@ -29,9 +31,10 @@ export function CubeList({ initialCubes }: CubeListProps) {
 
   const counts = useMemo(
     () => ({
-      all:       initialCubes.length,
-      CUBE:      initialCubes.filter((c) => c.type === 'CUBE').length,
+      all: initialCubes.length,
+      CUBE: initialCubes.filter((c) => c.type === 'CUBE').length,
       BATTLEBOX: initialCubes.filter((c) => c.type === 'BATTLEBOX').length,
+      TWOBERT: initialCubes.filter((c) => c.isTwobert).length,
     }),
     [initialCubes]
   )
@@ -43,8 +46,12 @@ export function CubeList({ initialCubes }: CubeListProps) {
         <div className="relative max-w-sm">
           <svg
             className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 pointer-events-none"
-            width={14} height={14} viewBox="0 0 16 16"
-            fill="none" stroke="currentColor" strokeWidth={1.5}
+            width={14}
+            height={14}
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.5}
           >
             <circle cx={7} cy={7} r={5} />
             <line x1={11} y1={11} x2={15} y2={15} />
