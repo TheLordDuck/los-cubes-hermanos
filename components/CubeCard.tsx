@@ -23,6 +23,7 @@ export function CubeCard({ cube }: { cube: Cube }) {
       <div className="relative w-full aspect-video bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
         {cube.imageUrl && !imgError ? (
           <Image
+            unoptimized
             src={cube.imageUrl}
             alt={cube.name}
             fill
