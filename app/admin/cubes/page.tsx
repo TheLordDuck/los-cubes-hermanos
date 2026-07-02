@@ -92,6 +92,7 @@ export default async function AdminCubesPage() {
                       <div className="relative w-10 h-7 rounded overflow-hidden bg-neutral-100 dark:bg-neutral-800">
                         {cube.imageUrl ? (
                           <Image
+                            unoptimized
                             src={cube.imageUrl}
                             alt={cube.name}
                             fill

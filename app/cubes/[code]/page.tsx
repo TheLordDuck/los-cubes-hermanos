@@ -1,30 +1,30 @@
 // app/cubes/[code]/page.tsx
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import { prisma } from "@/lib/prisma";
-import { Header } from "@/components/Header";
-import { CubeTabs } from "@/components/CubeTabs";
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
+import { prisma } from '@/lib/prisma'
+import { Header } from '@/components/Header'
+import { CubeTabs } from '@/components/CubeTabs'
 
 interface PageProps {
-  params: Promise<{ code: string }>;
+  params: Promise<{ code: string }>
 }
 
 const DIFFICULTY_STYLES: Record<string, string> = {
-  easy: "bg-emerald-950 text-emerald-300",
-  medium: "bg-amber-950 text-amber-300",
-  hard: "bg-red-950 text-red-300",
-};
+  easy: 'bg-emerald-950 text-emerald-300',
+  medium: 'bg-amber-950 text-amber-300',
+  hard: 'bg-red-950 text-red-300',
+}
 
 export default async function CubeDetailPage({ params }: PageProps) {
-  const { code } = await params;
+  const { code } = await params
 
   const cube = await prisma.cubes.findUnique({
     where: { code },
     include: { archetypes: true },
-  });
+  })
 
-  if (!cube) notFound();
+  if (!cube) notFound()
 
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
@@ -55,6 +55,7 @@ export default async function CubeDetailPage({ params }: PageProps) {
           <div className="relative shrink-0 w-32 h-20 rounded-lg overflow-hidden bg-neutral-100 dark:bg-neutral-800">
             {cube.imageUrl ? (
               <Image
+                unoptimized
                 src={cube.imageUrl}
                 alt={cube.name}
                 fill
@@ -87,9 +88,9 @@ export default async function CubeDetailPage({ params }: PageProps) {
             </h1>
             <div className="flex flex-wrap gap-1.5">
               <span
-                className={`text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wide ${cube.type === "BATTLEBOX" ? "bg-blue-950 text-blue-300" : "bg-emerald-950 text-emerald-300"}`}
+                className={`text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wide ${cube.type === 'BATTLEBOX' ? 'bg-blue-950 text-blue-300' : 'bg-emerald-950 text-emerald-300'}`}
               >
-                {cube.type === "BATTLEBOX" ? "Battlebox" : "Cube"}
+                {cube.type === 'BATTLEBOX' ? 'Battlebox' : 'Cube'}
               </span>
               {cube.isTwobert && (
                 <span className="text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wide bg-purple-950 text-purple-300">
@@ -97,7 +98,7 @@ export default async function CubeDetailPage({ params }: PageProps) {
                 </span>
               )}
               <span
-                className={`text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wide ${DIFFICULTY_STYLES[cube.difficulty.toLowerCase()] ?? "bg-neutral-800 text-neutral-300"}`}
+                className={`text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wide ${DIFFICULTY_STYLES[cube.difficulty.toLowerCase()] ?? 'bg-neutral-800 text-neutral-300'}`}
               >
                 {cube.difficulty}
               </span>
@@ -108,5 +109,5 @@ export default async function CubeDetailPage({ params }: PageProps) {
         <CubeTabs cube={cube} />
       </main>
     </div>
-  );
+  )
 }
