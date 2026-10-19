@@ -40,26 +40,13 @@ export function CubeList({ initialCubes }: CubeListProps) {
   )
 
   return (
-    <main className="max-w-310 w-full mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-20 flex flex-col gap-9">
-      {/* Hero + search */}
-      <section className="flex flex-wrap items-end justify-between gap-6">
-        <div className="flex flex-col gap-2.5">
-          <span className="font-mono text-xs uppercase tracking-[0.12em] text-accent">
-            The shelf
-          </span>
-          <h1 className="m-0 font-display font-extrabold text-4xl sm:text-[56px] leading-none tracking-tighter">
-            Pick a cube.
-            <br />
-            Shuffle up.
-          </h1>
-          <p className="m-0 text-muted max-w-115 leading-relaxed">
-            Every cube and battlebox we own, with lists pulled live from
-            CubeCobra.
-          </p>
-        </div>
+    <main className="max-w-310 w-full mx-auto px-4 sm:px-6 pt-8 pb-20 flex flex-col gap-6">
+      {/* Search (heading kept for screen readers only) */}
+      <section className="flex justify-end">
+        <h1 className="sr-only">Cubes</h1>
         <div className="flex flex-col gap-1.5 w-85 max-w-full">
-          <label htmlFor="cube-search" className="text-xs font-medium text-muted">
-            Search the shelf
+          <label htmlFor="cube-search" className="sr-only">
+            Search cubes
           </label>
           <div className="relative">
             <svg
@@ -78,7 +65,7 @@ export function CubeList({ initialCubes }: CubeListProps) {
             <input
               id="cube-search"
               type="search"
-              placeholder="Cube name…"
+              placeholder="Search cubes…"
               value={search}
               onChange={(e) => startTransition(() => setSearch(e.target.value))}
               className="w-full h-11.5 pl-10 pr-3.5 rounded-[10px] border border-line-strong bg-surface text-fg placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
