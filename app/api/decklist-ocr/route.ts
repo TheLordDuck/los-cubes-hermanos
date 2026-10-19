@@ -2,9 +2,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 
-const anthropic = new Anthropic();
+// Disabled by default: the decklist importer reads photos with Tesseract in
+// the browser. Set CLAUDE_DECKLIST_OCR=1 (plus ANTHROPIC_API_KEY) to enable.
+const enabled = process.env.CLAUDE_DECKLIST_OCR === "1";
 
 export async function POST(request: NextRequest) {
+  if (!enabled) {
+    return NextResponse.json({ error: "Claude decklist OCR is disabled" }, { status: 503 });
+  }
+
+  const anthropic = new Anthropic();
   const { image, mimeType } = await request.json();
 
   if (!image || !mimeType) {

@@ -6,7 +6,7 @@ A Next.js app for managing a personal collection of Magic: The Gathering cubes a
 
 - **Cube collection** — Browse, add, edit, and delete cubes (regular cubes and battleboxes), each with an image, difficulty rating, and a set of two-color archetypes with their strategy notes. Cube lists are pulled live from [CubeCobra](https://cubecobra.com).
 - **Draft league** — Create seasons, register players, and run matchdays made up of best-of-three rounds. Standings (points, wins, losses, draws, bye wins) are tracked automatically per season.
-- **Decklist OCR** — Upload a photo of a handwritten or printed decklist and have it transcribed into a card list automatically, powered by the Anthropic API (Claude).
+- **Decklist OCR** — Upload a photo of a handwritten or printed decklist and have it transcribed into a card list in the browser with Tesseract.js, with card names checked against Scryfall. An alternative Claude-based endpoint (`/api/decklist-ocr`) exists but is disabled by default.
 - **Admin area** — Dedicated screens under `/admin` for managing cubes, seasons, matchdays, and results without touching the database directly, behind a shared admin password.
 
 ## Tech stack
@@ -14,7 +14,7 @@ A Next.js app for managing a personal collection of Magic: The Gathering cubes a
 - [Next.js 16](https://nextjs.org) (App Router) + React 19 + TypeScript
 - [Prisma 7](https://www.prisma.io) with PostgreSQL
 - Tailwind CSS 4
-- [Anthropic SDK](https://www.npmjs.com/package/@anthropic-ai/sdk) for decklist OCR
+- [Tesseract.js](https://tesseract.projectnaptha.com) for decklist OCR (optional, disabled: [Anthropic SDK](https://www.npmjs.com/package/@anthropic-ai/sdk))
 - react-hook-form + zod for forms and validation
 
 ## Getting started
@@ -42,7 +42,8 @@ A Next.js app for managing a personal collection of Magic: The Gathering cubes a
    | Variable | Description |
    | --- | --- |
    | `DATABASE_URL` | PostgreSQL connection string |
-   | `ANTHROPIC_API_KEY` | API key used by the decklist OCR endpoint |
+   | `CLAUDE_DECKLIST_OCR` | Optional. Set to `1` to enable the disabled Claude OCR endpoint |
+   | `ANTHROPIC_API_KEY` | Optional. Only used when `CLAUDE_DECKLIST_OCR=1` |
    | `ADMIN_PASSWORD` | Password for the `/admin` area and for every write to the API |
 
 3. Run migrations and generate the Prisma client:
@@ -104,6 +105,6 @@ The app ships as a Docker image (multi-stage `Dockerfile`, Node 22, Next.js stan
    | --- | --- |
    | `DATABASE_URL` | Internal URL of the Coolify PostgreSQL database |
    | `ADMIN_PASSWORD` | Password for `/admin` |
-   | `ANTHROPIC_API_KEY` | Only needed for decklist OCR |
+   | `ANTHROPIC_API_KEY` | Not needed (Claude OCR is disabled by default) |
 
 5. Deploy. Migrations apply automatically on each start; set `SKIP_MIGRATIONS=1` to turn that off. To load the sample cubes once, run `npx prisma db seed` locally against the same database.
