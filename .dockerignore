@@ -1,0 +1,19 @@
+node_modules
+.next
+.git
+.gitignore
+.vscode
+.claude
+npm-debug.log*
+pnpm-debug.log*
+
+# Secrets come from Coolify's environment variables, never the image
+.env
+.env.*
+!.env.example
+
+lib/generated
+public/wildcards_old
+README.md
+Dockerfile
+.dockerignore

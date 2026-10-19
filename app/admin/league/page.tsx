@@ -3,8 +3,15 @@ import Link from 'next/link'
 import { prisma } from '@/lib/prisma'
 import { Header } from '@/components/Header'
 import { DeleteSeasonButton } from '@/components/admin/league/DeleteSeasonButton'
+import { AdminNav } from '@/components/admin/AdminNav'
 
 export const dynamic = 'force-dynamic'
+
+const TH =
+  'px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.08em] text-muted'
+
+const ACTION =
+  'inline-flex items-center min-h-10 px-3.5 rounded-lg border border-line-strong font-medium hover:bg-raised transition-colors'
 
 export default async function AdminLeaguePage() {
   const seasons = await prisma.seasons.findMany({
@@ -13,51 +20,107 @@ export default async function AdminLeaguePage() {
   })
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
+    <div className="min-h-screen bg-ink">
       <Header />
-      <main className="max-w-4xl mx-auto px-6 py-8 flex flex-col gap-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Manage seasons</h1>
-            <p className="text-sm text-neutral-400 mt-0.5">{seasons.length} season{seasons.length !== 1 ? 's' : ''} total</p>
+      <main className="max-w-310 mx-auto px-4 sm:px-6 pt-10 pb-20 flex flex-col gap-7">
+        <AdminNav />
+
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div className="flex flex-col gap-1.5">
+            <h1 className="m-0 font-display font-extrabold text-[44px] leading-none tracking-tighter">
+              Manage seasons
+            </h1>
+            <span className="text-sm text-muted">
+              {seasons.length} {seasons.length === 1 ? 'season' : 'seasons'}{' '}
+              total
+            </span>
           </div>
           <Link
             href="/admin/league/new"
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 min-h-11.5 px-5 rounded-[10px] bg-accent text-ink font-semibold hover:bg-accent-hover transition-colors"
           >
-            <svg width={14} height={14} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
-              <line x1={8} y1={2} x2={8} y2={14} /><line x1={2} y1={8} x2={14} y2={8} />
+            <svg
+              width={16}
+              height={16}
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              aria-hidden="true"
+            >
+              <line x1={8} y1={2} x2={8} y2={14} strokeLinecap="round" />
+              <line x1={2} y1={8} x2={14} y2={8} strokeLinecap="round" />
             </svg>
             New season
           </Link>
         </div>
 
-        <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 overflow-hidden">
+        <div className="overflow-x-auto rounded-2xl border border-line bg-surface">
           {seasons.length === 0 ? (
-            <p className="text-sm text-neutral-400 text-center py-16">
+            <p className="text-sm text-muted text-center py-16">
               No seasons yet.{' '}
-              <Link href="/admin/league/new" className="text-blue-500 hover:underline">Create the first one.</Link>
+              <Link
+                href="/admin/league/new"
+                className="text-accent hover:underline"
+              >
+                Create the first one.
+              </Link>
             </p>
           ) : (
-            <table className="w-full text-sm">
+            <table className="w-full min-w-170 border-collapse text-sm">
               <thead>
-                <tr className="border-b border-neutral-200 dark:border-neutral-800">
-                  <th className="text-left px-5 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide">Name</th>
-                  <th className="text-left px-5 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide hidden sm:table-cell">Players</th>
-                  <th className="text-left px-5 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide hidden sm:table-cell">Matchdays</th>
-                  <th className="px-5 py-3 w-32" />
+                <tr className="bg-raised">
+                  <th className={`${TH} pl-5 w-18`}>
+                    <span className="sr-only">Season number</span>
+                  </th>
+                  <th className={TH}>Name</th>
+                  <th className={`${TH} text-right!`}>Players</th>
+                  <th className={`${TH} text-right!`}>Matchdays</th>
+                  <th className={`${TH} pr-5 text-right!`}>Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800">
-                {seasons.map((s) => (
-                  <tr key={s.id} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
-                    <td className="px-5 py-3 font-medium text-neutral-900 dark:text-neutral-100">{s.name}</td>
-                    <td className="px-5 py-3 hidden sm:table-cell text-neutral-500">{s.players.length}</td>
-                    <td className="px-5 py-3 hidden sm:table-cell text-neutral-500">{s.matchdays.length}</td>
-                    <td className="px-5 py-3">
-                      <div className="flex items-center justify-end gap-3">
-                        <Link href={`/admin/league/${s.id}/edit`} className="text-xs text-neutral-400 hover:text-blue-400 transition-colors">Edit</Link>
-                        <Link href={`/admin/league/${s.id}/results`} className="text-xs text-neutral-400 hover:text-emerald-400 transition-colors">Results</Link>
+              <tbody>
+                {seasons.map((s, i) => (
+                  <tr key={s.id} className="border-t border-line">
+                    <td className="pl-5 pr-2 py-2.5">
+                      <span
+                        className={`inline-flex items-center justify-center w-11 h-11 rounded-xl font-mono font-bold ${
+                          i === 0 ? 'bg-accent text-ink' : 'bg-raised'
+                        }`}
+                      >
+                        S{s.id}
+                      </span>
+                    </td>
+                    <td className="px-2 py-2.5">
+                      <span className="flex flex-col gap-0.5">
+                        <span className="font-semibold">{s.name}</span>
+                        {i === 0 && (
+                          <span className="font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-accent">
+                            Current season
+                          </span>
+                        )}
+                      </span>
+                    </td>
+                    <td className="px-2 py-2.5 text-right font-mono text-soft">
+                      {s.players.length}
+                    </td>
+                    <td className="px-2 py-2.5 text-right font-mono text-soft">
+                      {s.matchdays.length}
+                    </td>
+                    <td className="pl-2 pr-5 py-2.5">
+                      <div className="flex items-center justify-end gap-1.5">
+                        <Link
+                          href={`/admin/league/${s.id}/results`}
+                          className={ACTION}
+                        >
+                          Results
+                        </Link>
+                        <Link
+                          href={`/admin/league/${s.id}/edit`}
+                          className={ACTION}
+                        >
+                          Edit
+                        </Link>
                         <DeleteSeasonButton id={s.id} name={s.name} />
                       </div>
                     </td>

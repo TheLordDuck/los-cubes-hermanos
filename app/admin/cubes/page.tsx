@@ -4,42 +4,51 @@ import Image from 'next/image'
 import { prisma } from '@/lib/prisma'
 import { Header } from '@/components/Header'
 import { DeleteButton } from '@/components/admin/DeleteButton'
+import { AdminNav } from '@/components/admin/AdminNav'
+import {
+  ART_PLACEHOLDER_STYLE,
+  DifficultyMeter,
+  cubeMonogram,
+} from '@/components/CubeBadges'
 
 export const dynamic = 'force-dynamic'
 
-const DIFFICULTY_STYLES: Record<string, string> = {
-  easy: 'bg-emerald-950 text-emerald-300',
-  medium: 'bg-amber-950 text-amber-300',
-  hard: 'bg-red-950 text-red-300',
-}
+const TH =
+  'px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.08em] text-muted'
+
+const BADGE =
+  'px-2 py-0.75 rounded-md font-mono text-[11px] font-bold uppercase tracking-[0.06em]'
 
 export default async function AdminCubesPage() {
   const cubes = await prisma.cubes.findMany({ orderBy: { name: 'asc' } })
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
+    <div className="min-h-screen bg-ink">
       <Header />
-      <main className="max-w-5xl mx-auto px-6 py-8 flex flex-col gap-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+      <main className="max-w-310 mx-auto px-4 sm:px-6 pt-10 pb-20 flex flex-col gap-7">
+        <AdminNav />
+
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div className="flex flex-col gap-1.5">
+            <h1 className="m-0 font-display font-extrabold text-[44px] leading-none tracking-tighter">
               Manage cubes
             </h1>
-            <p className="text-sm text-neutral-400 mt-0.5">
+            <span className="text-sm text-muted">
               {cubes.length} {cubes.length === 1 ? 'cube' : 'cubes'} total
-            </p>
+            </span>
           </div>
           <Link
             href="/admin/cubes/new"
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 min-h-11.5 px-5 rounded-[10px] bg-accent text-ink font-semibold hover:bg-accent-hover transition-colors"
           >
             <svg
-              width={14}
-              height={14}
+              width={16}
+              height={16}
               viewBox="0 0 16 16"
               fill="none"
               stroke="currentColor"
               strokeWidth={2}
+              aria-hidden="true"
             >
               <line x1={8} y1={2} x2={8} y2={14} strokeLinecap="round" />
               <line x1={2} y1={8} x2={14} y2={8} strokeLinecap="round" />
@@ -48,48 +57,36 @@ export default async function AdminCubesPage() {
           </Link>
         </div>
 
-        <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 overflow-hidden">
+        <div className="overflow-x-auto rounded-2xl border border-line bg-surface">
           {cubes.length === 0 ? (
-            <p className="text-sm text-neutral-400 text-center py-16">
+            <p className="text-sm text-muted text-center py-16">
               No cubes yet.{' '}
-              <Link
-                href="/admin/cubes/new"
-                className="text-blue-500 hover:underline"
-              >
+              <Link href="/admin/cubes/new" className="text-accent hover:underline">
                 Create the first one.
               </Link>
             </p>
           ) : (
-            <table className="w-full text-sm">
+            <table className="w-full min-w-215 border-collapse text-sm">
               <thead>
-                <tr className="border-b border-neutral-200 dark:border-neutral-800">
-                  <th className="text-left px-4 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide w-12" />
-                  <th className="text-left px-4 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide">
-                    Name
+                <tr className="bg-raised">
+                  <th className={`${TH} pl-5 w-18`}>
+                    <span className="sr-only">Image</span>
                   </th>
-                  <th className="text-left px-4 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide hidden sm:table-cell">
-                    Code
-                  </th>
-                  <th className="text-left px-4 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide hidden sm:table-cell">
-                    Type
-                  </th>
-                  <th className="text-left px-4 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide hidden md:table-cell">
-                    Difficulty
-                  </th>
-                  <th className="text-left px-4 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide hidden md:table-cell">
-                    Twobert
-                  </th>
-                  <th className="px-4 py-3 w-28" />
+                  <th className={TH}>Name</th>
+                  <th className={TH}>CubeCobra code</th>
+                  <th className={TH}>Type</th>
+                  <th className={TH}>Difficulty</th>
+                  <th className={`${TH} pr-5 text-right!`}>Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800">
+              <tbody>
                 {cubes.map((cube) => (
-                  <tr
-                    key={cube.id}
-                    className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors"
-                  >
-                    <td className="px-4 py-3">
-                      <div className="relative w-10 h-7 rounded overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+                  <tr key={cube.id} className="border-t border-line">
+                    <td className="pl-5 pr-2 py-2.5">
+                      <div
+                        className="relative w-12 h-8 rounded-md overflow-hidden bg-raised flex items-center justify-center font-display font-extrabold text-[13px] text-soft"
+                        style={ART_PLACEHOLDER_STYLE}
+                      >
                         {cube.imageUrl ? (
                           <Image
                             unoptimized
@@ -97,64 +94,42 @@ export default async function AdminCubesPage() {
                             alt={cube.name}
                             fill
                             className="object-cover"
-                            sizes="40px"
+                            sizes="48px"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center text-neutral-400">
-                            <svg
-                              width={14}
-                              height={14}
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth={1.5}
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <rect x={3} y={3} width={18} height={18} rx={2} />
-                              <circle cx={8.5} cy={8.5} r={1.5} />
-                              <polyline points="21 15 16 10 5 21" />
-                            </svg>
-                          </div>
+                          cubeMonogram(cube.name)
                         )}
                       </div>
                     </td>
-                    <td className="px-4 py-3 font-medium text-neutral-900 dark:text-neutral-100">
-                      {cube.name}
-                    </td>
-                    <td className="px-4 py-3 hidden sm:table-cell">
-                      <span className="text-xs text-neutral-400 font-mono">
+                    <td className="px-2 py-2.5 font-semibold">{cube.name}</td>
+                    <td className="px-2 py-2.5">
+                      <span
+                        className="block max-w-45 truncate font-mono text-xs text-muted"
+                        title={cube.code}
+                      >
                         {cube.code}
                       </span>
                     </td>
-                    <td className="px-4 py-3 hidden sm:table-cell">
-                      <span
-                        className={`text-[10px] font-medium px-1.5 py-0.5 rounded uppercase tracking-wide ${cube.type === 'BATTLEBOX' ? 'bg-blue-950 text-blue-300' : 'bg-emerald-950 text-emerald-300'}`}
-                      >
-                        {cube.type === 'BATTLEBOX' ? 'Battlebox' : 'Cube'}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3 hidden md:table-cell">
-                      <span
-                        className={`text-[10px] font-medium px-1.5 py-0.5 rounded uppercase tracking-wide ${DIFFICULTY_STYLES[cube.difficulty.toLowerCase()] ?? 'bg-neutral-800 text-neutral-300'}`}
-                      >
-                        {cube.difficulty}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3 hidden md:table-cell">
-                      {cube.isTwobert ? (
-                        <span className="text-[10px] font-medium px-1.5 py-0.5 rounded uppercase tracking-wide bg-purple-950 text-purple-300">
-                          Yes
+                    <td className="px-2 py-2.5">
+                      <span className="inline-flex gap-1.5">
+                        <span className={`${BADGE} bg-line`}>
+                          {cube.type === 'BATTLEBOX' ? 'Battlebox' : 'Cube'}
                         </span>
-                      ) : (
-                        <span className="text-xs text-neutral-400">—</span>
-                      )}
+                        {cube.isTwobert && (
+                          <span className={`${BADGE} bg-[#352b45] text-[#d9cbf2]`}>
+                            Twobert
+                          </span>
+                        )}
+                      </span>
                     </td>
-                    <td className="px-4 py-3">
-                      <div className="flex items-center justify-end gap-3">
+                    <td className="px-2 py-2.5 text-soft">
+                      <DifficultyMeter difficulty={cube.difficulty} size="sm" />
+                    </td>
+                    <td className="pl-2 pr-5 py-2.5">
+                      <div className="flex items-center justify-end gap-1.5">
                         <Link
                           href={`/admin/cubes/${cube.id}/edit`}
-                          className="text-xs text-neutral-400 hover:text-blue-400 transition-colors"
+                          className="inline-flex items-center min-h-10 px-3.5 rounded-lg border border-line-strong font-medium hover:bg-raised transition-colors"
                         >
                           Edit
                         </Link>

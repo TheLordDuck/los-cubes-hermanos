@@ -11,7 +11,7 @@ export default async function CubesPage() {
   })
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
+    <div className="min-h-screen bg-ink">
       <Header />
       <CubeList initialCubes={cubes} />
     </div>

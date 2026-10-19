@@ -31,7 +31,7 @@ interface ColorBreakdown {
 }
 
 // Fixed table rows — standard configurations
-const BASE_ROWS = [
+export const BOOSTER_ROWS = [
   {
     players: 3,
     packs: 8,
@@ -225,17 +225,16 @@ function packColors(
 
 // ── Color pill ─────────────────────────────────────────────────────────────
 
-const COLOR_META: Record<string, { bg: string; text: string; label: string }> =
-  {
-    W: { bg: '#f3f4f6', text: '#374151', label: 'W' },
-    U: { bg: '#dbeafe', text: '#1e40af', label: 'U' },
-    B: { bg: '#1f2937', text: '#e5e7eb', label: 'B' },
-    R: { bg: '#fee2e2', text: '#991b1b', label: 'R' },
-    G: { bg: '#dcfce7', text: '#166534', label: 'G' },
-    M: { bg: '#fef9c3', text: '#854d0e', label: 'M' },
-    C: { bg: '#e5e7eb', text: '#374151', label: 'C' },
-    L: { bg: '#fce7f3', text: '#9d174d', label: 'L' },
-  }
+const COLOR_META: Record<string, { bg: string; text: string }> = {
+  W: { bg: '#f4ebd0', text: '#3a3324' },
+  U: { bg: '#4a90d9', text: '#0b1726' },
+  B: { bg: '#3b3540', text: '#ece6f0' },
+  R: { bg: '#e0573f', text: '#1e0c08' },
+  G: { bg: '#3e9b63', text: '#0b1c12' },
+  M: { bg: '#d9b44a', text: '#2b2208' },
+  C: { bg: '#b8b3aa', text: '#1e1c19' },
+  L: { bg: '#8a6e52', text: '#fff6ec' },
+}
 
 function ColorPills({ colors }: { colors: ColorBreakdown }) {
   return (
@@ -247,19 +246,34 @@ function ColorPills({ colors }: { colors: ColorBreakdown }) {
           return (
             <span
               key={k}
-              className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-semibold"
-              style={{
-                background: m.bg,
-                color: m.text,
-                border: `1px solid ${m.text}33`,
-              }}
+              className="inline-block px-1.75 py-0.75 rounded-md font-mono text-[11px] font-bold"
+              style={{ background: m.bg, color: m.text }}
             >
-              {m.label}
+              {k}
               {v}
             </span>
           )
         })}
     </div>
+  )
+}
+
+// ── Shared table head ──────────────────────────────────────────────────────
+
+export function BoosterTableHead({ headers }: { headers: string[] }) {
+  return (
+    <thead>
+      <tr className="bg-raised">
+        {headers.map((h) => (
+          <th
+            key={h}
+            className="px-3 py-3.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted whitespace-nowrap"
+          >
+            {h}
+          </th>
+        ))}
+      </tr>
+    </thead>
   )
 }
 
@@ -301,7 +315,7 @@ export function BoosterSetup({ cubeCode }: { cubeCode: string }) {
 
   if (loading)
     return (
-      <div className="flex items-center justify-center gap-2 py-10 text-sm text-neutral-400">
+      <div className="flex items-center justify-center gap-2 py-10 text-sm text-muted">
         <svg
           className="animate-spin"
           width={16}
@@ -310,6 +324,7 @@ export function BoosterSetup({ cubeCode }: { cubeCode: string }) {
           fill="none"
           stroke="currentColor"
           strokeWidth={2}
+          aria-hidden="true"
         >
           <path
             d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"
@@ -322,7 +337,7 @@ export function BoosterSetup({ cubeCode }: { cubeCode: string }) {
 
   if (error)
     return (
-      <p className="text-sm text-red-400 bg-red-950/30 border border-red-900 rounded-lg px-4 py-3">
+      <p className="text-sm text-[#f2826a] bg-loss/10 border border-loss/40 rounded-[10px] px-4 py-3">
         {error}
       </p>
     )
@@ -331,34 +346,28 @@ export function BoosterSetup({ cubeCode }: { cubeCode: string }) {
     <div className="flex flex-col gap-5">
       {/* Cube composition */}
       {analysis && (
-        <div className="flex flex-wrap gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
-            { label: 'Total', value: analysis.total },
-            {
-              label: 'Commons',
-              value: analysis.common,
-              color: 'text-neutral-500',
-            },
+            { label: 'Total cards', value: analysis.total, color: 'text-fg' },
+            { label: 'Commons', value: analysis.common, color: 'text-soft' },
             {
               label: 'Uncommons',
               value: analysis.uncommon,
-              color: 'text-blue-400',
+              color: 'text-uncommon',
             },
             {
-              label: 'Rares+',
+              label: 'Rares & mythics',
               value: analysis.rareOrMythic,
-              color: 'text-amber-400',
+              color: 'text-accent',
             },
           ].map((s) => (
             <div
               key={s.label}
-              className="flex flex-col gap-0.5 px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-800 min-w-[70px]"
+              className="flex flex-col gap-1.5 px-5 py-4.5 rounded-[14px] border border-line bg-surface"
             >
-              <span className="text-[10px] text-neutral-400 uppercase tracking-wide">
-                {s.label}
-              </span>
+              <span className="text-xs text-muted">{s.label}</span>
               <span
-                className={`text-base font-semibold ${s.color ?? 'text-neutral-900 dark:text-neutral-100'}`}
+                className={`font-mono font-bold text-[32px] leading-none ${s.color}`}
               >
                 {s.value}
               </span>
@@ -368,31 +377,21 @@ export function BoosterSetup({ cubeCode }: { cubeCode: string }) {
       )}
 
       {/* Table */}
-      <div className="overflow-x-auto rounded-xl border border-neutral-200 dark:border-neutral-800">
-        <table className="w-full text-xs sm:text-sm">
-          <thead>
-            <tr className="border-b border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50">
-              {[
-                'Players',
-                'Packs',
-                'Pack Size',
-                'Picks',
-                'Total Packs',
-                'Total Cards',
-                'Rarity / Pack',
-                ...(analysis ? ['Colors / Pack'] : []),
-              ].map((h) => (
-                <th
-                  key={h}
-                  className="px-3 py-2.5 text-center text-xs font-medium text-neutral-400 uppercase tracking-wide whitespace-nowrap"
-                >
-                  {h}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800">
-            {BASE_ROWS.map((r) => {
+      <div className="overflow-x-auto rounded-[14px] border border-line bg-surface">
+        <table className="w-full min-w-215 border-collapse text-sm text-center">
+          <BoosterTableHead
+            headers={[
+              'Players',
+              'Packs',
+              'Pack size',
+              'Picks',
+              'Cards used',
+              'Rarity / pack',
+              ...(analysis ? ['Colors / pack'] : []),
+            ]}
+          />
+          <tbody>
+            {BOOSTER_ROWS.map((r) => {
               const pr = analysis
                 ? packRarity(
                     r.packSize,
@@ -409,56 +408,49 @@ export function BoosterSetup({ cubeCode }: { cubeCode: string }) {
               const overCube = r.totalCards > (analysis?.total ?? Infinity)
 
               return (
-                <tr
-                  key={r.players}
-                  className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors"
-                >
-                  <td className="px-3 py-3 text-center font-semibold text-neutral-900 dark:text-neutral-100">
-                    {r.players}
+                <tr key={r.players} className="border-t border-line">
+                  <td className="px-3 py-4">
+                    <span className="inline-flex items-center justify-center w-9 h-9 rounded-[10px] bg-raised font-mono font-bold">
+                      {r.players}
+                    </span>
                   </td>
-                  <td className="px-3 py-3 text-center text-neutral-600 dark:text-neutral-400">
-                    {r.packs}
-                  </td>
-                  <td className="px-3 py-3 text-center text-neutral-600 dark:text-neutral-400">
+                  <td className="px-3 py-4 font-mono text-soft">{r.packs}</td>
+                  <td className="px-3 py-4 font-mono text-soft">
                     {r.packSize}
                   </td>
-                  <td className="px-3 py-3 text-center text-neutral-600 dark:text-neutral-400">
-                    {r.picks}
-                  </td>
-                  <td className="px-3 py-3 text-center text-neutral-600 dark:text-neutral-400">
-                    {r.totalPacks}
-                  </td>
-                  <td className="px-3 py-3 text-center">
+                  <td className="px-3 py-4 font-mono text-soft">{r.picks}</td>
+                  <td className="px-3 py-4 font-mono">
                     <span
-                      className={`font-semibold ${overCube ? 'text-amber-500' : 'text-neutral-900 dark:text-neutral-100'}`}
+                      className={overCube ? 'text-[#ef7b45] font-bold' : ''}
                     >
                       {r.totalCards}
                     </span>
+                    {analysis && (
+                      <span className="text-faint"> / {analysis.total}</span>
+                    )}
                     {overCube && (
-                      <div className="text-[10px] text-amber-500">
+                      <div className="text-[10px] text-[#ef7b45] font-sans">
                         exceeds cube
                       </div>
                     )}
                   </td>
-                  <td className="px-3 py-3 text-center">
+                  <td className="px-3 py-4">
                     {pr ? (
-                      <div className="flex flex-col items-center gap-0.5 text-xs">
-                        <span className="text-amber-400 font-medium">
+                      <span className="inline-flex gap-1.5 font-mono text-[13px]">
+                        <span className="text-accent font-bold">
                           {pr.rareLabel}
                         </span>
-                        <span className="text-blue-400">
+                        <span className="text-uncommon">
                           {pr.uncommonLabel}
                         </span>
-                        <span className="text-neutral-400">
-                          {pr.commonLabel}
-                        </span>
-                      </div>
+                        <span className="text-muted">{pr.commonLabel}</span>
+                      </span>
                     ) : (
-                      <span className="text-neutral-400 text-xs">—</span>
+                      <span className="text-faint text-xs">—</span>
                     )}
                   </td>
                   {pc && (
-                    <td className="px-3 py-3">
+                    <td className="px-3 py-4">
                       <ColorPills colors={pc} />
                     </td>
                   )}
@@ -471,3 +463,4 @@ export function BoosterSetup({ cubeCode }: { cubeCode: string }) {
     </div>
   )
 }
+

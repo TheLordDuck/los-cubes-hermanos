@@ -45,21 +45,22 @@ export default async function SeasonPage({ params }: PageProps) {
   if (!season) notFound()
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
+    <div className="min-h-screen bg-ink">
       <Header />
-      <main className="max-w-4xl mx-auto px-6 py-8 flex flex-col gap-6">
-        <div>
+      <main className="max-w-310 mx-auto px-4 sm:px-6 pt-7 pb-20 flex flex-col gap-8">
+        <div className="flex flex-col gap-3">
           <Link
             href="/league"
-            className="inline-flex items-center gap-1.5 text-sm text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"
+            className="inline-flex items-center gap-2 min-h-11 w-fit text-sm text-muted hover:text-fg transition-colors"
           >
             <svg
-              width={14}
-              height={14}
+              width={16}
+              height={16}
               viewBox="0 0 16 16"
               fill="none"
               stroke="currentColor"
-              strokeWidth={1.5}
+              strokeWidth={1.6}
+              aria-hidden="true"
             >
               <path
                 d="M10 3L5 8l5 5"
@@ -67,11 +68,17 @@ export default async function SeasonPage({ params }: PageProps) {
                 strokeLinejoin="round"
               />
             </svg>
-            Back to League
+            All seasons
           </Link>
-          <h1 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mt-2">
-            {season.name}
-          </h1>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h1 className="m-0 font-display font-extrabold text-4xl sm:text-[56px] leading-none tracking-tighter">
+              {season.name}
+            </h1>
+            <span className="text-sm text-muted">
+              {season.players.length} players · {season.matchdays.length}{' '}
+              matchdays · best 5 count
+            </span>
+          </div>
         </div>
         <SeasonStandings season={season} />
       </main>

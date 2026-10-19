@@ -5,12 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import type { Cube } from '@/types/cube'
-
-const DIFFICULTY_STYLES: Record<string, string> = {
-  easy: 'bg-emerald-950 text-emerald-300',
-  medium: 'bg-amber-950 text-amber-300',
-  hard: 'bg-red-950 text-red-300',
-}
+import {
+  ART_PLACEHOLDER_STYLE,
+  DifficultyMeter,
+  cubeMonogram,
+  cubeTypeLabel,
+} from './CubeBadges'
 
 export function CubeCard({ cube }: { cube: Cube }) {
   const [imgError, setImgError] = useState(false)
@@ -18,9 +18,12 @@ export function CubeCard({ cube }: { cube: Cube }) {
   return (
     <Link
       href={`/cubes/${cube.code}`}
-      className="group flex flex-col overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+      className="group flex flex-col overflow-hidden rounded-[14px] border border-line bg-surface text-fg hover:border-line-strong hover:bg-raised transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
     >
-      <div className="relative w-full aspect-video bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
+      <div
+        className="relative w-full aspect-16/10 bg-raised overflow-hidden flex items-center justify-center text-soft"
+        style={ART_PLACEHOLDER_STYLE}
+      >
         {cube.imageUrl && !imgError ? (
           <Image
             unoptimized
@@ -32,81 +35,56 @@ export function CubeCard({ cube }: { cube: Cube }) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-neutral-400">
-            <svg
-              width={40}
-              height={40}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={1}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect x={3} y={3} width={18} height={18} rx={2} />
-              <circle cx={8.5} cy={8.5} r={1.5} />
-              <polyline points="21 15 16 10 5 21" />
-            </svg>
-          </div>
-        )}
-
-        {cube.isTwobert ? (
-          <span className="absolute top-2 left-2 text-[10px] font-medium px-1.5 py-0.5 rounded uppercase tracking-wide bg-purple-950 text-purple-300">
-            Twobert
-          </span>
-        ) : (
-          <span
-            className={`absolute top-2 left-2 text-[10px] font-medium px-1.5 py-0.5 rounded uppercase tracking-wide ${
-              cube.type === 'BATTLEBOX'
-                ? 'bg-blue-950 text-blue-300'
-                : 'bg-emerald-950 text-emerald-300'
-            }`}
-          >
-            {cube.type === 'BATTLEBOX' ? 'Battlebox' : 'Cube'}
+          <span className="font-display font-extrabold text-6xl tracking-tighter opacity-90">
+            {cubeMonogram(cube.name)}
           </span>
         )}
 
         <span
-          className={`absolute top-2 right-2 text-[10px] font-medium px-1.5 py-0.5 rounded uppercase tracking-wide ${
-            DIFFICULTY_STYLES[cube.difficulty.toLowerCase()] ??
-            'bg-neutral-800 text-neutral-300'
+          className={`absolute top-3 left-3 px-2 py-1 rounded-md bg-ink/80 font-mono text-[11px] font-bold uppercase tracking-[0.08em] ${
+            cube.isTwobert ? 'text-[#c3aee6]' : 'text-fg'
           }`}
         >
-          {cube.difficulty}
+          {cubeTypeLabel(cube)}
         </span>
       </div>
 
-      <div className="flex items-center justify-between gap-1 px-3 py-2.5">
-        <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100 leading-snug line-clamp-2">
+      <div className="flex flex-col gap-3 px-4 pt-4 pb-3.5">
+        <p className="font-display font-bold text-lg leading-tight tracking-tight line-clamp-2 min-h-11">
           {cube.name}
         </p>
-        <button
-          type="button"
-          onClick={(e) => {
-            e.preventDefault()
-            e.stopPropagation()
-            window.open(
-              `https://cubecobra.com/cube/list/${cube.code}?display=spoiler`,
-              '_blank',
-              'noopener,noreferrer'
-            )
-          }}
-          className="shrink-0 text-neutral-400 hover:text-emerald-500 transition-colors"
-          title="View on CubeCobra"
-        >
-          <svg
-            width={14}
-            height={14}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        <div className="flex items-center justify-between gap-2 text-xs text-muted">
+          <DifficultyMeter difficulty={cube.difficulty} />
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              window.open(
+                `https://cubecobra.com/cube/list/${cube.code}?display=spoiler`,
+                '_blank',
+                'noopener,noreferrer'
+              )
+            }}
+            className="inline-flex items-center gap-1.5 -my-2 py-2 hover:text-accent transition-colors"
+            title="View on CubeCobra"
           >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
-        </button>
+            <svg
+              width={14}
+              height={14}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.8}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            CubeCobra
+          </button>
+        </div>
       </div>
     </Link>
   )

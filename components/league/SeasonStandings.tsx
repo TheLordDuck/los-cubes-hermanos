@@ -113,6 +113,18 @@ function MoxfieldIcon() {
   )
 }
 
+const TH =
+  'py-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted'
+
+const MEDAL = ['bg-accent', 'bg-soft', 'bg-[#c98a5b]']
+
+const RESULT_BADGE = {
+  win: { label: 'Win', className: 'bg-win text-[#0b1c12]' },
+  loss: { label: 'Loss', className: 'bg-loss text-[#1e0c08]' },
+  draw: { label: 'Draw', className: 'bg-[#5c606a] text-fg' },
+  bye: { label: 'Bye', className: 'bg-accent text-[#2b2208]' },
+}
+
 export function SeasonStandings({ season }: { season: SeasonWithDetails }) {
   const [selectedId, setSelectedId] = useState<number>(
     season.players[0]?.id ?? 0
@@ -152,97 +164,128 @@ export function SeasonStandings({ season }: { season: SeasonWithDetails }) {
   const matchdaysPlayed = matchesByMatchday.length
 
   return (
-    <div className="flex flex-col gap-6">
-      {/* Standings table */}
-      <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 overflow-hidden">
-        <div className="px-5 py-4 border-b border-neutral-200 dark:border-neutral-800 flex items-center justify-between">
-          <h2 className="font-semibold text-neutral-900 dark:text-neutral-100">
-            Standings
-          </h2>
-          <span className="text-xs text-neutral-400">
-            Points = best {BEST_N} matchdays
-          </span>
-        </div>
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b border-neutral-100 dark:border-neutral-800">
-              <th className="text-left px-5 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide w-8">
-                #
-              </th>
-              <th className="text-left px-5 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide">
-                Player
-              </th>
-              <th className="text-left px-5 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide">
-                Pts
-              </th>
-              <th className="text-left px-5 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide hidden sm:table-cell">
-                Match WR
-              </th>
-              <th className="text-left px-5 py-3 text-xs font-medium text-neutral-400 uppercase tracking-wide hidden sm:table-cell">
-                Game WR
-              </th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800">
-            {sortedPlayers.map((sp, i) => (
-              <tr
-                key={sp.id}
-                className={i < 3 ? 'bg-rose-50/50 dark:bg-rose-950/10' : ''}
-              >
-                <td className="px-5 py-3 text-neutral-400">{i + 1}</td>
-                <td className="px-5 py-3 font-medium text-neutral-900 dark:text-neutral-100">
-                  {sp.player.username}
-                </td>
-                <td className="px-5 py-3 font-semibold text-neutral-900 dark:text-neutral-100">
-                  {bestNPoints(sp, season.matchdays)}
-                </td>
-                <td className="px-5 py-3 hidden sm:table-cell text-neutral-500">
-                  {matchWR(sp)}
-                </td>
-                <td className="px-5 py-3 hidden sm:table-cell text-neutral-500">
-                  {gameWR(sp, season.matchdays)}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Player detail */}
-      <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 overflow-hidden">
-        {/* Player pills */}
-        <div className="flex flex-wrap gap-2 p-4 border-b border-neutral-200 dark:border-neutral-800">
-          {sortedPlayers.map((sp) => (
-            <button
+    <div className="flex flex-col gap-8">
+      {/* Podium */}
+      {sortedPlayers.length > 0 && (
+        <section
+          aria-label="Podium"
+          className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4"
+        >
+          {sortedPlayers.slice(0, 3).map((sp, i) => (
+            <div
               key={sp.id}
-              type="button"
-              onClick={() => setSelectedId(sp.id)}
-              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                selectedId === sp.id
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700'
+              className={`flex flex-col gap-3.5 p-5.5 rounded-2xl bg-surface border ${
+                i === 0 ? 'border-accent' : 'border-line'
               }`}
             >
-              {sp.player.username}
-            </button>
+              <div className="flex items-center justify-between">
+                <span
+                  className={`inline-flex items-center justify-center w-10 h-10 rounded-full font-mono font-bold text-ink ${MEDAL[i]}`}
+                >
+                  #{i + 1}
+                </span>
+                <span className="font-mono text-xs text-muted">
+                  {sp.wins}W {sp.losses}L {sp.draws}D
+                </span>
+              </div>
+              <span className="font-display font-bold text-[26px] tracking-tight truncate">
+                {sp.player.username}
+              </span>
+              <span className="flex items-baseline gap-1.5">
+                <span className="font-mono font-bold text-[40px] leading-none">
+                  {bestNPoints(sp, season.matchdays)}
+                </span>
+                <span className="text-[13px] text-muted">pts</span>
+              </span>
+            </div>
           ))}
-        </div>
+        </section>
+      )}
 
+      <div className="flex flex-wrap gap-6 items-start">
+        {/* Standings table */}
+        <section className="flex-[1_1_380px] min-w-0 rounded-2xl border border-line bg-surface overflow-hidden">
+          <div className="px-5 py-4.5 flex items-center justify-between border-b border-line">
+            <h2 className="m-0 font-display font-bold text-xl">Standings</h2>
+            <span className="text-xs text-muted">Select a player</span>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr>
+                  <th className={`${TH} text-left pl-5 pr-2 w-8`}>#</th>
+                  <th className={`${TH} text-left px-2`}>Player</th>
+                  <th className={`${TH} text-right px-2`}>Pts</th>
+                  <th className={`${TH} text-right px-2`}>Match</th>
+                  <th className={`${TH} text-right pl-2 pr-5`}>Game</th>
+                </tr>
+              </thead>
+              <tbody>
+                {sortedPlayers.map((sp, i) => {
+                  const isSelected = sp.id === selectedId
+                  return (
+                    <tr
+                      key={sp.id}
+                      className={`border-t border-line ${
+                        isSelected
+                          ? 'bg-[#1f2228] shadow-[inset_3px_0_0_var(--color-accent)]'
+                          : ''
+                      }`}
+                    >
+                      <td className="pl-5 pr-2 py-1.5 font-mono text-muted">
+                        {i + 1}
+                      </td>
+                      <td className="px-2 py-1.5">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedId(sp.id)}
+                          aria-pressed={isSelected}
+                          className="min-h-11 text-left font-semibold hover:text-accent transition-colors"
+                        >
+                          {sp.player.username}
+                        </button>
+                      </td>
+                      <td className="px-2 py-1.5 text-right font-mono font-bold">
+                        {bestNPoints(sp, season.matchdays)}
+                      </td>
+                      <td className="px-2 py-1.5 text-right font-mono text-soft">
+                        {matchWR(sp)}
+                      </td>
+                      <td className="pl-2 pr-5 py-1.5 text-right font-mono text-soft">
+                        {gameWR(sp, season.matchdays)}
+                      </td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Player detail */}
         {selected && (
-          <div className="p-5 flex flex-col gap-5">
-            <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-              {selected.player.username}
-            </h3>
+          <section className="flex-[999_1_560px] min-w-0 flex flex-col gap-5">
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <h2 className="m-0 font-display font-extrabold text-[34px] tracking-tight">
+                {selected.player.username}
+              </h2>
+              <span className="inline-flex items-center gap-2 text-[13px] text-muted">
+                <span
+                  className="block w-3 h-3 rounded-[3px] border-2 border-accent"
+                  aria-hidden="true"
+                />
+                Counts toward best {BEST_N}
+              </span>
+            </div>
 
-            {/* Stat cards */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
                 {
-                  label: `Best ${BEST_N} pts`,
-                  value: `${bestNPoints(selected, season.matchdays)} pts`,
+                  label: `Best ${BEST_N} points`,
+                  value: bestNPoints(selected, season.matchdays),
                 },
                 {
-                  label: 'Matchdays played',
+                  label: 'Matchdays',
                   value: `${matchdaysPlayed} / ${season.matchdays.length}`,
                 },
                 { label: 'Match WR', value: matchWR(selected) },
@@ -250,226 +293,132 @@ export function SeasonStandings({ season }: { season: SeasonWithDetails }) {
               ].map((s) => (
                 <div
                   key={s.label}
-                  className="flex flex-col gap-1 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800"
+                  className="flex flex-col gap-1 p-4 rounded-xl border border-line bg-surface"
                 >
-                  <span className="text-xs text-neutral-400">{s.label}</span>
-                  <span className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+                  <span className="text-xs text-muted">{s.label}</span>
+                  <span className="font-mono font-bold text-2xl">
                     {s.value}
                   </span>
                 </div>
               ))}
             </div>
 
-            {/* Match history */}
             {matchesByMatchday.length === 0 ? (
-              <p className="text-sm text-neutral-400">No matches played yet.</p>
+              <p className="text-sm text-muted py-10 text-center rounded-[14px] border border-dashed border-line-strong">
+                No matches played yet.
+              </p>
             ) : (
-              <div className="flex flex-col gap-6">
-                {/* Legend */}
-                <div className="flex items-center gap-2 text-xs text-neutral-400">
-                  <span className="inline-block w-3 h-3 rounded-sm border border-amber-400 bg-amber-400/10" />
-                  <span>Counts toward best {BEST_N}</span>
-                </div>
-
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,300px),1fr))] gap-3.5">
                 {matchesByMatchday.map(({ matchday, rounds }) => {
                   const isBest = bestIds.has(matchday.id)
                   const mdPts = pointsInMatchday(selected, matchday)
-
-                  let w = 0,
-                    l = 0,
-                    d = 0,
-                    byeCount = 0
-                  rounds.forEach(({ match }) => {
-                    if (!match) return
-                    if (match.is_bye) {
-                      byeCount++
-                      return
-                    }
-                    const isP1 = match.player1_id === selectedId
-                    if (
-                      (isP1 && match.result === 'P1_WIN') ||
-                      (!isP1 && match.result === 'P2_WIN')
-                    )
-                      w++
-                    else if (
-                      (isP1 && match.result === 'P2_WIN') ||
-                      (!isP1 && match.result === 'P1_WIN')
-                    )
-                      l++
-                    else if (match.result === 'DRAW') d++
-                  })
-
                   const deckUrl = matchday.decklists?.find(
                     (d) => d.player_id === selectedId
                   )?.decklist_url
 
                   return (
-                    <div
+                    <article
                       key={matchday.id}
-                      className={`flex flex-col gap-0 rounded-xl overflow-hidden ${
+                      className={`rounded-[14px] overflow-hidden bg-surface ${
                         isBest
-                          ? 'ring-2 ring-amber-400 dark:ring-amber-500'
-                          : 'ring-1 ring-neutral-200 dark:ring-neutral-800'
+                          ? 'border-2 border-accent'
+                          : 'border border-line'
                       }`}
                     >
-                      {/* Matchday header */}
-                      <div
-                        className={`flex items-center justify-between px-3 py-2 ${
-                          isBest
-                            ? 'bg-amber-50 dark:bg-amber-950/30'
-                            : 'bg-neutral-100 dark:bg-neutral-800/60'
-                        }`}
-                      >
-                        <div className="flex items-center gap-2">
-                          <span
-                            className={`text-xs font-semibold uppercase tracking-wider ${
-                              isBest
-                                ? 'text-amber-700 dark:text-amber-300'
-                                : 'text-neutral-600 dark:text-neutral-400'
-                            }`}
-                          >
+                      <div className="flex items-center justify-between gap-2 px-4 py-1.5 min-h-14 border-b border-line">
+                        <span className="flex items-center gap-2.5">
+                          <span className="font-display font-bold text-[17px]">
                             Matchday {matchday.number}
                           </span>
-                          {isBest && (
-                            <span className="text-[10px] px-1.5 py-0.5 rounded font-medium bg-amber-400/20 text-amber-700 dark:text-amber-300 uppercase tracking-wide">
-                              +{mdPts} pts
-                            </span>
-                          )}
-                        </div>
-                        <div className="flex items-center gap-3">
-                          {deckUrl && (
-                            <a
-                              href={deckUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-xs font-medium text-violet-500 hover:text-violet-400 transition-colors"
-                              title="View decklist on Moxfield"
-                            >
-                              <MoxfieldIcon />
-                              <span className="hidden sm:inline">Decklist</span>
-                            </a>
-                          )}
-                          <span className="text-xs font-mono">
-                            <span className="text-emerald-500">{w}W</span>
-                            <span className="text-neutral-500">-</span>
-                            <span className="text-red-400">{l}L</span>
-                            <span className="text-neutral-500">-</span>
-                            <span className="text-amber-500">{d}D</span>
-                            {byeCount > 0 && (
-                              <>
-                                <span className="text-neutral-500">-</span>
-                                <span className="text-amber-500">
-                                  {byeCount}B
-                                </span>
-                              </>
-                            )}
+                          <span
+                            className={`px-2 py-0.75 rounded-md font-mono text-xs font-bold ${
+                              isBest
+                                ? 'bg-accent text-ink'
+                                : 'bg-line text-muted'
+                            }`}
+                          >
+                            +{mdPts}
                           </span>
-                        </div>
+                        </span>
+                        {deckUrl && (
+                          <a
+                            href={deckUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 min-h-11 text-[13px] font-semibold text-accent hover:text-accent-hover transition-colors"
+                            title="View decklist on Moxfield"
+                          >
+                            <MoxfieldIcon />
+                            Deck
+                          </a>
+                        )}
                       </div>
+                      <ol className="list-none m-0 py-1.5">
+                        {rounds.map(({ round, match }) => {
+                          if (!match) return null
+                          const isP1 = match.player1_id === selectedId
+                          const myGames = isP1 ? match.p1_games : match.p2_games
+                          const oppGames = isP1
+                            ? match.p2_games
+                            : match.p1_games
+                          const won =
+                            (isP1 && match.result === 'P1_WIN') ||
+                            (!isP1 && match.result === 'P2_WIN')
+                          const lost =
+                            (isP1 && match.result === 'P2_WIN') ||
+                            (!isP1 && match.result === 'P1_WIN')
+                          const badge = match.is_bye
+                            ? RESULT_BADGE.bye
+                            : won
+                              ? RESULT_BADGE.win
+                              : lost
+                                ? RESULT_BADGE.loss
+                                : match.result === 'DRAW'
+                                  ? RESULT_BADGE.draw
+                                  : null
+                          const opponentName = match.is_bye
+                            ? 'Bye'
+                            : ((isP1 ? match.player2 : match.player1)?.player
+                                .username ?? '?')
 
-                      {/* Rounds table */}
-                      <div className="border-t border-neutral-100 dark:border-neutral-800">
-                        <table className="w-full text-sm">
-                          <thead>
-                            <tr className="bg-neutral-50 dark:bg-neutral-800/50 border-b border-neutral-100 dark:border-neutral-800">
-                              <th className="text-left px-4 py-2 text-xs font-medium text-neutral-400 uppercase tracking-wide">
-                                Round
-                              </th>
-                              <th className="text-left px-4 py-2 text-xs font-medium text-neutral-400 uppercase tracking-wide">
-                                Opponent
-                              </th>
-                              <th className="text-left px-4 py-2 text-xs font-medium text-neutral-400 uppercase tracking-wide">
-                                Score
-                              </th>
-                              <th className="text-left px-4 py-2 text-xs font-medium text-neutral-400 uppercase tracking-wide">
-                                Result
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800">
-                            {rounds.map(({ round, match }) => {
-                              if (!match) return null
-                              const isP1 = match.player1_id === selectedId
-                              const myGames = isP1
-                                ? match.p1_games
-                                : match.p2_games
-                              const oppGames = isP1
-                                ? match.p2_games
-                                : match.p1_games
-                              const won =
-                                !match.is_bye &&
-                                ((isP1 && match.result === 'P1_WIN') ||
-                                  (!isP1 && match.result === 'P2_WIN'))
-                              const lost =
-                                !match.is_bye &&
-                                ((isP1 && match.result === 'P2_WIN') ||
-                                  (!isP1 && match.result === 'P1_WIN'))
-                              const draw =
-                                !match.is_bye && match.result === 'DRAW'
-                              const opponentName = match.is_bye
-                                ? null
-                                : ((isP1 ? match.player2 : match.player1)
-                                    ?.player.username ?? '?')
-
-                              return (
-                                <tr
-                                  key={round.id}
-                                  className={
-                                    match.is_bye
-                                      ? 'bg-amber-50/40 dark:bg-amber-950/10'
-                                      : ''
-                                  }
+                          return (
+                            <li
+                              key={round.id}
+                              className="grid grid-cols-[34px_1fr_auto_56px] items-center gap-2.5 px-4 py-2"
+                            >
+                              <span className="font-mono text-xs text-faint">
+                                R{round.round_number}
+                              </span>
+                              <span
+                                className={`font-medium truncate ${match.is_bye ? 'italic text-muted' : ''}`}
+                              >
+                                {opponentName}
+                              </span>
+                              <span className="font-mono text-soft">
+                                {match.is_bye ? '—' : `${myGames}–${oppGames}`}
+                              </span>
+                              {badge ? (
+                                <span
+                                  className={`justify-self-end w-13 py-0.75 rounded-md text-center text-[11px] font-bold uppercase tracking-[0.06em] ${badge.className}`}
                                 >
-                                  <td className="px-4 py-2.5 text-neutral-400 font-mono text-xs">
-                                    R{round.round_number}
-                                  </td>
-                                  <td className="px-4 py-2.5 font-medium text-neutral-900 dark:text-neutral-100">
-                                    {match.is_bye ? (
-                                      <span className="text-amber-500 italic text-xs">
-                                        Bye
-                                      </span>
-                                    ) : (
-                                      opponentName
-                                    )}
-                                  </td>
-                                  <td className="px-4 py-2.5 font-mono text-neutral-500">
-                                    {myGames}–{oppGames}
-                                  </td>
-                                  <td className="px-4 py-2.5">
-                                    <div className="flex items-center gap-2">
-                                      {match.is_bye ? (
-                                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 uppercase tracking-wide">
-                                          Bye
-                                        </span>
-                                      ) : won ? (
-                                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 uppercase tracking-wide">
-                                          Win
-                                        </span>
-                                      ) : lost ? (
-                                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-950 text-red-300 uppercase tracking-wide">
-                                          Loss
-                                        </span>
-                                      ) : draw ? (
-                                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-300 uppercase tracking-wide">
-                                          Draw
-                                        </span>
-                                      ) : null}
-                                    </div>
-                                  </td>
-                                </tr>
-                              )
-                            })}
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+                                  {badge.label}
+                                </span>
+                              ) : (
+                                <span />
+                              )}
+                            </li>
+                          )
+                        })}
+                      </ol>
+                    </article>
                   )
                 })}
               </div>
             )}
-          </div>
+          </section>
         )}
       </div>
     </div>
   )
 }
+

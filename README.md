@@ -7,7 +7,7 @@ A Next.js app for managing a personal collection of Magic: The Gathering cubes a
 - **Cube collection** — Browse, add, edit, and delete cubes (regular cubes and battleboxes), each with an image, difficulty rating, and a set of two-color archetypes with their strategy notes. Cube lists are pulled live from [CubeCobra](https://cubecobra.com).
 - **Draft league** — Create seasons, register players, and run matchdays made up of best-of-three rounds. Standings (points, wins, losses, draws, bye wins) are tracked automatically per season.
 - **Decklist OCR** — Upload a photo of a handwritten or printed decklist and have it transcribed into a card list automatically, powered by the Anthropic API (Claude).
-- **Admin area** — Dedicated screens under `/admin` for managing cubes, seasons, matchdays, and results without touching the database directly.
+- **Admin area** — Dedicated screens under `/admin` for managing cubes, seasons, matchdays, and results without touching the database directly, behind a shared admin password.
 
 ## Tech stack
 
@@ -43,6 +43,7 @@ A Next.js app for managing a personal collection of Magic: The Gathering cubes a
    | --- | --- |
    | `DATABASE_URL` | PostgreSQL connection string |
    | `ANTHROPIC_API_KEY` | API key used by the decklist OCR endpoint |
+   | `ADMIN_PASSWORD` | Password for the `/admin` area and for every write to the API |
 
 3. Run migrations and generate the Prisma client:
 
@@ -90,4 +91,19 @@ types/        # Shared TypeScript types
 
 ## Deployment
 
-A multi-stage `Dockerfile` is included that builds a standalone Next.js production image (Node 22, runs `prisma generate` at build time). Provide `DATABASE_URL` and `ANTHROPIC_API_KEY` to the container at runtime.
+The app ships as a Docker image (multi-stage `Dockerfile`, Node 22, Next.js standalone output). On start, the container runs `prisma migrate deploy` and then launches the server on port 3000. `GET /api/health` is used as the healthcheck.
+
+### Coolify
+
+1. Create a PostgreSQL database in Coolify (or use an existing one) and copy its internal connection URL.
+2. Add a new resource from this Git repository and pick the **Dockerfile** build pack.
+3. Set **Ports Exposes** to `3000` and attach your domain. Coolify's proxy provides HTTPS, which the admin login cookie requires.
+4. Add the environment variables:
+
+   | Variable | Value |
+   | --- | --- |
+   | `DATABASE_URL` | Internal URL of the Coolify PostgreSQL database |
+   | `ADMIN_PASSWORD` | Password for `/admin` |
+   | `ANTHROPIC_API_KEY` | Only needed for decklist OCR |
+
+5. Deploy. Migrations apply automatically on each start; set `SKIP_MIGRATIONS=1` to turn that off. To load the sample cubes once, run `npx prisma db seed` locally against the same database.
