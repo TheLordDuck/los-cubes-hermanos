@@ -18,6 +18,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
+# Caps Node's heap so `next build` can't eat all the RAM of the 4 GB VPS
+ENV NODE_OPTIONS=--max-old-space-size=1536
 RUN pnpm exec prisma generate
 RUN pnpm build
 
